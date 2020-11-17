@@ -17,6 +17,7 @@
     "next-images": "^1.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1"
   }

@@ -15,6 +15,7 @@ const NavBar = () => {
     const useStyles = makeStyles((theme) => ({
         div: {
             flex: 1,
+            
           },
         button:{
             background: "inherit",
@@ -30,6 +31,10 @@ const NavBar = () => {
         }
     }));
     
+    const scrollTo = (id) => {
+        const element = document.getElementById(id);
+        element.scrollIntoView({ behavior: "smooth" });
+      };
 
     const classes = useStyles();
 
@@ -39,8 +44,8 @@ const NavBar = () => {
                 <Toolbar>
                     <Typography variant="h6" style={{flex: 1}} className={classes.title}>Guilherme</Typography>
                     <div>
-                        <Button className={classes.button}>About me</Button>
-                        <Button className={classes.button}>Projects</Button>
+                        <Button className={classes.button} onClick={() => scrollTo("about-me")}>About me</Button>
+                        <Button className={classes.button} onClick={() => scrollTo("projetos")}>Projects</Button>
                         <Button className={classes.button}>Articles</Button>
                         <Button className={classes.button}>Contact</Button>
                     </div>
