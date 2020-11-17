@@ -17,8 +17,11 @@ const AboutMe = () => {
         },
         title:{
             position: "relative",
-            right:"22rem",
-            bottom: "5rem", 
+            right:"20rem",
+            bottom: "5rem",
+            letterSpacing: "0.4rem",
+            display: "flex",
+            justify: "center"
         },
         text: {
             position: "relative",
@@ -42,7 +45,7 @@ const AboutMe = () => {
             display: "flex",
             justify:"center",
             alignItems: "center"
-        }
+        },
     }));
 
     const theme = createMuiTheme({
@@ -64,7 +67,7 @@ const AboutMe = () => {
             <Typography variant="h3">Skill Set</Typography>
             <Grid container direction="row" justify="center" className={classes.icons}>
                 <Grid item>
-                    <DiPython size="5em" className={classes.icon}/> 
+                    <DiPython size="5em" className={classes.icon}/>
                 </Grid>
                 <Grid item>
                     <DiJavascript1 size="5em" className={classes.icon}/>
