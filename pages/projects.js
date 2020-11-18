@@ -10,7 +10,7 @@ import imageProjeto1 from "./../images/website.png";
 const Projetos = () => {
     const useStyles = makeStyles({
         background: {
-            width:"auto",
+            width:"100%",
             height: "99.4vh",
             justifyContent: "center",
             display: "flex",

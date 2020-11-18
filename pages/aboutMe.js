@@ -5,7 +5,7 @@ const AboutMe = () => {
 
     const useStyles = makeStyles((theme) => ({
         div: {
-            width: "auto",
+            width: "100%",
             height: "99.4vh",
             display: "flex",
             flexDirection: "column",

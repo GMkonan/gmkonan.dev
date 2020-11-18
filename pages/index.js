@@ -4,17 +4,18 @@ import AboutMe from './aboutMe';
 import NavBar from '../components/navbar';
 import Projetos from './projects';
 import Contact from './contact';
+import {Box} from '@material-ui/core';
 
 function HomePage() {
     return(
         
-        <div>
+        <Box style={{ overflow: "hidden" }}>
             <NavBar />
             <FrontPage />
             <AboutMe />
             <Projetos />
             <Contact />
-        </div>
+        </Box>
         
     )
   }

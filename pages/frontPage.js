@@ -1,16 +1,18 @@
 import React from 'react';
-import {Box, Typography, makeStyles} from '@material-ui/core';
+import {Box, Typography, makeStyles, Container} from '@material-ui/core';
 import image from './../images/prog10.jpg';
+import withWidth from '@material-ui/core/withWidth';
 
-const FrontPage = () => {
+const FrontPage = (props) => {
     const useStyles = makeStyles((theme) => ({
         background: {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: "auto",
+            width: "100%",
             height: "99.4vh",
+            backgroundAttachment: "fixed",
             backgroundImage: `url(${image})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -42,12 +44,14 @@ const FrontPage = () => {
 
     const classes = useStyles();
     return (
-        <Box m={0} className={classes.background}>
+        
+        <Box className={classes.background}>
         <Typography className={classes.presentation} align="center" variant="h3">Hello, My name is</Typography>
         <Typography className={classes.title} align="center" variant="h2">Guilherme Monteiro.</Typography>
         <Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>
         </Box>
+        
     )
 }
 
-export default FrontPage;
+export default withWidth() (FrontPage);

@@ -7,7 +7,7 @@ const Contact = () => {
 
     const useStyles = makeStyles({
         background: {
-            width:"auto",
+            width:"100%",
             height: "25vh",
             justifyContent: "center",
             display: "flex",
