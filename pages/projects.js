@@ -12,8 +12,6 @@ const Projetos = () => {
         background: {
             width:"auto",
             height: "99.4vh",
-            marginLeft: -8,
-            marginRight: -8,
             justifyContent: "center",
             display: "flex",
             alignItems: "center",
@@ -34,7 +32,7 @@ const Projetos = () => {
     const classes = useStyles();
 
     return(
-        <Box bgcolor="#212326" className={classes.background} id="projetos">
+        <Box width={1} bgcolor="#212326" className={classes.background} id="projetos">
             <Typography className={classes.title}>Projects</Typography>
             <Grid container direction="row" spacing={2}>
                 <Grid item>

@@ -4,6 +4,7 @@ import AboutMe from './aboutMe';
 import NavBar from '../components/navbar';
 import Projetos from './projects';
 import Contact from './contact';
+
 function HomePage() {
     return(
         

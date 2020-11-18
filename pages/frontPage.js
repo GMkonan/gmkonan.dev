@@ -14,10 +14,7 @@ const FrontPage = () => {
             backgroundImage: `url(${image})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backgroundPosition: "50%",
-            marginLeft: -8,
-            marginRight: -8
-            
+            backgroundPosition: "50%",     
         },
         title:{
             bottom: "2rem",
@@ -45,14 +42,12 @@ const FrontPage = () => {
 
     const classes = useStyles();
     return (
-        <div>
-        <Box className={classes.background}>
+        <Box m={0} className={classes.background}>
         <Typography className={classes.presentation} align="center" variant="h3">Hello, My name is</Typography>
         <Typography className={classes.title} align="center" variant="h2">Guilherme Monteiro.</Typography>
         <Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>
         </Box>
-        </div>
-    );
+    )
 }
 
 export default FrontPage;

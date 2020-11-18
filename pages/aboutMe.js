@@ -11,8 +11,6 @@ const AboutMe = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            marginLeft: -8,
-            marginRight: -8,
             backgroundSize: "cover"
         },
         title:{
@@ -58,7 +56,7 @@ const AboutMe = () => {
 
     return(
         <ThemeProvider theme={theme} >
-        <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
+        <Box width={1} color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
             <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
             also known as Konan and I'm a Self-Learning Software Developer.<br /> 
