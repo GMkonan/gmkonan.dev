@@ -1,11 +1,13 @@
 import React from 'react';
-import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Grid} from '@material-ui/core';
-import {DiPython, DiGit, DiTerminal, DiJavascript1} from 'react-icons/di';
+import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Grid,ListItem,ListItemIcon,ListItemText, Icon, Divider} from '@material-ui/core';
+import {DiPython, DiGit, DiTerminal, DiJavascript1, DiReact} from 'react-icons/di';
 const AboutMe = () => {
+
+    //use breakpoints in specific parts that break im mobile like title position (gets up)
 
     const useStyles = makeStyles((theme) => ({
         div: {
-            width: "100%",
+            width: "auto",
             height: "99.4vh",
             display: "flex",
             flexDirection: "column",
@@ -33,17 +35,18 @@ const AboutMe = () => {
             
         },
         icon: {
-            position: "relative",
-            right: "5rem",
-            paddingLeft:"7rem",
-            paddingTop: "3rem"
+            display:"flex",
+            alignItems:"center",
+            position:"relative",
+            justifyContent:"center",
         },
-        icons: {
-            marginLeft: "auto",
-            display: "flex",
-            justify:"center",
-            alignItems: "center"
-        },
+        dividerColor: {
+            width: '100%',
+            maxWidth: 360,
+            backgroundColor: "#ffffff",
+            fontSize: "3rem",
+            height: "0.1rem"
+        }
     }));
 
     const theme = createMuiTheme({
@@ -56,27 +59,21 @@ const AboutMe = () => {
 
     return(
         <ThemeProvider theme={theme} >
-        <Box width={1} color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
+        <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
             <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
             also known as Konan and I'm a Self-Learning Software Developer.<br /> 
-            I have always had been really curious,researching ideas that interest me and that got me into <br />
-            programming,I love the tech world and I'm always learning new things while working in projects.</Typography>
+            I have always had been really curious, researching ideas that interest me and that got me into <br />
+            programming, I love the tech world and I'm always learning new things while working in projects.</Typography>
             <Typography variant="h3">Skill Set</Typography>
-            <Grid container direction="row" justify="center" className={classes.icons}>
-                <Grid item>
-                    <DiPython size="5em" className={classes.icon}/>
-                </Grid>
-                <Grid item>
-                    <DiJavascript1 size="5em" className={classes.icon}/>
-                </Grid>
-                <Grid item>
-                    <DiTerminal size="5em" className={classes.icon}/>
-                </Grid>
-                <Grid item>
-                    <DiGit size="5em" className={classes.icon}/>
-                </Grid>
-            </Grid>
+            <Divider className={classes.dividerColor} />
+            <Box style={{display:"flex", alignItems:"center",justifyContent:"center",paddingTop:"7rem"}}>
+            <DiPython size="13em" style={{paddingRight:"4rem"}} /> 
+            <DiJavascript1 size="13em" style={{paddingRight:"4rem"}}/>
+            <DiReact size="13em" style={{paddingRight:"4rem"}}/>
+            <DiTerminal size="13em" style={{paddingRight:"4rem"}}/>
+            <DiGit size="13em" style={{paddingRight:"4rem"}}/>
+            </Box>
         </Box>
         </ThemeProvider>
     )

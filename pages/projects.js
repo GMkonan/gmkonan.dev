@@ -22,19 +22,22 @@ const Projetos = () => {
             color: "white",
             fontSize: "3rem",
             left:"13rem",
-            bottom: "15rem",
+            bottom: "18rem",
             letterSpacing: "0.4rem",
             display: "flex",
             justify: "center"
             
+        },
+        grid: {
+            marginLeft: "9rem"
         }
     })
     const classes = useStyles();
 
     return(
-        <Box width={1} bgcolor="#212326" className={classes.background} id="projetos">
-            <Typography className={classes.title}>Projects</Typography>
-            <Grid container direction="row" spacing={2}>
+        <Box bgcolor="#212326" className={classes.background} id="projetos">
+            <Typography className={classes.title} style={{ fontFamily:"Monospace" }}>PROJECTS</Typography>
+            <Grid container direction="row" spacing={5} className={classes.grid} >
                 <Grid item>
                     <Projeto 
                     title="Anime Downloader"
@@ -64,6 +67,7 @@ const Projetos = () => {
                     url="https://github.com/mui-org/material-ui/issues/4163"
                     />
                 </Grid>
+                
                 
             </Grid>
             
