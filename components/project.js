@@ -9,10 +9,14 @@ import {Box, Typography, makeStyles,Button,
 
 const Projeto = ({image,titleCard,title,text, url}) => {
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme =>({
         root: {
           maxWidth: 345,
-          backgroundColor:"#1d1f1e"
+          maxHeight: 400,
+          backgroundColor:"#1d1f1e",
+          [theme.breakpoints.down("md")] : {
+            width: '80%',
+            }
         },
         media: {
           height: 200,
@@ -23,7 +27,7 @@ const Projeto = ({image,titleCard,title,text, url}) => {
         text: {
             color:"white"
         }
-      });
+      }));
 
       const classes = useStyles();
 

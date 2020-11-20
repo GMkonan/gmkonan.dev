@@ -21,55 +21,23 @@ const Projetos = () => {
             position: "relative",
             color: "white",
             fontSize: "3rem",
-            left:"13rem",
             bottom: "18rem",
             letterSpacing: "0.4rem",
             display: "flex",
-            justify: "center"
+            justifyContent: "center"
             
         },
         grid: {
-            marginLeft: "9rem"
+            display:"flex",
+            justify:"center",
+            justifyContent:"center"
         }
     })
     const classes = useStyles();
 
     return(
         <Box bgcolor="#212326" className={classes.background} id="projetos">
-            <Typography className={classes.title} style={{ fontFamily:"Monospace" }}>PROJECTS</Typography>
-            <Grid container direction="row" spacing={5} className={classes.grid} >
-                <Grid item>
-                    <Projeto 
-                    title="Anime Downloader"
-                    image={imageProjeto1}
-                    titleCard="Anime Downloader"
-                    text="A small Web Scraping Script using Python and Selenium to download Animes from the website Anbient.com"
-                    url="https://github.com/GMkonan/anime_scraper"
-                    />
-                </Grid>
-                <Grid item>
-                <Projeto 
-                    title="Portfolio Website"
-                    image={imageProjeto1}
-                    titleCard="Portfolio Website"
-                    text="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarcticaa"
-                    url="https://github.com/mui-org/material-ui/issues/4163"
-                    />
-                </Grid>
-                <Grid item>
-                <Projeto 
-                    title="Projeto1"
-                    image={imageProjeto1}
-                    titleCard="Projeto1"
-                    text="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarcticaa"
-                    url="https://github.com/mui-org/material-ui/issues/4163"
-                    />
-                </Grid>
-                
-                
-            </Grid>
+            <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">PROJECTS</Typography>
             
         </Box>
     )

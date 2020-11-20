@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Grid,ListItem,ListItemIcon,ListItemText, Icon, Divider} from '@material-ui/core';
+import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Grid,ListItem,ListItemIcon,ListItemText, Icon, Divider, Container} from '@material-ui/core';
 import {DiPython, DiGit, DiTerminal, DiJavascript1, DiReact} from 'react-icons/di';
 const AboutMe = () => {
 
@@ -8,27 +8,34 @@ const AboutMe = () => {
     const useStyles = makeStyles((theme) => ({
         div: {
             width: "auto",
-            height: "99.4vh",
+            height: "1000px",
+            maxHeight:"auto",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
+            [theme.breakpoints.down('md')] : {
+                height:"auto",
+                
+            }
         },
         title:{
             position: "relative",
-            right:"20rem",
             bottom: "5rem",
             letterSpacing: "0.4rem",
             display: "flex",
-            justify: "center"
+            justify: "center",
+            justifyContent:"center",
+            [theme.breakpoints.down('md')] : {
+                paddingTop:"7rem"
+            }
+            
         },
         text: {
             position: "relative",
             fontSize: "1.3rem",
             color: "white",
-            maxWidth: "100%",
-            maxHeight: "100%",
             margin: "1rem",
             lineHeight: "1.6rem",
             bottom: "2rem",
@@ -39,6 +46,16 @@ const AboutMe = () => {
             alignItems:"center",
             position:"relative",
             justifyContent:"center",
+        },
+        skills: {
+            display:"flex", 
+            alignItems:"center",
+            justifyContent:"center",
+            paddingTop:"5rem",
+            [theme.breakpoints.down('md')] : {
+                flexDirection:"column",
+                 
+            }
         },
         dividerColor: {
             width: '100%',
@@ -59,22 +76,27 @@ const AboutMe = () => {
 
     return(
         <ThemeProvider theme={theme} >
-        <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
+            <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
+        
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
+            
             <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
-            also known as Konan and I'm a Self-Learning Software Developer.<br /> 
-            I have always had been really curious, researching ideas that interest me and that got me into <br />
-            programming, I love the tech world and I'm always learning new things while working in projects.</Typography>
-            <Typography variant="h3">Skill Set</Typography>
+            also known as Konan and I'm a Self-Learning Software Developer.<br />  <br />
+            I have always had been really curious, researching ideas that interest me and that got me into 
+            programming.<br /><br /> I love the tech world and I'm always learning new things while working in projects.</Typography>
+            
+            <Typography style={{justifyContent:"center"}} variant="h3">Skill Set</Typography>
             <Divider className={classes.dividerColor} />
-            <Box style={{display:"flex", alignItems:"center",justifyContent:"center",paddingTop:"7rem"}}>
-            <DiPython size="13em" style={{paddingRight:"4rem"}} /> 
-            <DiJavascript1 size="13em" style={{paddingRight:"4rem"}}/>
-            <DiReact size="13em" style={{paddingRight:"4rem"}}/>
-            <DiTerminal size="13em" style={{paddingRight:"4rem"}}/>
-            <DiGit size="13em" style={{paddingRight:"4rem"}}/>
+            <Box className={classes.skills}>
+            <DiPython size="10em"  /> 
+            <DiJavascript1 size="10em" />
+            <DiReact size="10em" />
+            <DiTerminal size="10em" />
+            <DiGit size="10em" />
             </Box>
         </Box>
+        
+
         </ThemeProvider>
     )
 }
