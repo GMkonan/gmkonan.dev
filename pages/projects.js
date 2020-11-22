@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography, makeStyles, Grid  } from '@material-ui/core';
 import Projeto from './../components/project';
-import imageProjeto1 from "./../images/website.png";
+import websiteImage from "./../images/website.png";
 
 // Change title font and text in card font aswell as fontsize
 //port to mobile
@@ -11,29 +11,43 @@ const Projetos = () => {
     const useStyles = makeStyles(theme => ({
         background: {
             width:"100%",
-            height: "99.4vh",
+            height: "1000px",
             justifyContent: "center",
             display: "flex",
+            flexDirection:"column",
             alignItems: "center",
             backgroundSize: "cover",
+            [theme.breakpoints.down('sm')] : {
+                height: "auto",
+            }
         },
         title: {
             position: "relative",
             color: "white",
             fontSize: "3rem",
-            bottom: "15rem",
             letterSpacing: "0.4rem",
             display: "flex",
             justifyContent: "center",
+            paddingBottom:"10rem",
             [theme.breakpoints.down('md')] : {
-                paddingTop:"10rem"
+                paddingTop:"5rem"
+            },
+            [theme.breakpoints.down('sm')] : {
+                paddingBottom:"4rem"
             }
             
         },
-        grid: {
+        projects: {
             display:"flex",
+            flexDirection:"row",
+            alignItems:"center",
+            justifyContent:"center",
             justify:"center",
-            justifyContent:"center"
+            [theme.breakpoints.down('sm')] : {
+                flexDirection:"column",
+                paddingTop:"3rem",
+                paddingBottom:"5rem"
+            }
         }
     }))
     const classes = useStyles();
@@ -41,6 +55,17 @@ const Projetos = () => {
     return(
         <Box bgcolor="#212326" className={classes.background} id="projetos">
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">PROJECTS</Typography>
+            <Grid container className={classes.projects} spacing={3}>
+                <Grid item >
+                    <Projeto 
+                            title="Portfolio Website"
+                            image={websiteImage}
+                            titleCard="Portfolio Website"
+                            text="A website I made as my portfolio with React, NextJS and Material UI"
+                            url="https://github.com/GMkonan/portfolio"
+                            />
+                </Grid>                      
+            </Grid>
         </Box>
     )
 }
