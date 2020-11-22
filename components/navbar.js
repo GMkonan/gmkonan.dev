@@ -1,16 +1,19 @@
 import React from 'react';
-import { Button, Box, makeStyles,
+import { Button, 
+Box, 
+makeStyles,
 Typography,
 AppBar,
 Toolbar,
- IconButton
+IconButton,
+Drawer,
+List,
+ListItem,
+Hidden,
+Divider
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-
-//make slide down, the navbar dissapears
-// maybe make a button to go to the top, see https://material-ui.com/components/app-bar/ for more
-// attach URLS to buttons and make function to scroll to the part of the page they belong (by ID)
-
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 const NavBar = () => {
 
     const useStyles = makeStyles((theme) => ({
@@ -30,11 +33,8 @@ const NavBar = () => {
             height: 40,
             padding: "0 1rem",
             color: "black",
-            //fontFamily: "bold",
-            //fontWeight:"bold"
         },
         title: {
-          //fontWeight:"bold"
           color: "Black"
         },
         appbar: {
@@ -46,15 +46,26 @@ const NavBar = () => {
         const element = document.getElementById(id);
         element.scrollIntoView({ behavior: "smooth" });
       };
+    
 
     const classes = useStyles();
+    
+    const [open, setOpen] = React.useState(false);
+
+    const handleDrawerOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleDrawerClose = () => {
+      setOpen(false);
+    };
 
     return(
         <Box>
             <AppBar className={classes.appbar}>
                 <Toolbar>
                     <Typography variant="h6" style={{flex: 1}} className={classes.title}>Guilherme</Typography>
-                    <IconButton edge="end" className={classes.hideIconMenu}>
+                    <IconButton edge="end" className={classes.hideIconMenu} onClick={handleDrawerOpen}>
                         <MenuIcon />
                     </IconButton>
                     <div className={classes.hideButtons}>
@@ -64,6 +75,29 @@ const NavBar = () => {
                     </div>
                 </Toolbar>
             </AppBar>
+            <Drawer
+                variant="persistent"
+                anchor="right"
+                open={open}
+                >
+                <div>
+                    <IconButton onClick={handleDrawerClose}>
+                        <ChevronRightIcon />
+                    </IconButton>
+                </div>
+                <Divider />
+                <List>
+                    <ListItem>
+                        <Button onClick={() => scrollTo("about-me")}>About me</Button>
+                    </ListItem>
+                    <ListItem>
+                        <Button onClick={() => scrollTo("projetos")}>Projects</Button>
+                    </ListItem>
+                    <ListItem>
+                        <Button onClick={() => scrollTo("contact")}>Contact</Button>
+                    </ListItem>
+                </List>
+            </Drawer>
         </Box>
     )
 }

@@ -8,7 +8,7 @@ import imageProjeto1 from "./../images/website.png";
 // maybe change cards size
 
 const Projetos = () => {
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
         background: {
             width:"100%",
             height: "99.4vh",
@@ -21,10 +21,13 @@ const Projetos = () => {
             position: "relative",
             color: "white",
             fontSize: "3rem",
-            bottom: "18rem",
+            bottom: "15rem",
             letterSpacing: "0.4rem",
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
+            [theme.breakpoints.down('md')] : {
+                paddingTop:"10rem"
+            }
             
         },
         grid: {
@@ -32,13 +35,12 @@ const Projetos = () => {
             justify:"center",
             justifyContent:"center"
         }
-    })
+    }))
     const classes = useStyles();
 
     return(
         <Box bgcolor="#212326" className={classes.background} id="projetos">
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">PROJECTS</Typography>
-            
         </Box>
     )
 }

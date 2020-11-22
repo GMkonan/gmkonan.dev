@@ -28,7 +28,7 @@ const AboutMe = () => {
             justify: "center",
             justifyContent:"center",
             [theme.breakpoints.down('md')] : {
-                paddingTop:"7rem"
+                paddingTop:"10rem"
             }
             
         },
