@@ -1,6 +1,7 @@
 import React from 'react';
-import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Grid,ListItem,ListItemIcon,ListItemText, Icon, Divider, Container} from '@material-ui/core';
-import {DiPython, DiGit, DiTerminal, DiJavascript1, DiReact} from 'react-icons/di';
+import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Divider} from '@material-ui/core';
+import websiteImage from "./../images/anotherMeNobg.png";
+
 const AboutMe = () => {
 
     //use breakpoints in specific parts that break im mobile like title position (gets up)
@@ -77,26 +78,13 @@ const AboutMe = () => {
     return(
         <ThemeProvider theme={theme} >
             <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
-        
-            <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
-            
-            <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
-            also known as Konan and I'm a Self-Learning Software Developer.<br />  <br />
-            I have always had been really curious, researching ideas that interest me and that got me into 
-            programming.<br /><br /> I love the tech world and I'm always learning new things while working in projects.</Typography>
-            
-            <Typography style={{justifyContent:"center"}} variant="h3">Skill Set</Typography>
-            <Divider className={classes.dividerColor} />
-            <Box className={classes.skills}>
-            <DiPython size="10em"  /> 
-            <DiJavascript1 size="10em" />
-            <DiReact size="10em" />
-            <DiTerminal size="10em" />
-            <DiGit size="10em" />
+                <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
+                <img src={websiteImage} height="300px"  />
+                <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
+                also known as Konan and I'm a Self-Learning Software Developer.<br />  <br />
+                I have always had been really curious, researching ideas that interest me and that got me into 
+                programming.<br /><br /> I love the tech world and I'm always learning new things while working in projects.</Typography>
             </Box>
-        </Box>
-        
-
         </ThemeProvider>
     )
 }
