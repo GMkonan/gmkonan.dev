@@ -34,7 +34,7 @@ const AboutMe = () => {
         },
         text: {
             position: "relative",
-            fontSize: "1.3rem",
+            fontSize: "1.4rem",
             color: "white",
             margin: "1rem",
             lineHeight: "1.6rem",
@@ -47,22 +47,13 @@ const AboutMe = () => {
             position:"relative",
             justifyContent:"center",
         },
-        skills: {
-            display:"flex", 
-            alignItems:"center",
-            justifyContent:"center",
-            paddingTop:"5rem",
-            [theme.breakpoints.down('md')] : {
-                flexDirection:"column",
-                 
-            }
-        },
         dividerColor: {
             width: '100%',
             maxWidth: 360,
             backgroundColor: "#ffffff",
             fontSize: "3rem",
-            height: "0.1rem"
+            height: "0.1rem",
+            marginTop: "-5rem",
         }
     }));
 
@@ -78,7 +69,8 @@ const AboutMe = () => {
         <ThemeProvider theme={theme} >
             <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
                 <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
-                <img src={websiteImage} height="300px"  />
+                <Divider className={classes.dividerColor} />
+                <img src={websiteImage} height="350px" style={{marginTop: "30px", marginBottom: "30px"}}  />
                 <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
                 also known as Konan and I'm a Self-Learning Software Developer.<br />  <br />
                 I have always had been really curious, researching ideas that interest me and that got me into 

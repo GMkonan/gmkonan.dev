@@ -25,6 +25,7 @@ const Skills = () => {
     const classes = useStyles();
 
 
+
     return(
         <Box>
         <Typography style={{justifyContent:"center"}} variant="h3">Skill Set</Typography>
