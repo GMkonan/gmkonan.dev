@@ -1,5 +1,6 @@
 import React from 'react';
 import {DiPython, DiGit, DiTerminal, DiJavascript1, DiReact} from 'react-icons/di';
+import {Box, makeStyles, Typography, Divider} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     skills: {
