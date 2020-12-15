@@ -5,6 +5,7 @@ import NavBar from '../components/navbar';
 import Projetos from './projects';
 import Contact from './contact';
 import {Box} from '@material-ui/core';
+import Skills from './skills';
 
 function HomePage() {
     return(
@@ -13,6 +14,7 @@ function HomePage() {
             <NavBar />
             <FrontPage />
             <AboutMe />
+            {/*<Skills /> */}
             <Projetos />
             <Contact />
         </Box>
