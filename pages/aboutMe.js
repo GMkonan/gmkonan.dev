@@ -1,4 +1,3 @@
-import React from 'react';
 import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Divider} from '@material-ui/core';
 import websiteImage from "./../images/anotherMeNobg.png";
 
