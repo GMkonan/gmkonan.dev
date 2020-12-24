@@ -9,12 +9,11 @@ IconButton,
 Drawer,
 List,
 ListItem,
-Hidden,
 Divider,
 Link
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+
 const NavBar = () => {
 
     const useStyles = makeStyles((theme) => ({
@@ -62,7 +61,7 @@ const NavBar = () => {
     const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
-      setOpen(true);
+        setOpen((prev) => !prev);
     };
   
     const handleDrawerClose = () => {
@@ -86,16 +85,12 @@ const NavBar = () => {
                     </div>
                 </Toolbar>
             </AppBar>
+            <div onClick={handleDrawerClose}>
             <Drawer
                 variant="persistent"
                 anchor="right"
                 open={open}
                 >
-                <div>
-                    <IconButton onClick={handleDrawerClose}>
-                        <ChevronRightIcon />
-                    </IconButton>
-                </div>
                 <Divider />
                 <List>
                     <ListItem>
@@ -106,9 +101,10 @@ const NavBar = () => {
                     </ListItem>
                     <ListItem>
                         <Button onClick={() => scrollTo("contact")}>Contact</Button>
-                    </ListItem>
+                    </ListItem>  
                 </List>
-            </Drawer>
+            </Drawer>      
+            </div> 
         </Box>
     )
 }
