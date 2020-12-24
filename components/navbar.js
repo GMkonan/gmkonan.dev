@@ -10,7 +10,8 @@ Drawer,
 List,
 ListItem,
 Hidden,
-Divider
+Divider,
+Link
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -36,6 +37,14 @@ const NavBar = () => {
         },
         title: {
           color: "Black"
+        },
+        link: {
+            textDecoration: 'none',
+            flex: 1,
+            '&:hover':{
+              cursor: 'pointer',
+              textDecoration: "none",
+            }
         },
         appbar: {
             background: "#ffffff"
@@ -64,7 +73,9 @@ const NavBar = () => {
         <Box>
             <AppBar className={classes.appbar}>
                 <Toolbar>
-                    <Typography variant="h6" style={{flex: 1}} className={classes.title}>Guilherme</Typography>
+                    <Link className={classes.link} onClick={() => scrollTo("frontPage")}>
+                        <Typography variant="h6" className={classes.title}>Guilherme</Typography>
+                    </Link>
                     <IconButton edge="end" className={classes.hideIconMenu} onClick={handleDrawerOpen}>
                         <MenuIcon />
                     </IconButton>
