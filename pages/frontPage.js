@@ -43,7 +43,7 @@ const FrontPage = (props) => {
         },
     }));
 
-    //let msgs = ["WELCOME TO MY WORLD","THIS IS MY WEBSITE","I AM AT YOUR SERVICE"];
+    let msgs = ["Self-Learning","Software Developer"];
 
     const classes = useStyles();
     return (
@@ -51,8 +51,8 @@ const FrontPage = (props) => {
         <Box className={classes.background} id="frontPage">
         <Typography className={classes.presentation} align="center" variant="h3">Hello, My name is</Typography>
         <Typography className={classes.title} align="center" variant="h2">Guilherme Monteiro.</Typography>
-        <Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>
-        {/*<TypeEffect heading={"test"} messages={msgs} />*/}
+        {/*<Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>*/}
+        <TypeEffect align="center" messages={msgs} />
         </Box>
         
     )

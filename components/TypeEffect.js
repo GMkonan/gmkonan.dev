@@ -1,11 +1,24 @@
+import { Typography, makeStyles } from '@material-ui/core';
 import { useState, useEffect } from 'react';
 
+
 const CONSTANTS = {
-    DELETING_SPEED: 30,
+    DELETING_SPEED: 40,
     TYPING_SPEED: 150
 }
 
 const TypeEffect = ({ messages, heading }) => {
+    //styles
+    const useStyles = makeStyles((theme) => ({
+        text: {
+            bottom: "2.5rem",
+            position: "relative",
+            fontSize: "1.5rem",
+            color:"white"
+        },
+    }));
+    const classes = useStyles();
+    
     const [state, setState] = useState({
         text: "",
         message: "",
@@ -64,7 +77,7 @@ const TypeEffect = ({ messages, heading }) => {
     }
 
     return(
-        <p>{state.text}</p>
+        <Typography className={classes.text}>{state.text}</Typography>
     )
 }
 
