@@ -5,6 +5,7 @@ import websiteImage from "./../images/website.png";
 import blog from "./../images/blog.png";
 import anime from "./../images/anime.jpg";
 import githubImage from "./../images/github.png";
+import Carousel from 'react-material-ui-carousel'
 
 // Change title font and text in card font aswell as fontsize
 //port to mobile
@@ -58,47 +59,50 @@ const Projetos = () => {
     }))
     const classes = useStyles();
 
+    const projects = [
+        {
+            title: "Portfolio Website",
+            image: websiteImage,
+            titleCard: "Portfolio Website",
+            text: "A website I made as my portfolio with React, NextJS and Material UI",
+            url: "https://github.com/GMkonan/portfolio"
+        },
+        {
+            title: "Blog Website",
+            image: blog,
+            titleCard: "Blog Website",
+            text: "A website I made So I can post my articles using NextJS and styled-components",
+            url: "https://github.com/GMkonan/MyBlog"
+        },
+        {
+            title: "Github Automation",
+            image: githubImage,
+            titleCard: "Github Automation",
+            text: "A Script I made using python to automate the process of starting a project",
+            url: "https://github.com/GMkonan/githubAutomation"
+        },
+        {
+            title: "Anime Scraper",
+            image: anime,
+            titleCard: "Anime Scraper",
+            text: "A script I made with python to download animes faster",
+            url: "https://github.com/GMkonan/anime_scraper"
+        }
+    ]
+
     return(
         <Box bgcolor="#212326" className={classes.background} id="projetos">
             <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">PROJECTS</Typography>
-            <Grid container className={classes.projects} spacing={3}>
-                <Grid item >
-                    <Projeto 
-                            title="Portfolio Website"
-                            image={websiteImage}
-                            titleCard="Portfolio Website"
-                            text="A website I made as my portfolio with React, NextJS and Material UI"
-                            url="https://github.com/GMkonan/portfolio"
-                            />
-                </Grid>  
-                <Grid item >
-                    <Projeto 
-                            title="Blog Website"
-                            image={blog}
-                            titleCard="Blog Website"
-                            text="A website I made So I can post my articles using NextJS and styled-components"
-                            url="https://github.com/GMkonan/MyBlog"
-                            />
-                </Grid>                       
-                <Grid item >
-                    <Projeto 
-                            title="Github Automation"
-                            image={githubImage}
-                            titleCard="Github Automation"
-                            text="A Script I made using python to automate the process of starting a project"
-                            url="https://github.com/GMkonan/githubAutomation"
-                            />
-                </Grid>   
-                <Grid item >
-                    <Projeto 
-                            title="Anime Scraper"
-                            image={anime}
-                            titleCard="Anime scraper"
-                            text="A script I made with python to download animes faster"
-                            url="https://github.com/GMkonan/anime_scraper"
-                            />
-                </Grid>   
-            </Grid>
+            <Carousel>
+                {
+                    projects.map((project, i) => <Projeto key={i}
+                    title={project.title}
+                    image={project.image}
+                    titleCard={project.titleCard}
+                    text={project.text}
+                    url={project.url} /> )
+                }
+            </Carousel>
         </Box>
     )
 }

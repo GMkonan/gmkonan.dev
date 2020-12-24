@@ -21,6 +21,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
+    "react-material-ui-carousel": "^2.1.1",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1"
   }

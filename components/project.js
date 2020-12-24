@@ -11,8 +11,8 @@ const Projeto = ({image,titleCard,title,text, url}) => {
 
     const useStyles = makeStyles(theme =>({
         root: {
-          maxWidth: 345,
-          maxHeight: 400,
+          maxWidth: 1000,
+          maxHeight: 1100,
           backgroundColor:"#1c1c1b",
         },
         media: {
