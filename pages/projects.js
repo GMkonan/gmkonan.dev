@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography, makeStyles, Grid  } from '@material-ui/core';
+import {Box, Typography, makeStyles, Grid, Divider } from '@material-ui/core';
 import Projeto from './../components/project';
 import websiteImage from "./../images/website.png";
 import blog from "./../images/blog.png";
