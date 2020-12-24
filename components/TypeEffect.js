@@ -14,7 +14,8 @@ const TypeEffect = ({ messages, heading }) => {
             bottom: "2.5rem",
             position: "relative",
             fontSize: "1.5rem",
-            color:"white"
+            color:"white",
+            fontFamily: 'monospace'
         },
     }));
     const classes = useStyles();
@@ -77,7 +78,7 @@ const TypeEffect = ({ messages, heading }) => {
     }
 
     return(
-        <Typography className={classes.text}>{state.text}</Typography>
+        <Typography variant="h6" align="center" className={classes.text}>{state.text}</Typography>
     )
 }
 

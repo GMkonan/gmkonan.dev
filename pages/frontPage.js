@@ -52,7 +52,7 @@ const FrontPage = (props) => {
         <Typography className={classes.presentation} align="center" variant="h3">Hello, My name is</Typography>
         <Typography className={classes.title} align="center" variant="h2">Guilherme Monteiro.</Typography>
         {/*<Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>*/}
-        <TypeEffect align="center" messages={msgs} />
+        <TypeEffect messages={msgs} />
         </Box>
         
     )
