@@ -32,7 +32,7 @@ const Projetos = () => {
             letterSpacing: "0.4rem",
             display: "flex",
             justifyContent: "center",
-            paddingBottom:"10rem",
+            paddingBottom:"5rem",
             [theme.breakpoints.down('lg')] : {
                 paddingBottom:"3rem"
             },            
@@ -65,14 +65,20 @@ const Projetos = () => {
             image: websiteImage,
             titleCard: "Portfolio Website",
             text: "A website I made as my portfolio with React, NextJS and Material UI",
-            url: "https://github.com/GMkonan/portfolio"
+            url: "https://github.com/GMkonan/portfolio",
+            buttonText: "Github",
+            url2: "https://guilhermemonteiro.dev",
+            buttonText2:"Website"
         },
         {
             title: "Blog Website",
             image: blog,
             titleCard: "Blog Website",
             text: "A website I made So I can post my articles using NextJS and styled-components",
-            url: "https://github.com/GMkonan/MyBlog"
+            url: "https://github.com/GMkonan/MyBlog",
+            buttonText: "Github",
+            url2: "https://my-blog-vert.vercel.app/",
+            buttonText2:"Website"
         },
         {
             title: "Github Automation",
@@ -87,7 +93,7 @@ const Projetos = () => {
             titleCard: "Anime Scraper",
             text: "A script I made with python to download animes faster",
             url: "https://github.com/GMkonan/anime_scraper"
-        }
+        },
     ]
 
     return(
@@ -100,8 +106,13 @@ const Projetos = () => {
                     image={project.image}
                     titleCard={project.titleCard}
                     text={project.text}
-                    url={project.url} /> )
+                    url={project.url} 
+                    buttonText={project.buttonText}
+                    url2={project.url2}
+                    buttonText2={project.buttonText2}/>
+                    )
                 }
+                
             </Carousel>
         </Box>
     )

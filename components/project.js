@@ -7,16 +7,36 @@ import {Box, Typography, makeStyles,Button,
     CardActionArea,
     CardActions} from '@material-ui/core';
 
-const Projeto = ({image,titleCard,title,text, url}) => {
+const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2}) => {
 
     const useStyles = makeStyles(theme =>({
         root: {
-          maxWidth: 1000,
-          maxHeight: 1100,
+          width: "1300px",
           backgroundColor:"#1c1c1b",
+          [theme.breakpoints.down('lg')] : {
+            width:"900px"
+          },
+          [theme.breakpoints.down('sm')] : {
+            width: 300
+        },
+        },
+        div: {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          margin: "1rem",
         },
         media: {
-          height: 200,
+          height: "42rem",
+          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+          borderRadius: "4px",
+          [theme.breakpoints.down('lg')] : {
+            height: "28rem"
+          },
+          [theme.breakpoints.down('sm')] : {
+            height: 200
+        },
         },
         title:{
             color:"white"
@@ -29,13 +49,9 @@ const Projeto = ({image,titleCard,title,text, url}) => {
       const classes = useStyles();
 
     return(
+      <Box className={classes.div}>
     <Card className={classes.root}>
       <CardActionArea onClick={() => window.open(url)} >
-        <CardMedia
-          className={classes.media}
-          image={image}
-          title={titleCard}
-        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
             {title}
@@ -44,13 +60,24 @@ const Projeto = ({image,titleCard,title,text, url}) => {
             {text}
           </Typography>
         </CardContent>
+        <CardMedia
+          className={classes.media}
+          image={image}
+          title={titleCard}
+        />
       </CardActionArea>
       <CardActions>
         <Button variant="contained" size="small" onClick={() => window.open(url)}>
-          Github
+            {buttonText}
         </Button>
+        {url2 == null ? null : 
+        <Button variant="contained" size="small" onClick={() => window.open(url2)}>
+        {buttonText2}
+        </Button>
+        }
       </CardActions>
     </Card>
+    </Box>
     )
 }
 
