@@ -25,7 +25,13 @@ const FrontPage = (props) => {
             fontSize: "4.5rem",
             fontFamily: "Pixer",
             fontWeight: "bold",
-            color:"white"
+            color:"white",
+            [theme.breakpoints.down('sm')] : {
+                fontSize: "3rem"
+            },
+            [theme.breakpoints.down('xs')] : {
+                fontSize: "2rem"
+            },
         },
         presentation: {
             bottom: "2rem",

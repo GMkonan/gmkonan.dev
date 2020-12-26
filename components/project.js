@@ -17,8 +17,11 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
             width:"900px"
           },
           [theme.breakpoints.down('sm')] : {
-            width: 300
+            width: 500
         },
+        [theme.breakpoints.down('xs')] : {
+          width: 300
+      },
         },
         div: {
           display: "flex",

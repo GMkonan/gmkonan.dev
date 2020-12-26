@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography, makeStyles, IconButton, } from '@material-ui/core';
+import {Box, Typography, makeStyles, IconButton, Tooltip } from '@material-ui/core';
 import twitter from './../images/icons/twitter.png';
 import email from './../images/icons/email.png';
 import reddit from './../images/icons/reddit.png';
@@ -33,23 +33,33 @@ const Contact = () => {
             <Typography variant="h5" className={classes.sayHi}> <b>Social Medias</b> </Typography>
                 <Box>
                     <IconButton onClick={() => window.open('https://github.com/GMkonan')}>
-                        <img src={github} height="40px" />
+                        <Tooltip disableFocusListener disableTouchListener title="Github">
+                            <img src={github} height="40px" />
+                        </Tooltip>
                     </IconButton>
 
                     <IconButton onClick={() => window.open('mailto:guilhemont@hotmail.com')}>
-                        <img src={email} height="40px" />
+                        <Tooltip disableFocusListener disableTouchListener title="Email">
+                            <img src={email} height="40px" />
+                        </Tooltip>
                     </IconButton>
 
                     <IconButton onClick={() => window.open('https://www.reddit.com/user/KonanGM')}>
-                        <img src={reddit} height="40px" />
+                        <Tooltip disableFocusListener disableTouchListener title="Reddit">
+                            <img src={reddit} height="40px" />
+                        </Tooltip>
                     </IconButton>
 
                     <IconButton onClick={() => window.open('https://twitter.com/GuilhermeKonan')}>
-                        <img src={twitter} height="40px" />
+                        <Tooltip disableFocusListener disableTouchListener title="Twitter">
+                            <img src={twitter} height="40px" />
+                        </Tooltip>
                     </IconButton>
 
                     <IconButton onClick={() => window.open('https://www.linkedin.com/in/gmkonan/')}>
-                        <img src={linkedin} height="40px" />
+                        <Tooltip disableFocusListener disableTouchListener title="Linkedin">
+                            <img src={linkedin} height="40px" />
+                        </Tooltip>
                     </IconButton>
                 </Box>
         </Box>
