@@ -17,6 +17,7 @@ function HomePage() {
             {/*<Skills /> */}
             <Projetos />
             <Contact />
+            
         </Box>
         
     )

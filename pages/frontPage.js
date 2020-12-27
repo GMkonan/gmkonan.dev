@@ -1,64 +1,74 @@
 import React from 'react';
-import {Box, Typography, makeStyles} from '@material-ui/core';
-import image from './../images/prog10.jpg';
+import {Box, Typography, makeStyles, Grid, Avatar} from '@material-ui/core';
 import withWidth from '@material-ui/core/withWidth';
-import TypeEffect from '../components/TypeEffect';
+import Particle from '../components/Particle';
+import ReactTyped from 'react-typed';
+import avatar from './../images/Nobg.png';
 
 const FrontPage = (props) => {
     const useStyles = makeStyles((theme) => ({
-        background: {
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "99.4vh",
-            backgroundAttachment: "fixed",
-            backgroundImage: `url(${image})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "50%",     
-        },
+        avatar: {
+            width: theme.spacing(20),
+            height: theme.spacing(20),
+            margin: theme.spacing(1),
+            borderStyle: "solid",
+            borderColor: "grey"
+          },
+
         title:{
-            bottom: "2rem",
-            position: "relative",
-            fontSize: "4.5rem",
+            fontSize: "3.5rem",
             fontFamily: "Pixer",
             fontWeight: "bold",
             color:"white",
             [theme.breakpoints.down('sm')] : {
-                fontSize: "3rem"
+                fontSize: "2.5rem"
             },
             [theme.breakpoints.down('xs')] : {
-                fontSize: "2rem"
+                fontSize: "1.5rem"
             },
         },
-        presentation: {
-            bottom: "2rem",
-            position: "relative",
-            fontSize: "3.7rem",
-            color:"white",
-            fontFamily: "Mont",
-            
+        subTitle: {
+            color: "white"
         },
-        text: {
-            bottom: "2.5rem",
+        height: {
             position: "relative",
-            fontSize: "1.5rem",
-            color:"white"
+            height: "99.4vh",
         },
+        partics: {
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            zIndex: "-1"
+        },
+        textBox: {
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+        }
     }));
 
-    let msgs = ["Self-Learning","Software Developer"];
+    let msgs = ["SELF-LEARNING","SOFTWARE DEVELOPER"];
 
     const classes = useStyles();
     return (
-        
-        <Box className={classes.background} id="frontPage">
-        <Typography className={classes.presentation} align="center" variant="h3">Hello, My name is</Typography>
-        <Typography className={classes.title} align="center" variant="h2">Guilherme Monteiro.</Typography>
-        {/*<Typography className={classes.text} align="center" variant="h6">Self-Learning Software Developer</Typography>*/}
-        <TypeEffect messages={msgs} />
+        <Box className={classes.height}>
+        <Box className={classes.partics} bgcolor="#161617" id="frontPage" >
+        <Particle />
+        </Box>
+        <Box className={classes.textBox}> 
+        <Grid container justify="center">
+            <Avatar className={classes.avatar} src={avatar} alt="Guilherme" />
+        </Grid>
+        <Typography>
+        <ReactTyped className={classes.title} strings={['Guilherme Monteiro']} typeSpeed={40} />
+        </Typography>
+        <ReactTyped className={classes.subTitle} strings={msgs} typeSpeed={50} backSpeed={40} loop/>
+        </Box>
         </Box>
         
     )
