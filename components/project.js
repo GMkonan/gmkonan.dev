@@ -11,17 +11,19 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
 
     const useStyles = makeStyles(theme =>({
         root: {
-          width: "auto",
-          height: "auto",
-          backgroundColor:"#1c1c1b",
+          //width: "30rem",
+          //height: "25rem",
+          //marginRight: "auto",
+          //marginLeft: "auto",
+          backgroundColor: "#52514f", //"#1c1c1b",
           justifyContent:"center"
       },
         div: {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "100%",
-          margin: "1rem",
+          //width: "100%",
+          margin: "1rem"
         },
         media: {
           height: 200
@@ -42,7 +44,7 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
       
       <CardActionArea onClick={() => window.open(url)} >
         <CardContent>
-        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+        <Typography  variant="h5" className={classes.title}>
             {title}
           </Typography>
         </CardContent>
@@ -53,17 +55,17 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
         />
       </CardActionArea>
       <CardContent>
-          <Typography variant="body2" className={classes.text} component="p">
+          <Typography className={classes.text}>
             {text} <br /> <br />
             <b>Tech Used:</b> <br /> {tech}
           </Typography>
         </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
-        <Button variant="contained" size="small" onClick={() => window.open(url)}>
+        <Button variant="contained"  onClick={() => window.open(url)}>
           {buttonText == null ? "Repo" : buttonText}
         </Button>
         {url2 == null ? null : 
-        <Button variant="contained" size="small" onClick={() => window.open(url2)}>
+        <Button variant="contained"  onClick={() => window.open(url2)}>
         {buttonText2}
         </Button>
         }

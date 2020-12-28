@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography, makeStyles, Grid } from '@material-ui/core';
+import {Box, Typography, makeStyles, Grid, Divider } from '@material-ui/core';
 import Projeto from './../components/project';
 import projects from './../data/projectData'
 
@@ -10,7 +10,6 @@ const Projetos = () => {
             width:"100%",
             height: "auto",
             justifyContent: "center",
-            display: "flex",
             flexDirection:"column",
             alignItems: "center",
             backgroundSize: "cover",
@@ -31,16 +30,6 @@ const Projetos = () => {
             display: "flex",
             justifyContent: "center",
             paddingTop: "4rem",
-            paddingBottom:"3rem",
-            [theme.breakpoints.down('lg')] : {
-                paddingBottom:"1rem"
-            },            
-            [theme.breakpoints.down('md')] : {
-                paddingTop:"5rem",
-            },
-            [theme.breakpoints.down('sm')] : {
-                paddingBottom:"1rem"
-            }
             
         },
         projects: {
@@ -52,20 +41,31 @@ const Projetos = () => {
             [theme.breakpoints.down('sm')] : {
                 flexDirection:"column",
                 paddingTop:"3rem",
-                paddingBottom:"5rem"
+                paddingBottom:"5rem",
+                
             }
         },
+        dividerColor: {
+            width: '100%',
+            maxWidth: 360,
+            backgroundColor: "#ffffff",
+            fontSize: "3rem",
+            height: "0.1rem",
+            marginTop: "0.2rem",
+        }
     }))
     const classes = useStyles();
 
     return(
-        <Box bgcolor="#212326" className={classes.background} id="projetos">
+        <Box  bgcolor="#212326" className={classes.background} id="projetos">
             <Typography className={classes.title} variant="h3">PROJECTS</Typography>
-            <Grid container className={classes.projects} spacing={3}>
+            <Divider className={classes.dividerColor} />
+            <Box mt="7rem" mx="auto" maxWidth="1280px">
+            <Grid container spacing={4} justify="center" alignItems="center" className={classes.projects} >
             {
         projects.map((project, i) => (
-        <Grid item xs={12} sm={12} md={6} lg={4}>
-        <Projeto key={i}
+        <Grid key={i} item xs={12} sm={12} md={6} lg={4}>
+        <Projeto
         title={project.title}
         image={project.image}
         titleCard={project.titleCard}
@@ -78,6 +78,7 @@ const Projetos = () => {
         </Grid>
         ))}
             </Grid>
+            </Box>
         </Box>
     )
 }

@@ -12,7 +12,7 @@ const projects = [
         url: "https://github.com/GMkonan/portfolio",
         url2: "https://guilhermemonteiro.dev",
         buttonText2:"Website",
-        tech: "JS, Material UI, React, NextJS"
+        tech: "React, Material UI, NextJS"
     },
     {
         title: "Blog Website",
@@ -22,7 +22,7 @@ const projects = [
         url: "https://github.com/GMkonan/MyBlog",
         url2: "https://my-blog-vert.vercel.app/",
         buttonText2:"Website",
-        tech: "JS, styledComponents, React, NextJS"
+        tech: "React, styledComponents, NextJS"
     },
     {
         title: "Github Automation",
@@ -30,6 +30,7 @@ const projects = [
         titleCard: "Github Automation",
         text: "A Script I made using python to automate the process of starting a project",
         url: "https://github.com/GMkonan/githubAutomation",
+        tech: "Python, Bash"
     },
     {
         title: "Anime Scraper",
@@ -37,6 +38,7 @@ const projects = [
         titleCard: "Anime Scraper",
         text: "A script I made with python to download animes faster",
         url: "https://github.com/GMkonan/anime_scraper",
+        tech: "Python"
     },
     
 ]
