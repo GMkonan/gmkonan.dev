@@ -28,7 +28,11 @@ const FrontPage = (props) => {
             },
         },
         subTitle: {
-            color: "white"
+            color: "white",
+            fontSize: "1.3rem",
+            [theme.breakpoints.down('xs')] : {
+                fontSize: "0.9rem"
+            },
         },
         height: {
             position: "relative",

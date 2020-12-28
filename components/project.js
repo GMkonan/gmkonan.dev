@@ -7,22 +7,15 @@ import {Box, Typography, makeStyles,Button,
     CardActionArea,
     CardActions} from '@material-ui/core';
 
-const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2}) => {
+const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2, tech}) => {
 
     const useStyles = makeStyles(theme =>({
         root: {
-          width: "1300px",
+          width: "auto",
+          height: "auto",
           backgroundColor:"#1c1c1b",
-          [theme.breakpoints.down('lg')] : {
-            width:"900px"
-          },
-          [theme.breakpoints.down('sm')] : {
-            width: 500
-        },
-        [theme.breakpoints.down('xs')] : {
-          width: 300
+          justifyContent:"center"
       },
-        },
         div: {
           display: "flex",
           justifyContent: "center",
@@ -31,15 +24,7 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
           margin: "1rem",
         },
         media: {
-          height: "42rem",
-          boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-          borderRadius: "4px",
-          [theme.breakpoints.down('lg')] : {
-            height: "28rem"
-          },
-          [theme.breakpoints.down('sm')] : {
-            height: 200
-        },
+          height: 200
         },
         title:{
             color:"white"
@@ -53,14 +38,12 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
 
     return(
       <Box className={classes.div}>
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={10}>
+      
       <CardActionArea onClick={() => window.open(url)} >
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
+        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
             {title}
-          </Typography>
-          <Typography variant="body2" className={classes.text} component="p">
-            {text}
           </Typography>
         </CardContent>
         <CardMedia
@@ -69,9 +52,15 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
           title={titleCard}
         />
       </CardActionArea>
-      <CardActions>
+      <CardContent>
+          <Typography variant="body2" className={classes.text} component="p">
+            {text} <br /> <br />
+            <b>Tech Used:</b> <br /> {tech}
+          </Typography>
+        </CardContent>
+      <CardActions style={{justifyContent: 'center'}}>
         <Button variant="contained" size="small" onClick={() => window.open(url)}>
-            {buttonText}
+          {buttonText == null ? "Repo" : buttonText}
         </Button>
         {url2 == null ? null : 
         <Button variant="contained" size="small" onClick={() => window.open(url2)}>
