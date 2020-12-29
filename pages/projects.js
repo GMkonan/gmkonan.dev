@@ -5,8 +5,7 @@ import projects from './../data/projectData'
 
 const Projetos = () => {
     const useStyles = makeStyles(theme => ({
-        background: {
-            
+        background: { 
             width:"100%",
             height: "auto",
             justifyContent: "center",

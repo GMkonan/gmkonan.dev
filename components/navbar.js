@@ -81,6 +81,7 @@ const NavBar = () => {
                     <div className={classes.hideButtons}>
                         <Button className={classes.button} onClick={() => scrollTo("about-me")}>About me</Button>
                         <Button className={classes.button} onClick={() => scrollTo("projetos")}>Projects</Button>
+                        <Button className={classes.button} onClick={() => scrollTo("articles")}>Articles</Button>
                         <Button className={classes.button} onClick={() => scrollTo("contact")}>Contact</Button>
                     </div>
                 </Toolbar>
@@ -100,8 +101,11 @@ const NavBar = () => {
                         <Button onClick={() => scrollTo("projetos")}>Projects</Button>
                     </ListItem>
                     <ListItem>
+                        <Button onClick={() => scrollTo("articles")}>Articles</Button>
+                    </ListItem> 
+                    <ListItem>
                         <Button onClick={() => scrollTo("contact")}>Contact</Button>
-                    </ListItem>  
+                    </ListItem>                    
                 </List>
             </Drawer>      
             </div> 

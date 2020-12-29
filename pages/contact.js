@@ -29,7 +29,7 @@ const Contact = () => {
     const classes = useStyles();
     
     return (
-        <Box width={1} color="white" className={classes.background} id="contact" bgcolor="#2f3133">
+        <Box width={1} color="white" className={classes.background} id="contact" bgcolor="#323437">
             <Typography variant="h5" className={classes.sayHi}> <b>Social Medias</b> </Typography>
                 <Box>
                     <IconButton onClick={() => window.open('https://github.com/GMkonan')}>

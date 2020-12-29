@@ -1,6 +1,5 @@
 import React from 'react';
-import {Box, Typography, makeStyles,Button,
-    Divider, 
+import {Box, Typography, makeStyles,Button, 
     Card, 
     CardMedia, 
     CardContent,
