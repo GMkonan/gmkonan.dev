@@ -6,9 +6,7 @@ import { Box,
     Card,
     CardContent,
     CardActionArea,
-    Button,
-    Typography,
-    Divider } from '@material-ui/core';
+ } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     background: {

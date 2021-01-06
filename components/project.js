@@ -10,18 +10,13 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
 
     const useStyles = makeStyles(theme =>({
         root: {
-          //width: "30rem",
-          //height: "25rem",
-          //marginRight: "auto",
-          //marginLeft: "auto",
-          backgroundColor: "#52514f", //"#1c1c1b",
+          backgroundColor: "#52514f",
           justifyContent:"center"
       },
         div: {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          //width: "100%",
           margin: "1rem"
         },
         media: {

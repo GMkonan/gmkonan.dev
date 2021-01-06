@@ -6,7 +6,7 @@ import Projetos from './projects';
 import Contact from './contact';
 import {Box} from '@material-ui/core';
 import Skills from './skills';
-import Articles from './Articles';
+import Articles from '../components/Articles';
 import axios from 'axios';
 
 function HomePage({posts}) {
