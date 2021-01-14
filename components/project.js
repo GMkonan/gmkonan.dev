@@ -10,7 +10,7 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
 
     const useStyles = makeStyles(theme =>({
         root: {
-          backgroundColor: "#52514f",
+          backgroundColor: "#323437",
           justifyContent:"center"
       },
         div: {

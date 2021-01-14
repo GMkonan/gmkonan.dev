@@ -40,7 +40,6 @@ const projects = [
         url: "https://github.com/GMkonan/anime_scraper",
         tech: "Python"
     },
-    
 ]
 
 export default projects;
