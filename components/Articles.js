@@ -86,7 +86,7 @@ const Articles = ({ posts }) => {
                <Card className={classes.articleCard}>
                    <CardContent>
                         <h1>{post.title}</h1>
-                        <span><b>{new Date(post.readable_publish_date).toLocaleDateString()}</b></span> <br />
+                        <span><b>{new Date(post.published_at).toLocaleDateString()}</b></span> <br />
                         <span style={{fontSize: "0.8rem"}}><b>{post.tag_list.map((tags) => `#${tags} `)}</b></span>
                         <br /> <br />
                         <p style={{fontSize: "1.3rem", lineHeight: "1.8rem"}}>{post.description}</p>
