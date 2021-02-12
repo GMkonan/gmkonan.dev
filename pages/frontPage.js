@@ -12,10 +12,13 @@ const FrontPage = (props) => {
             height: theme.spacing(20),
             margin: theme.spacing(1),
             borderStyle: "solid",
-            borderColor: "grey"
+            borderColor: "grey",
+            zIndex: "1",
+            
           },
 
         title:{
+            zIndex: "1",
             fontSize: "3.5rem",
             fontFamily: "Pixer",
             fontWeight: "bold",
@@ -24,10 +27,11 @@ const FrontPage = (props) => {
                 fontSize: "2.5rem"
             },
             [theme.breakpoints.down('xs')] : {
-                fontSize: "1.5rem"
+                fontSize: "1.2rem"
             },
         },
         subTitle: {
+            zIndex: "1",
             color: "white",
             fontSize: "1.3rem",
             [theme.breakpoints.down('xs')] : {
@@ -42,17 +46,19 @@ const FrontPage = (props) => {
             position: "absolute",
             width: "100%",
             height: "100%",
-            zIndex: "-1"
+            zIndex: "1",
         },
         textBox: {
+            zIndex: "1",
+            margin: 0,
             position: "absolute",
-            top: 0,
-            width: "100%",
-            height: "100%",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
         }
     }));
 
@@ -64,7 +70,7 @@ const FrontPage = (props) => {
         <Box className={classes.partics} bgcolor="#161617" id="frontPage" >
         <Particle />
         </Box>
-        <Box className={classes.textBox}> 
+        <Box justify="center" className={classes.textBox}> 
         <Grid container justify="center">
             <Avatar className={classes.avatar} src={avatar} alt="Guilherme" />
         </Grid>

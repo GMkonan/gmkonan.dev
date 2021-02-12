@@ -22,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        [theme.breakpoints.down('sm')] : {
+            height: "auto",
+        }
     },
     articles: {
         display:"flex",
@@ -47,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
         height: "360px",
         color: "white",
         borderRadius: 20,
+        
     },
     dividerColor: {
         width: '100%',

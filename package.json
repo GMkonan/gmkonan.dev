@@ -27,6 +27,7 @@
     "react-icons": "^3.11.0",
     "react-material-ui-carousel": "^2.1.1",
     "react-particles-js": "^3.4.1",
+    "react-tsparticles": "^1.18.12",
     "react-typed": "^1.2.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1"
