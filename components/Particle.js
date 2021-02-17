@@ -12,7 +12,7 @@ const Particle = () => {
           events: {
             onClick: {
               enable: true,
-              mode: "push",
+              mode: "trail",
             },
             onHover: {
               enable: true,
@@ -36,8 +36,17 @@ const Particle = () => {
               quantity: 4,
             },
             repulse: {
-              distance: 200,
-              duration: 0.4,
+              distance: 100,
+              duration: 0.5,
+            },
+            trail: {
+              particles: {
+                shape: {
+                  type: "circle"
+                }
+              },
+              delay: 0.05,
+              quantity: 1
             },
           },
         },

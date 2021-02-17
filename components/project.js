@@ -55,11 +55,11 @@ const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2
           </Typography>
         </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
-        <Button variant="contained"  onClick={() => window.open(url)}>
+        <Button fullWidth={true}  variant="contained"  onClick={() => window.open(url)}>
           {buttonText == null ? "Repo" : buttonText}
         </Button>
         {url2 == null ? null : 
-        <Button variant="contained"  onClick={() => window.open(url2)}>
+        <Button fullWidth={true} variant="contained" onClick={() => window.open(url2)}>
         {buttonText2}
         </Button>
         }
