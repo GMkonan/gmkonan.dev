@@ -32,10 +32,10 @@ function HomePage({posts}) {
 //thats why the get articles is inside index
 //https://stackoverflow.com/questions/61111933/unable-to-pass-props-in-next
   export async function getServerSideProps() {
-    const posts = await axios.get('https://dev.to/api/articles', {
+    const posts = await axios.get('https://dev.to/api/articles/', {
       params: {
         username: 'gmkonan',
-        per_page: 3
+        per_page: 4
       }
     }).then((res) => res.data)
     
