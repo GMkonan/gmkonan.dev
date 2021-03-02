@@ -1,5 +1,5 @@
 import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Divider} from '@material-ui/core';
-import websiteImage from "./../images/anotherMeNobg.png";
+import websiteImage from "./../images/EU.jpg";
 
 const AboutMe = () => {
 
@@ -70,7 +70,7 @@ const AboutMe = () => {
             <Box color="white" bgcolor="#1b1c1f" className={classes.div} id="about-me">
                 <Typography className={classes.title} style={{ fontFamily:"Courier New" }} variant="h3">ABOUT ME</Typography>
                 <Divider className={classes.dividerColor} />
-                <img src={websiteImage} height="350px" style={{marginTop: "30px", marginBottom: "30px"}}  />
+                <img src={websiteImage} height="300px" style={{marginTop: "30px", marginBottom: "40px", borderRadius: "20px"}}  />
                 <Typography className={classes.text} variant="h6">My name is Guilherme Monteiro Pereira,
                 also known as Konan and I'm a Self-Learning Software Developer.<br />  <br />
                 I have always had been really curious, researching ideas that interest me and that got me into 
