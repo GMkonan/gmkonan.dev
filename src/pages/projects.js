@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography, makeStyles, Grid, Divider } from '@material-ui/core';
-import Projeto from './../components/project';
-import projects from './../data/projectData'
+import Projeto from '../components/project';
+import projects from '../data/projectData'
 
 const Projetos = () => {
     const useStyles = makeStyles(theme => ({
