@@ -14,6 +14,8 @@
     "@material-ui/icons": "^4.9.1",
     "@mui-treasury/components": "^1.9.1",
     "@mui-treasury/styles": "^1.13.0",
+    "@types/node": "^15.6.1",
+    "@types/typescript": "^2.0.0",
     "axios": "^0.21.1",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
@@ -30,6 +32,7 @@
     "react-tsparticles": "^1.18.12",
     "react-typed": "^1.2.0",
     "style-loader": "^2.0.0",
+    "typescript": "^4.2.4",
     "url-loader": "^4.1.1"
   }
 }
