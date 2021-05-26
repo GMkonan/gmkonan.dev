@@ -4,7 +4,7 @@ You can visit my portfolio website [here](https://portfolio-lilac-psi.vercel.app
 
 ## Refactore List
 - [x] Start by using different branches for production and development
-- [ ] remove not used dependencies.
+- [x] remove not used dependencies.
 - [ ] Move the project to typescript.
 - [ ] Reestructure the project, a lot of pages that can be components etc
 - [ ] Make more clean code for styles.
