@@ -12,7 +12,8 @@ Divider,
 Link
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import useStyles from './test';
+import useStyles from './styles';
+
 const NavBar = () => {
     
     const scrollTo = (id) => {

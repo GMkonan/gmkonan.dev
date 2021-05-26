@@ -1,36 +1,15 @@
 import React from 'react';
-import {Box, Typography, makeStyles,Button, 
+import {Box, Typography, Button, 
     Card, 
     CardMedia, 
     CardContent,
     CardActionArea,
     CardActions} from '@material-ui/core';
+import useStyles from './styles';
 
 const Projeto = ({image,titleCard,title,text, url, url2 ,buttonText, buttonText2, tech}) => {
 
-    const useStyles = makeStyles(theme =>({
-        root: {
-          backgroundColor: "#323437",
-          justifyContent:"center"
-      },
-        div: {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "1rem"
-        },
-        media: {
-          height: 200
-        },
-        title:{
-            color:"white"
-        },
-        text: {
-            color:"white"
-        }
-      }));
-
-      const classes = useStyles();
+    const classes = useStyles();
 
     return(
       <Box className={classes.div}>
