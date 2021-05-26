@@ -1,5 +1,5 @@
 import {Box, makeStyles, Typography, createMuiTheme, ThemeProvider, Divider} from '@material-ui/core';
-import websiteImage from "./../images/EU.jpg";
+import websiteImage from "../images/EU.jpg";
 
 const AboutMe = () => {
 

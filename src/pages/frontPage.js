@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Typography, makeStyles, Grid, Avatar} from '@material-ui/core';
 import withWidth from '@material-ui/core/withWidth';
-import Particle from '../components/Particle';
+import Particle from '../components/Particle/Particle';
 import ReactTyped from 'react-typed';
 import avatar from './../images/Nobg.png';
 

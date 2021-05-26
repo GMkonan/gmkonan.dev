@@ -1,12 +1,12 @@
 import React from 'react';
 import FrontPage from './frontPage';
 import AboutMe from './aboutMe';
-import NavBar from '../components/navbar';
+import NavBar from '../components/Navbar/Navbar';
 import Projetos from './projects';
 import Contact from './contact';
 import {Box} from '@material-ui/core';
 import Skills from './skills';
-import Articles from '../components/Articles';
+import Articles from '../components/Articles/Articles';
 import axios from 'axios';
 
 function HomePage({posts}) {

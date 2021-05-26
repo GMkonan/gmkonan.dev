@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Typography, makeStyles, Grid, Divider } from '@material-ui/core';
-import Projeto from '../components/project';
+import Projeto from '../components/Project/project';
 import projects from '../data/projectData'
 
 const Projetos = () => {
