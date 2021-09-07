@@ -15,8 +15,13 @@
     "twin.macro": "^2.7.0"
   },
   "devDependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@types/react": "17.0.19",
+    "@types/styled-components": "^5.1.14",
     "autoprefixer": "^10.3.4",
+    "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.6",
