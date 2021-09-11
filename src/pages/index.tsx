@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import tw, { css } from 'twin.macro';
 import { TextSm, TextMd, TextXl } from '@components/Texts';
+import NavBar from '@components/NavBar';
 
 const Home: NextPage = () => {
   return (
@@ -19,8 +20,8 @@ const Home: NextPage = () => {
     }
     `}</style>
     <div tw="flex flex-col">
-      <div tw="flex w-full h-16">
-        {/* NavBar */}
+      <div tw="flex w-full h-16 m-4">
+        <NavBar />
       </div>
       <div tw="flex flex-col justify-center mt-16">
         <TextSm>
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
       </div> 
     </div>
     <div tw="flex flex-col justify-center items-center w-full h-full"> 
-      <div tw="flex items-center justify-center w-96 h-96 shadow-xl rounded-xl mb-28 text-blue-400">
+      <div tw="flex items-center justify-center w-96 h-96 shadow-xl rounded-xl mb-28 text-brand-color">
           Class Developer
       </div>
     </div>

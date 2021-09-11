@@ -2,9 +2,12 @@ module.exports = {
     purge: [],
     darkMode: 'media', // or 'media' or 'class'
     theme: {
+      fontFamily: {
+        'inter': ['Inter'],
+      },
       extend: {
-        color: {
-          'brand-color': '#2BBC8A',
+        colors: {
+          'brand-color': '#6184D8',
         },
       },
     },
