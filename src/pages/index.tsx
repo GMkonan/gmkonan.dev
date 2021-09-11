@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import tw, { css } from 'twin.macro';
-
-const Title = tw.h1`text-white text-4xl mt-20 ml-20 whitespace-pre-line leading-loose font-bold tracking-widest text-green-500`;
+import { TextSm, TextMd, TextXl } from '@components/Texts';
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +10,7 @@ const Home: NextPage = () => {
     body,
     #__next {
       height: 100vh;
+      width: 100%;
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -18,21 +18,25 @@ const Home: NextPage = () => {
       background-color: #f5f5f5;
     }
     `}</style>
-    <div tw="flex h-full w-full relative">
-      <div tw="bg-white shadow-xl flex w-full h-16 fixed z-20">
+    <div tw="flex flex-col">
+      <div tw="flex w-full h-16">
         {/* NavBar */}
       </div>
-      <div tw="flex items-center" css={[`
-      	background-color: #1D1F21;
-        width: 100%;
-        clip-path: polygon(0 42%, 53% 0, 100% 0, 100% 35%, 25% 100%, 0 100%);
-        position: relative;
-      `]}>
-        <Title>
-          I’m Konan, a Creative {"\n"}
-          {'&'} Self-learning {"\n"}
-          Developer
-        </Title>
+      <div tw="flex flex-col justify-center mt-16">
+        <TextSm>
+          Hello, I’m
+        </TextSm>
+        <TextXl>
+          Konan
+        </TextXl>
+        <TextMd>
+          Full-Stack Developer
+        </TextMd>
+      </div> 
+    </div>
+    <div tw="flex flex-col justify-center items-center w-full h-full"> 
+      <div tw="flex items-center justify-center w-96 h-96 shadow-xl rounded-xl mb-28 text-blue-400">
+          Class Developer
       </div>
     </div>
     </>
