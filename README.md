@@ -1,7 +1,8 @@
 # My website
 
 - [x] create _document file
-- [ ] pass brand colors to tailwind config
+- [x] pass brand colors to tailwind config
+- [ ] check best way for layout implementation without making a mess in Home
 ### IF needed...
 ```
 <style global jsx>{`
