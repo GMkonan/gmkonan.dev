@@ -38,9 +38,15 @@ const Home: NextPage = () => {
           Full-Stack Developer
         </TextMd>
         <div tw="flex items-center justify-evenly ml-32 mt-4 w-1/3">
-          <Image src={GithubLogo} alt="My Github" />
-          <Image src={LinkedinLogo} alt="My Github" />
-          <Image src={TwitterLogo} alt="My Github" />
+          <a target="_blank" rel='noreferrer' href="https://github.com/gmkonan">
+            <Image src={GithubLogo} alt="My Github" />
+          </a>
+          <a target="_blank" rel='noreferrer' href="https://www.linkedin.com/in/gmkonan">
+            <Image src={LinkedinLogo} alt="My Linkedin" />
+          </a>
+          <a target="_blank" rel='noreferrer' href="https://twitter.com/GuilhermeKonan">
+            <Image src={TwitterLogo} alt="My Twitter" />
+          </a>
         </div>
       </div> 
     </div>
