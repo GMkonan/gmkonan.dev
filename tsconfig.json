@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@components/*": ["src/common/components/*"],
       "@images/*": ["public/images/*"],
     },
     "target": "esNext",
