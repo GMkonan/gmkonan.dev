@@ -2,7 +2,9 @@
 
 - [x] create _document file
 - [x] pass brand colors to tailwind config
-- [ ] check best way for layout implementation without making a mess in Home
+- [x] check best way for layout implementation without making a mess in Home
+- [ ] pass global jsx style to separate layout file in common AND use to wrap _app or index
+  Take a look at this: https://nextjs.org/blog/styling-next-with-styled-jsx
 ### IF needed...
 ```
 <style global jsx>{`
