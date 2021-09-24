@@ -9,10 +9,8 @@ const NavBar = () => {
 
     return (
         <div tw="flex">
-            <Item>About</Item>
             <Item>Projects</Item>
             <Item>Blog</Item>
-            <Item>Contact</Item>
         </div>
     );
 }
