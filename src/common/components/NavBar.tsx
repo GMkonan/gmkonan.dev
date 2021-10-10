@@ -8,10 +8,10 @@ const NavBar = () => {
     // if you choose the scroll option take a look at a react lib (there is one only for this scroll effect)
 
     return (
-        <div tw="flex">
+      <div tw="flex w-full h-16 m-4">
             <Item>Projects</Item>
-            <Item>Blog</Item>
-        </div>
+            <Item>Blog</Item>  
+      </div>
     );
 }
 
