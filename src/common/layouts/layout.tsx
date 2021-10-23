@@ -14,9 +14,8 @@ import tw, { css } from 'twin.macro';
             html,
             body,
             #__next {
-            height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
             font-family: Inter;
