@@ -5,7 +5,7 @@ const Main = () => {
     return(
         <Container>
         <MaxWrapper>
-            <Title>Hello, I'm Konan</Title>        
+            <Title>Hello, Im Konan</Title>        
             <Title>Creative Developer</Title>
             <Paragraph>Self-Learning Developer manly focused in full-stack applications</Paragraph>
             <ButtonContainer>
