@@ -1,15 +1,17 @@
 import styled from 'styled-components';
+import MaxWidthWrapper from './MaxWidthWrapper';
 
 const Hero = () => {
     return(
         <Container>
-            <MaxWrapper>
+            <MaxWidthWrapper>
                 <Title>My Work</Title>
                 <div>things about me</div>
                 <div>My photo (flip it to see both me and me in pixel art)</div>
                 <div>List of what tech I use the most</div>
                 <div>List of interests</div>
-            </MaxWrapper>
+                <div>Maybe a github custom graph of contributions?</div>
+            </MaxWidthWrapper>
         </Container>
     );
 }
@@ -19,11 +21,6 @@ display: flex;
 flex-direction: column;
 height: 100%;
 background: #d4d8f0;
-`
-
-const MaxWrapper = styled.div`
-width: 1400px;
-margin: 0 auto;
 `
 
 const Title = styled.h1`
