@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import useScroll from '../hooks/useScroll';
 import MaxWidthWrapper from './MaxWidthWrapper';
 
 const NavBar = () => {
+    
     return(
         <MaxWidthWrapper>
             <Container>
                 <Logo>GMkonan</Logo>
                 <Links>
-                    <Link>My Work</Link>
+                    <Link onClick={() => useScroll("Hero")}>My Work</Link>
                     <Link>Projects</Link>
                     <Link href="/blog">Articles</Link>
                 </Links>
