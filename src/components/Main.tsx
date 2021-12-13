@@ -80,6 +80,17 @@ const translateToLeft = keyframes`
   }
 `
 
+const scaleInExistence = keyframes`
+  from {
+    transform: scale(0);
+    //opacity: 0;
+  }
+  to {
+    transform:  scale(1);
+    //opacity: 1;
+  }
+`
+
 const Intro = styled.p`
 font-size: 1.2rem;
 font-weight: 500;
@@ -146,6 +157,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-top: 150px;
+animation: ${scaleInExistence} 0.65s ease 0s 1 normal both running;
 `
 
 const SocialsList = styled.ul`

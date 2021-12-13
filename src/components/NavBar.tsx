@@ -9,8 +9,8 @@ const NavBar = () => {
             <Container>
                 <Logo>GMkonan</Logo>
                 <Links>
-                    <Link onClick={() => useScroll("Hero")}>My Work</Link>
-                    <Link>Projects</Link>
+                    <Link onClick={() => useScroll("Hero")}>About</Link> {/* Later change to "My Work" */}
+                    {/*<Link>Projects</Link> */}
                     <Link href="/blog">Articles</Link>
                 </Links>
             </Container>
