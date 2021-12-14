@@ -9,7 +9,7 @@ const Hero = () => {
                 <Title>About Me</Title> {/* Later change to "My Work" */}
                 <SubTitle>Who Am I?</SubTitle>
                 <AboutMe>
-                    My name is Guilherme Monteiro Pereira AKA Konan and I'm a Self-Learning Software Developer.
+                    My name is Guilherme Monteiro Pereira AKA Konan and I&apos;m a Self-Learning Software Developer.
                     I have always had been really curious guy, researching ideas that interest me and that got me into programming.
                     I like making ideas come to reality with code.
                 </AboutMe>
