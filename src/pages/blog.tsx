@@ -1,84 +1,60 @@
 import styled from "styled-components";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
 
 const Blog = () => {
     return(
-        <Wrapper>
-            <MaxWrapper>
-                <Container>
-                    <TagTitle>
-                        React <br /> 4 articles <br /> Most popular one: ...
-                    </TagTitle>
-                    <ArticleWrapper>
-                        <Article>
-                            Stuff
-                        </Article>
-                        <Article>
-                            Stuff
-                        </Article>
-                        <Article>
-                            Stuff
-                        </Article>
-                        <Article>
-                            Stuff
-                        </Article>
-                        <Article>
-                            Stuff
-                        </Article>
-                        <Article>
-                            Stuff
-                        </Article>
-                    </ArticleWrapper>
-                </Container>
-            </MaxWrapper>
-        </Wrapper>
+        <Container>
+            <MaxWidthWrapper>
+                <Wrapper>
+                    <Article>
+                        <Title>Why use keys in React</Title>
+                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                    </Article>
+                    <Article>
+                        <Title>Why use keys in React</Title>
+                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                    </Article>
+                    <Article>
+                        <Title>Why use keys in React</Title>
+                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                    </Article>
+                    <Article>
+                        <Title>Why use keys in React</Title>
+                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                    </Article>
+                </Wrapper>
+            </MaxWidthWrapper>
+        </Container>
     );
 }
+const Container = styled.div`
+margin-top: 32px;
+`
 
 const Wrapper = styled.div`
-display: flex;
-flex-direction: column;
-`
-
-const ArticleWrapper = styled.div`
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin-top: 60px;
-`
-
-const TagTitle = styled.div`
-width: 40%;
-margin-right: 7%;
-font-size: 3rem;
-font-weight: 600;
-color: #b8c1ec;
-font-family: Raleway;
-position: sticky;
-right: 0;
-top: 50px;
-float: left;
-`
-
-//probably make MaxWrapper a component since is used in other places,
-//but here is used with display flex so we are gonna extend the component here later.
-const MaxWrapper = styled.div`
-display: block;
-position: relative;
-width: 1100px;
-margin: 0 auto;
-`
-
-const Container = styled.div`
-display: flex;
-align-items: flex-start;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+justify-items: center;
+gap: 32px;
 `
 
 const Article = styled.article`
-width: 550px;
+width: 500px;
 height: 300px;
-background: #fffffe;
+background: white;
+border-radius: 3%;
+padding: 16px;
+`
+
+const Title = styled.h1`
+font-size: 2rem;
+margin-bottom: 12px;
 color: #232946;
-border-radius: 10px;
+`
+
+const Description = styled.p`
+color: #232946;
 `
 
 export default Blog;

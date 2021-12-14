@@ -7,7 +7,6 @@ import Projects from "../components/Projects";
 const Home: NextPage = () => {
   return (
     <>
-      <NavBar />
       <Main />
       <Hero />
       {/*<Projects />*/}

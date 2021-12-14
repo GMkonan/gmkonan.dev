@@ -7,7 +7,7 @@ const NavBar = () => {
     return(
         <MaxWidthWrapper>
             <Container>
-                <Logo>GMkonan</Logo>
+                <Logo><UnstyledLink href="/">GMkonan</UnstyledLink></Logo>
                 <Links>
                     <Link onClick={() => useScroll("Hero")}>About</Link> {/* Later change to "My Work" */}
                     {/*<Link>Projects</Link> */}
@@ -40,6 +40,11 @@ font-weight: 500;
 color: inherit;
 text-decoration: inherit;
 cursor: pointer;
+`
+
+const UnstyledLink = styled.a`
+    text-decoration: none;
+    color: white;
 `
 
 export default NavBar;
