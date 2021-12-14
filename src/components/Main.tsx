@@ -14,7 +14,7 @@ const Main = () => {
       <MaxWidthWrapper>
         <Wrapper>
           <TitleWrapper>
-            <Title>Hi, Im Konan.</Title>
+            <Title>Hi, I&apos;m Konan.</Title>
             <SubTitle>Creative Developer</SubTitle>
             <P>Self-Learning Developer manly focused in full-stack applications</P>
           </TitleWrapper>
