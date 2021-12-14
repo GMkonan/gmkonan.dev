@@ -5,6 +5,8 @@ import MaxWidthWrapper from './MaxWidthWrapper';
 import Github from '../../public/socials/github.svg'
 import Linkedin from '../../public/socials/linkedin.svg'
 import Twitter from '../../public/socials/twitter.svg'
+import { translateToLeft, translateToRight, scaleInExistence } from '../components/animations'
+
 const Main = () => {
 
   return (
@@ -41,7 +43,6 @@ const Main = () => {
   );
 }
 
-
 const Container = styled.div`
 display: flex;
 flex-direction: column;
@@ -56,39 +57,6 @@ display: flex;
 const TitleWrapper = styled.div`
 display: flex;
 flex-direction: column;
-`
-
-const translateToRight = keyframes`
-  from {
-    transform: translateX(-300px);
-    opacity: 0;
-  }
-  to {
-    transform:  translateX(0);
-    opacity: 1;
-  }
-`
-
-const translateToLeft = keyframes`
-  from {
-    transform: translateX(300px);
-    opacity: 0;
-  }
-  to {
-    transform:  translateX(0);
-    opacity: 1;
-  }
-`
-
-const scaleInExistence = keyframes`
-  from {
-    transform: scale(0);
-    //opacity: 0;
-  }
-  to {
-    transform:  scale(1);
-    //opacity: 1;
-  }
 `
 
 const Intro = styled.p`
