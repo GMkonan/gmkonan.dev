@@ -1,27 +1,22 @@
 import styled from "styled-components";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import fs from 'fs'
+import matter from 'gray-matter';
 
-const Blog = () => {
+const Blog = (props:any) => {
     return(
         <Container>
             <MaxWidthWrapper>
+                
                 <Wrapper>
-                    <Article>
-                        <Title>Why use keys in React</Title>
-                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
-                    </Article>
-                    <Article>
-                        <Title>Why use keys in React</Title>
-                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
-                    </Article>
-                    <Article>
-                        <Title>Why use keys in React</Title>
-                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
-                    </Article>
-                    <Article>
-                        <Title>Why use keys in React</Title>
-                        <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
-                    </Article>
+                    {props.frontmatter.map((metadata:any) => (
+                        
+                        <Article href={`/articles/${metadata.slug}`}>
+                            <Title>{metadata.title}</Title>
+                            <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                        </Article>
+                        
+                    ))}
                 </Wrapper>
             </MaxWidthWrapper>
         </Container>
@@ -39,7 +34,9 @@ justify-items: center;
 gap: 32px;
 `
 
-const Article = styled.article`
+const Article = styled.a`
+color: #FFFFFF;
+text-decoration: none;
 width: 500px;
 height: 300px;
 background: white;
@@ -56,5 +53,37 @@ color: #232946;
 const Description = styled.p`
 color: #232946;
 `
+
+const PostType = styled.div`
+    //display: inline;
+    //width: min-content;
+    //border-bottom: 2px solid white;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    margin-left: 20px;
+    padding: 20px 0;
+`
+
+export async function getStaticProps() {
+  
+    const getArticles = () => fs.readdirSync('./posts')
+    
+    const articlesRaw = getArticles()
+    
+    const frontmatter = articlesRaw.map((articleRaw: any) => {
+        const post = fs.readFileSync(`./posts/${articleRaw}`)
+        const article:any = matter(post)  
+        console.log(article)  
+        return ({
+            title: article.data.title,
+            type: article.data.type,
+            content: article.content,
+            slug: article.data.slug,
+        })
+    })
+
+    return { props: { frontmatter } }
+  }
 
 export default Blog;
