@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}: any) {
   const post = fs.readFileSync(`./posts/${params.slug}.mdx`)
   const article:any = matter(post) 
-
   const mdxSource = await serialize(article.content, {mdxOptions: {remarkPlugins: [prism]}})
+  console.log(mdxSource)
   return { props: { source: mdxSource } }
 }
