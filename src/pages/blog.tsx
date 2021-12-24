@@ -11,9 +11,11 @@ const Blog = (props:any) => {
                 <Wrapper>
                     {props.frontmatter.map((metadata:any) => (
                         
-                        <Article href={`/articles/${metadata.slug}`}>
+                        <Article key={metadata} href={`/articles/${metadata.slug}`}>
                             <Title>{metadata.title}</Title>
-                            <Description>asdasdasdasdasdasd asdasdasd asdasdasdas dasdasd asdasdasdas dasdasd asd asdasdas</Description>
+                            <Description>
+                                {metadata.content.slice(0, 232)}...
+                            </Description>
                         </Article>
                         
                     ))}
@@ -52,6 +54,9 @@ color: #232946;
 
 const Description = styled.p`
 color: #232946;
+font-size: 1.1rem;
+line-height: 28px;
+font-weight: 500;
 `
 
 const PostType = styled.div`
