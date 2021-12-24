@@ -1,0 +1,111 @@
+---
+title: Why we use "key" in React?
+slug: why-we-use-key-in-react
+type: React
+---
+
+Ever wondered why React keeps bugging you about using the `key` attribute? Why we need to use this if everything is working perfectly? The answer is rather simple, Performance!
+
+Every time you make a change in a React app your application re-renders entirely right? Actually no! And that's what we are going to understand now!
+
+## The problem
+
+Every time our application renders React create a new tree of react elements. The problem here is updating the UI to match the most recent tree created in render. This problem can be solved in a non efficient way, ending with a a complexity in the order of O(n^3) where n is the number of nodes (elements) in the tree.
+
+React came with a really clever way of handling this, by implementing an algorithm based on two simple assumptions they managed to make this problem go from O(n^3) to O(n).
+
+The two assumptions they made can handle most cases, and they are:
+
+1. If one element changed it's type a new tree will be created.
+2. If two elements have the same `key` id in both trees, they are the same element and will not be re-rendered from 0.
+
+## Reconciliation algorithm
+
+The algorithm have some different ways to work depending on the root elements. If the root element changed from one type to another (or one tag to another) the new tree will be created from scratch.
+
+A good way to visualize is checking out this example I got from [react docs](https://reactjs.org/docs/reconciliation.html):
+
+```jsx
+<div>
+  <Counter />
+</div>
+
+<span>
+  <Counter />
+</span>
+```
+
+Here the Counter will not be reused, the Counter will be remounted.
+
+Another case React handles pretty well is when we have DOM elements of the same type. React can update only attributes and have the structure be reused, Check the examples above:
+
+```html
+<!-- before -->
+<img src="images/image.svg" className="something" />
+
+<!-- after -->
+<img src="images/image.svg" className="another-something" /> 
+```
+
+The tag remains the same and react only updates the `className`.
+
+Another case is with styles:
+
+```html
+<!-- before -->
+<div style={{color: "green", padding: "10px"}}></div>
+
+<!-- after -->
+<div style={{color: "orange", padding: "10px"}}></div>
+```
+
+React only changes the `color` style, and not `padding.`
+
+## Okay really interesting, but why key?
+
+React differs if a node changed or not using the node type itself or the attributes passed to it. But there's a problematic case that is not resolved by only looking at the node or it's attributes. Lists.
+
+Lists will have the same node types and attributes, so they won't be recognized by the algorithm. 
+
+But we can have cases where the algorithm will work fine, like this:
+
+```html
+<!-- tree1 -->
+<ul>
+	<li>1</li>	
+	<li>2</li>
+</ul>
+
+<!-- tree2 -->
+<ul>
+	<li>1</li>	
+	<li>2</li>
+	<li>3</li>
+</ul>
+```
+
+Here we have two lists, React will match the first two elements (1, 2) and will insert the last one (3) at the end.
+
+But if we have a similar but different implementation.
+
+```html
+<!-- tree1 -->
+<ul>
+	<li>2</li>	
+	<li>3</li>
+</ul>
+
+<!-- tree2 -->
+<ul>
+	<li>1</li>	
+	<li>2</li>
+	<li>3</li>
+</ul>
+```
+
+Here we are inserting something new at the start of the list. React doesn't know how to handle this and will recreate every element, instead of reusing 2 and 3 that remained the same between trees, leading to bad performance.
+
+That's where `keys` are important. Using keys we can have every item in a list have a unique identifier (ID) so React can easily detect who needs to be changed or not, re-rendering only the ones with changes.
+## Conclusion
+That's my takeaway and what I have understood searching about this underlying implementations react has.
+I started searching for curiosity + to have a better understanding of react's big picture. I may write more about how react works underneath the hood in the future, if you have any suggestion please comment down here :) Thanks for reading.
