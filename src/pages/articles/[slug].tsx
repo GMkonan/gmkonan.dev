@@ -26,6 +26,7 @@ const ArticleContainer = styled.div`
   padding: 20px;
   //font-size: 1.1rem;
   line-height: 26px;
+  margin: 60px 0;
 `
 
 const H2 = styled.h2`
