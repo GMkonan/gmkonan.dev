@@ -1,0 +1,423 @@
+---
+title: Implementing Singly Linked Lists in Java
+type: algorithms
+slug: implementing-singly-linked-lists-in-java
+---
+
+Linked lists are really important data structures, they let us store values in different parts of the memory and find them by their addresses. Today in this article I'm gonna go on how to implement a Singly Linked List in java.
+
+
+
+lets create our first java file `SinglyLinkedList.java`
+
+Inside lets start by making a class that will represent the `Node` 
+
+```java
+package singlyLinkedList;
+
+class Node {
+	//thats the value(data) that is inside the Node
+	public int data;
+	//Thats the pointer inside the Node, every Node
+	//has a pointer that store the address of the next node
+	//Here we call this pointers "next"
+	public Node next;
+	
+	public void displayNodeData() {
+		System.out.print( data +  " -> ");
+	}
+	
+}
+```
+
+This class will represent the Node, every Node in a liked list stores a value, represent by our `public int data` in code, and a pointer to the next Node that will be represented by our `public Node next` in our code. Inside this class we made a method that will just print the data so that in the end we can see our results.
+
+
+
+Okay now inside our class `SinglyLinkedList` we are gonna start by defining a Node that represents the start of our list, a `head` node.
+
+```java
+public class SinglyLinkedList {
+	//Its private because we only need to reference head
+	//inside this class
+	private Node head; //here head == null
+```
+
+IMPORTANT: `head = null` even if we don't write it explicitly, java does that for us.
+
+We are gonna use head in our methods to reference the beginning of our list  (aka our first node) and for iterations, we will see this now.
+
+Our first method is gonna be a simple insert,We are gonna use this method to insert a value at the beginning of the list
+
+```java
+	public void insertFirst(int data) {
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.next = head;
+		head = newNode;
+	}
+```
+
+Here we first create a new Node called node `Node node = new Node();` then we set the data of this node to the parameter `data` that we will pass as argument later when we call it. In the end we make the `newNode` point to the head (which is null) and then make head points to the `newNode` so now head is holding the address of this `newNode` and `newNode` is pointing to null, which is the end of the list.
+
+IMPORTANT: Just to clear things out, if we `insertFirst` two times (like we are gonna do later) the second `newNode` is gonna start pointing to head which is the address of the first `newNode` and then head is gonna point to the second `newNode` making this:
+
+```markdown
+ head
+  ↓
+newNode -> null
+```
+
+be this:
+
+```markdown
+ head
+  ↓
+newNode2 -> newNode -> null
+```
+
+
+
+Now lets make our `deleteFirst` method
+
+```java
+	public void deleteFirst() {
+		//shifts the first node (head) to be where 
+		//it was pointing (second node)
+		head = head.next;
+	}
+```
+
+This one is more simple and to the point, head points to what is next to the head. Basically shifts head to be the second node, making it the first node.
+
+Before we continue with building our other methods lets make a `printLinkedList` method so you can see the results and have a better visualization of what the code is doing too.
+
+Here is our `printLinkedList` method
+
+```java
+	public void printLinkedList() {
+		Node current = head;
+		while (current != null) {
+			current.displayNodeData();
+			current = current.next;
+			
+		}
+		System.out.print("NULL");
+
+	}
+```
+
+We just make a Node called `current` that starts at head,which means that the node current starts pointing to the address of the first node. Then we loop the `current` node so that every loop we Displays our node data (with the `displayNodeData()` we made in our node class) and shifts  the current node to the next node, passing through all the nodes in the linked list until we find null (which is the end), after the loop we just print "NULL" to indicate end of the list and make a nicer representation with the print.
+
+Now lets create another java file called `LinkedListMain.java` . This is the file we will execute.
+
+```java
+package singlyLinkedList;
+
+public class LinkedListMain {
+	public static void main(String args[]) {
+		SinglyLinkedList linkedList = new SinglyLinkedList();
+		linkedList.insertFirst(1);
+		linkedList.insertFirst(8);
+		linkedList.insertFirst(5);
+        linkedList.insertFirst(3);
+        linkedList.deleteFirst();
+		//its gonna be 5 -> 8 -> 1 -> NULL
+		linkedList.printLinkedList();
+	}
+}
+```
+
+Here we are gonna call our methods, when you run it the output should be `be 5 -> 8 -> 1 -> NULL`
+
+Now you can test the methods the way you want! Lets get back to creating our other methods.
+
+
+
+We created methods for inserting in the first place and deleting the first place, but if we want to put something at the last place? Well lets create methods for it, starting with `insertLast`
+
+```java
+	public void insertLast(int data) {
+		Node current = head; //start from the first node
+		//loop until current == null because you are looping
+		//all the nodes until you find the end (null)
+		while(current.next != null) {
+			current = current.next;
+		}
+		//insert the newNode next to current
+		//which now is the final node
+		Node newNode = new Node();
+		newNode.data = data;
+		current.next = newNode;
+	}
+```
+
+Okay, here we start by doing something pretty similar to what we did in the `printLinkedList` method, we start by the head and loop, but here we loop until the current is pointing to null and not IS equal null. Because with this we will have current as the last node, because the last node is the one that points to null. Then we create a `newNode` and make the `current` point to the `newNode` so now it is the last node because the order changed from 
+
+`current -> null` 
+
+to
+
+ `current -> newNode -> null` .
+
+
+
+After that we can create our `deleteLast` method
+
+```java
+	public void deleteLast() {
+		Node current = head;
+		Node temp = head;
+		while (current.next != null) {
+			temp = current;
+			current = current.next;
+		}
+		current = temp;
+		current.next = null;
+	}
+```
+
+Here we make like the `insertLast` method and make the exact same loop, but we have something different. That is the Node `temp`, so we can move current to the last position with our loop, but we also move the temp alongside so that in the end we have current in the last position `current -> null` but we have temp before that `temp -> current -> null` . Then we make current shift to temp position and make current point to null.
+
+
+
+Okay, that`s great and all but... what if we want to put something in the middle for example? Or delete it? Well we can make a method to put a node anywhere AFTER another node.
+
+Lets start with the `insertAfter` 
+```` java
+	public void insertAfter(Node after,int data) {
+		Node current = head;
+		Node temp = head;
+		while (temp.data != after.data ) {
+			temp = current;
+			current = current.next;
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		temp.next = newNode;
+		newNode.next = current;
+	}
+````
+In the `insertAfter` we again use `temp` and we make a similar loop, but the condition is different. Now we want to match the `temp.data` that we are looping with the `after.data` that is a node we are gonna pass to our method. When the loop finishes we have `temp` in the place of our `after` node, which means we are gonna insert our `newNode` after the `temp` node where our `current` node is. After the loop we create the `newNode` and we make temp point to the `newNode` and make `newNode` point to the `current` node.
+
+
+
+Now we have our last method, the `deleteAfter` method
+
+````java
+	public void deleteAfter(Node after) {
+		Node current = head; 
+		while (current.data != after.data) {
+			current = current.next;
+		}
+		current.next = current.next.next;
+	}
+````
+
+Here we check if the `current.data` is != to `after.data` so we can have the position of the `after` node (the same way we made with `temp` in the last one). Then we just make the current point to what the it was pointing before was pointing to. Example:
+
+`current -> node1 -> node2`
+
+After the `current.next = current.next.next`:
+
+`current -> node2` 
+
+
+
+And that`s all our  methods implemented and explained. Now we can test all of them
+
+```java
+package singlyLinkedList;
+
+public class LinkedListMain {
+	public static void main(String args[]) {
+		SinglyLinkedList linkedList = new SinglyLinkedList();
+		linkedList.insertFirst(1);
+		linkedList.insertFirst(8);
+		linkedList.insertFirst(5);
+		//its gonna be 5 -> 8 -> 1 -> NULL
+		
+		linkedList.insertLast(3);
+		//now its gonna be 5 -> 8 -> 1 -> 3 -> NULL
+		Node node = new Node();
+		node.data = 1;
+		linkedList.insertAfter(node, 10);
+		// now its gonna be 5 -> 8 -> 1 -> 10 -> 3 -> NULL
+		
+		
+		Node node2 = new Node();
+		node2.data = 8;
+		linkedList.deleteAfter(node2);
+		// now its gonna be 5 -> 8 -> 10 -> 3 -> NULL
+		linkedList.deleteFirst();
+		//now its gonna be 8 -> 10 -> 3 -> NULL
+		linkedList.insertFirst(14);
+		//now its gonna be 14 -> 8 -> 10 -> 3 -> NULL
+		linkedList.insertLast(40);
+		// now its gonna be 14 -> 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.deleteFirst();
+		//now its gonna be 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.insertLast(56);
+		//now its gonna be 8 -> 10 -> 3 -> 40 -> 56 -> NULL
+		linkedList.deleteLast();
+		// now its gonna be 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.printLinkedList();
+	}
+}
+```
+
+
+
+I hope you understood or at least I could help just a little bit in your learning. This is my first article so I may or may not have explained or write in a good way but I will try to improve as I write more! If you want the source code you can check my [repository](https://github.com/GMkonan/A-DS_Java/tree/master/src/singlyLinkedList) in [Github](https://github.com/GMkonan) where I'm trying to make a list of Data Structures and Algorithms implemented in java (and maybe later in C ) with everything up to date or the source below that is the exact same code as above, I will let some links that you can check more about linked lists and that's it. Good studying and good luck!
+
+
+
+`SinglyLinkedList.java`
+
+```java
+package singlyLinkedList;
+
+class Node {
+	//thats the value(data) that is inside the Node
+	public int data;
+	//Thats the pointer inside the Node, every Node
+	//has a pointer that store the address of the next node
+	//Here we call this pointers "next"
+	public Node next;
+	
+	public void displayNodeData() {
+		System.out.print( data +  " -> ");
+	}
+	
+}
+
+public class SinglyLinkedList {
+	//Its private because we only need to reference head
+	//inside this class
+	private Node head; //here head == null
+    
+    public void insertFirst(int data) {
+        Node newNode = new Node();
+        newNode.data = data;
+        newNode.next = head;
+        head = newNode;
+	}
+    
+	public void deleteFirst() {
+		//shifts the first node (head) to be where 
+		//it was pointing (second node)
+		head = head.next;
+	}
+    
+	public void insertLast(int data) {
+		Node current = head; //start from the first node
+		//loop until current == null because you are looping
+		//all the nodes until you find the end (null)
+		while(current.next != null) {
+			current = current.next;
+		}
+		//insert the newNode next to current
+		//which now is the final node
+		Node newNode = new Node();
+		newNode.data = data;
+		current.next = newNode;
+	}
+    
+	public void deleteLast() {
+		Node current = head;
+		Node temp = head;
+		while (current.next != null) {
+			temp = current;
+			current = current.next;
+		}
+		current = temp;
+		current.next = null;
+	}
+    
+	public void insertAfter(Node after,int data) {
+		Node current = head;
+		Node temp = head;
+		while (temp.data != after.data ) {
+			temp = current;
+			current = current.next;
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		temp.next = newNode;
+		newNode.next = current;
+	}
+    
+	public void deleteAfter(Node after) {
+		Node current = head; 
+		while (current.data != after.data) {
+			current = current.next;
+		}
+		current.next = current.next.next;
+	}
+    
+	public void printLinkedList() {
+		Node current = head;
+		while (current != null) {
+			current.displayNodeData();
+			current = current.next;
+			
+		}
+		System.out.print("NULL");
+
+	}
+}
+```
+
+
+
+`LinkedListMain.java`
+
+```java
+package singlyLinkedList;
+
+public class LinkedListMain {
+	public static void main(String args[]) {
+		SinglyLinkedList linkedList = new SinglyLinkedList();
+		linkedList.insertFirst(1);
+		linkedList.insertFirst(8);
+		linkedList.insertFirst(5);
+		//its gonna be 5 -> 8 -> 1 -> NULL
+		
+		linkedList.insertLast(3);
+		//now its gonna be 5 -> 8 -> 1 -> 3 -> NULL
+		Node node = new Node();
+		node.data = 1;
+		linkedList.insertAfter(node, 10);
+		// now its gonna be 5 -> 8 -> 1 -> 10 -> 3 -> NULL
+		
+		
+		Node node2 = new Node();
+		node2.data = 8;
+		linkedList.deleteAfter(node2);
+		// now its gonna be 5 -> 8 -> 10 -> 3 -> NULL
+		linkedList.deleteFirst();
+		//now its gonna be 8 -> 10 -> 3 -> NULL
+		linkedList.insertFirst(14);
+		//now its gonna be 14 -> 8 -> 10 -> 3 -> NULL
+		linkedList.insertLast(40);
+		// now its gonna be 14 -> 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.deleteFirst();
+		//now its gonna be 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.insertLast(56);
+		//now its gonna be 8 -> 10 -> 3 -> 40 -> 56 -> NULL
+		linkedList.deleteLast();
+		// now its gonna be 8 -> 10 -> 3 -> 40 -> NULL
+		linkedList.printLinkedList();
+	}
+}
+```
+
+
+
+### Some Links that you may find interesting
+
+- [cs50 notes about DS](https://cs50.harvard.edu/college/2020/fall/notes/5/)
+
+- [insert node at beginning linked list by log2base2](https://www.log2base2.com/data-structures/linked-list/inserting-a-node-at-the-beginning-of-a-linked-list.html)
+
+- [Grokking Algorithms book](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_1?crid=3TOXYOE3D8OAZ&dchild=1&keywords=grokking+algorithm&qid=1607583227&sprefix=grokking%2Caps%2C317&sr=8-1)
