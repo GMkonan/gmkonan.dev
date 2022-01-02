@@ -1,0 +1,119 @@
+---
+title: The compiling process
+type: computer-science
+slug: the-compiling-process
+---
+
+# The compiling process
+
+Hello guys, a while back I made some notes about the compiling process. When I finished I thought that I could make some small edits and transform it into a post. So here we are.
+
+The compiling process (turn source code in machine code) is divided in 4 smaller steps:
+
+- preprocessing
+
+- compiling
+
+- assembling
+
+- linking
+
+  ​	
+
+To be sure you will understand everything I will first explain some terms I will be using when describing the compiling process:
+
+**prototype:** Is a function declaration that comes in the start of our programs, so the compiler can understand that there will be a function with this name. We usually declare our functions at the top of our code and write what they to at the end of it.
+
+Example of a prototype:
+
+```c
+/*here we only declare name, type and parameters of our function,
+we don't say what the function does (aka we don't specify the
+function body), that's why it's a prototype.*/
+int area( int length, int breadth ); 
+```
+
+**Library:** Is a <i>compiled binary file</i> (or a collection of binary files) which can be linked (will explain what is **linked** below in the compiling steps).
+
+**header file:** Is the name of what we include when we start our code (aka `#include<stdio.h>`), header files are files that contain **prototypes** for all the functions from the libraries we include in our code.
+
+Okay Now let's go for the 4 compiling steps.  
+
+### Preprocessing
+
+**Preprocessing** is when the compiler look at the header files we included in our program and replace the "include" lines for the actual prototypes that are inside of these files.
+
+for example:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+}
+```
+
+will be preprocessed into:
+
+```c
+//prototypes from printf function
+...
+int printf(string format, ...);
+...
+
+int main(void)
+{
+    printf("hello, world\n");
+}
+```
+
+### Compiling
+
+**Compiling** takes our source code in C, and converts to assembly code.
+
+### Assembling
+
+**Assembling** is the process of converting the assembly code that we have after the last step, **Compiling**, and actually convert it (or assemble it) to binary code (or machine code). Most modern compilers don't have this phase because they jump the assembly code and convert directly your source code to binary, they probably will only convert to assembly first if you ask to. But with old compilers the case will often be that they will convert your code do assembly first and then to binary. 
+
+Extra: When a compiler makes the binary code for you and it still haven't being linked, he actually have produced for you an **Object file**. Here is an good explanation of what it is (link for this explanation in the end).
+
+```
+Object code is a portion of machine code not yet linked into a
+complete program. It's the machine code for one particular library
+or module that will make up the completed product. It may also
+contain placeholders or offsets not found in the machine code of a
+completed program. The linker will use these placeholders and
+offsets to connect everything together.
+```
+
+### Linking
+
+Now that we have our program file in binary we need to **link** it to the binary of the libraries we are using so in the end we have only one binary file with all of it inside, that process is called **linking**.
+
+**Additional:** stdio is a part of the <i>standard </i>library, and the linker in the **linking** process already know where this library is, that's why we doesn't have to specify where the binary file of the library is when using stdio and some other standard functions (we still need to specify the header files). 
+But when we are using a library that is not standard (for example a library you created) we need to specify it with the linker using a flag when compiling our program. This flag is `-l`, and we use it without the lib prefix to link with the library file. Ex: `-lExampleLibrary`. If your library file is not where `-l` looks by default you have to specify where is it using `-L`. 
+Example:
+
+```
+if the library code is inside the current folder you are:
+gcc test.c -L. -lExampleLibrary -o test 
+```
+
+Just to have the notes a little more specific I'm gonna explain some more deep details about the linking process.
+
+**library file:** When the linker go get the binaries of the libraries we are using he doesn't actually get .o files (aka normal binary files), he get's what we call a library file, that can be a static ".a" or a dynamic ".so" one. 
+
+A **static Library** combines all the object code (aka binary code that doesn't have been linked) into a single archive with a ".a" file extension, that's what our linker actually goes get to link with your source code. 
+
+A **dynamic Library** have their object codes linked together forming a single piece of object code that is loaded into memory and only the address in memory of where the library function (being used in source code) is, is added to the executable file (after linked).
+
+### Links
+
+- [static VS dynamic libraries](https://medium.com/@dkwok94/the-linking-process-exposed-static-vs-dynamic-libraries-977e92139b5f)
+
+- [-l and -L flags in gcc compiler](https://www.rapidtables.com/code/linux/gcc/gcc-l.html)
+
+- [object code in C](https://stackoverflow.com/questions/7718299/whats-an-object-file-in-c)
+- [object code X assembly code X Machine code](https://stackoverflow.com/questions/466790/assembly-code-vs-machine-code-vs-object-code)
+
