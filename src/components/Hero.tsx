@@ -22,26 +22,26 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 height: 100%;
-background: #d4d8f0;
+background: #2a3050; //#1a1e33
 `
 
 const Title = styled.h1`
 margin-top: 225px;
 font-size: 5rem;
-color: #232946;
+color: #d4d8f0;
 `
 
 const SubTitle = styled.h1`
 margin-top: 50px;
 font-size: 2.78rem;
-color: #232946;
+color: #d4d8f0;
 `
 
 const AboutMe = styled.h2`
 padding: 0 0px;
 margin-top: 75px;
 font-size: 2rem;
-color: #232946;
+color: #d4d8f0;
 `
 
 export default Hero;
