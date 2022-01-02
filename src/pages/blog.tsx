@@ -34,6 +34,7 @@ grid-template-columns: repeat(2, 1fr);
 grid-template-rows: repeat(2, 1fr);
 justify-items: center;
 gap: 32px;
+padding: 64px 0;
 `
 
 const Article = styled.a`
