@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
-import fs from 'fs'
-import matter from 'gray-matter';
+import { getPostsData } from "../api";
 
 interface Metadata {
     title: string
@@ -15,17 +14,14 @@ const Blog = (props:any) => {
     return(
         <Container>
             <MaxWidthWrapper>
-                
                 <Wrapper>
-                    {props.frontmatter.map((metadata:Metadata) => (
-                        
+                    {props.frontmatter.map((metadata: Metadata) => (
                         <Article key={metadata.slug} href={`/articles/${metadata.slug}`}>
                             <Title>{metadata.title}</Title>
                             <Description>
                                 {metadata.description}
                             </Description>
                         </Article>
-                        
                     ))}
                 </Wrapper>
             </MaxWidthWrapper>
@@ -80,25 +76,10 @@ const PostType = styled.div`
 `
 
 export async function getStaticProps() {
-  
-    const getArticles = () => fs.readdirSync('./posts')
     
-    const articlesRaw = getArticles()
-    
-    const frontmatter = articlesRaw.map((articleRaw: any) => {
-        const post = fs.readFileSync(`./posts/${articleRaw}`)
-        const article:any = matter(post)  
-        console.log(article)  
-        return ({
-            title: article.data.title,
-            type: article.data.type,
-            slug: article.data.slug,
-            description: article.data.description,
-            content: article.content,
-        })
-    })
+    const frontmatter = getPostsData()
 
     return { props: { frontmatter } }
-  }
+}
 
 export default Blog;

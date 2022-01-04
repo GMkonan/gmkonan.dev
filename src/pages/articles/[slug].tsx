@@ -1,21 +1,11 @@
-import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import MaxWidthWrapper from '../../components/MaxWidthWrapper'
-import fs from 'fs'
-import matter from 'gray-matter';
 import styled from 'styled-components';
-import prism from "remark-prism";
+import components from '../../components/BaseMdComponents';
+import { getPostsBySlug, getPostsData } from '../../api';
 
 export default function Slug({ source }: any) {
 
-  const components = { 
-    h2: (props:any) => <H2 variant="h2" {...props} />,
-    h3: (props:any) => <H3 variant="h3" {...props} />,
-    h4: (props:any) => <H4 variant="h4" {...props} />,
-    p: (props:any) => <P variant="p" {...props} />,
-    li: (props:any) => <LI variant="li" {...props} />,
-    a: (props:any) => <A variant="a" {...props} />,
-  }
   //consider making an "aside" at the left of the article
   return (
     <MaxWidthWrapper>
@@ -40,67 +30,16 @@ const ArticleContainer = styled.div`
   margin: 60px 0;
 `
 
-//elements from mdx
-const H2 = styled.h2`
-  margin: 20px 0;
-  color: #d4d8f0;
-`
-
-const H3 = styled.h3`
-  margin: 20px 0;
-  color: #d4d8f0;
-`
-
-const H4 = styled.h4`
-  margin: 20px 0;
-  color: #d4d8f0;
-`
-
-const P = styled.p`
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-`
-
-const LI = styled.li`
-  list-style-position: inside; //maintain numbers together, making padding affect list
-  color: white;
-`
-
-const A = styled.a`
-  text-decoration: none;
-  color: inherit;
-
-  &:hover {
-    text-decoration: revert;
-  }
-`
-
 export async function getStaticProps({params}: any) {
-  const post = fs.readFileSync(`./posts/${params.slug}.mdx`)
-  const article:any = matter(post) 
-  const mdxSource = await serialize(article.content, {mdxOptions: {remarkPlugins: [prism]}})
-  console.log(mdxSource)
+
+  const mdxSource = await getPostsBySlug(params)
+
   return { props: { source: mdxSource } }
 }
 
 export async function getStaticPaths() {
-  
-  const getArticles = () => fs.readdirSync('./posts')
     
-    const articlesRaw = getArticles()
-    
-    const frontmatter = articlesRaw.map((articleRaw: any) => {
-        const post = fs.readFileSync(`./posts/${articleRaw}`)
-        const article:any = matter(post)  
-        console.log(article)  
-        return ({
-            title: article.data.title,
-            type: article.data.type,
-            content: article.content,
-            slug: article.data.slug,
-        })
-    })
+  const frontmatter = getPostsData()
 
   return {
     paths: frontmatter.map((post:any) => ({params: { slug: post.slug }})),
