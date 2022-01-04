@@ -3,18 +3,26 @@ import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import fs from 'fs'
 import matter from 'gray-matter';
 
+interface Metadata {
+    title: string
+    type: string
+    slug: string
+    description: string
+    content: string
+}
+
 const Blog = (props:any) => {
     return(
         <Container>
             <MaxWidthWrapper>
                 
                 <Wrapper>
-                    {props.frontmatter.map((metadata:any) => (
+                    {props.frontmatter.map((metadata:Metadata) => (
                         
-                        <Article key={metadata} href={`/articles/${metadata.slug}`}>
+                        <Article key={metadata.slug} href={`/articles/${metadata.slug}`}>
                             <Title>{metadata.title}</Title>
                             <Description>
-                                {metadata.content.slice(0, 232)}...
+                                {metadata.description}
                             </Description>
                         </Article>
                         
@@ -84,8 +92,9 @@ export async function getStaticProps() {
         return ({
             title: article.data.title,
             type: article.data.type,
-            content: article.content,
             slug: article.data.slug,
+            description: article.data.description,
+            content: article.content,
         })
     })
 
