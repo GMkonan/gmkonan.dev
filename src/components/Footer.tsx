@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Footer = () => {
     return(
         <Container>
-            <Title>Made using Typescript</Title>
+            <Copyright>© {new Date().getFullYear()}-present GMkonan. All Rights Reserved.</Copyright>
         </Container>
     )
 }
@@ -14,13 +14,12 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: 120px;
-    background: #d4d8f0;
+    background: #2a3050;
 `
 
-const Title = styled.div`
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #232946;
+const Copyright = styled.p`
+    font-size: 0.9rem;
+    color: #d4d8f0;
 `
 
 export default Footer

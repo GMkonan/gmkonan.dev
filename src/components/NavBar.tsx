@@ -5,6 +5,8 @@ import MaxWidthWrapper from './MaxWidthWrapper';
 const NavBar = () => {
     
     return(
+        <Wrapper>
+
         <MaxWidthWrapper>
             <Container>
                 <Logo><UnstyledLink href="/">GMkonan</UnstyledLink></Logo>
@@ -15,8 +17,13 @@ const NavBar = () => {
                 </Links>
             </Container>
         </MaxWidthWrapper>
+        </Wrapper>
     );
 }
+
+const Wrapper = styled.div`
+    //background: #2a3050;
+`
 
 const Container = styled.div`
 padding-top: 32px;

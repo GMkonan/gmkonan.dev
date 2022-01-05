@@ -6,6 +6,7 @@ const components = {
     h4: (props:any) => <H4 variant="h4" {...props} />,
     p: (props:any) => <P variant="p" {...props} />,
     li: (props:any) => <LI variant="li" {...props} />,
+    ul: (props:any) => <UL variant="ul" {...props} />,
     a: (props:any) => <A variant="a" {...props} />,
   }
 
@@ -32,8 +33,19 @@ const P = styled.p`
 `
 
 const LI = styled.li`
-  list-style-position: inside; //maintain numbers together, making padding affect list
+  display: flex;
+  align-items: flex-start;
+  //list-style-position: inside; //maintain numbers together, making padding affect list
   color: white;
+
+  &::before {
+    content: '->';
+    margin-right: 8px;
+  }
+`
+
+const UL = styled.ul`
+  
 `
 
 const A = styled.a`
