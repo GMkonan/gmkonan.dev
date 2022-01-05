@@ -9,12 +9,20 @@ export default function Slug({ source }: any) {
   //consider making an "aside" at the left of the article
   return (
     <MaxWidthWrapper>
-      <ArticleContainer>
-        <MDXRemote {...source} components={components} />
-      </ArticleContainer>
+      <Wrapper>
+        <ArticleContainer>
+          <MDXRemote {...source} components={components} />
+        </ArticleContainer>
+      </Wrapper>
     </MaxWidthWrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const ArticleContainer = styled.div`
   //pass this width when aside is done
@@ -24,7 +32,7 @@ const ArticleContainer = styled.div`
   //background: #232946;
   border: 2px solid #2d3458;
   border-radius: 32px;
-  padding: 20px;
+  padding: 32px  64px;
   //font-size: 1.1rem;
   line-height: 26px;
   margin: 60px 0;
