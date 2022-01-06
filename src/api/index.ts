@@ -12,7 +12,6 @@ const getPostsData = () => {
     const frontmatter = articlesRaw.map((articleRaw: any) => {
         const post = fs.readFileSync(`./posts/${articleRaw}`)
         const article:any = matter(post)  
-        console.log(article)  
         return ({
             title: article.data.title,
             type: article.data.type,
@@ -28,7 +27,16 @@ const getPostsBySlug = async (params:any) => {
     const post = fs.readFileSync(`./posts/${params.slug}.mdx`)
     const article:any = matter(post)
     const mdxSource = await serialize(article.content, {mdxOptions: {remarkPlugins: [prism]}})
-    return mdxSource
+    const metadata = {
+        title: article.data.title,
+        type: article.data.type,
+        slug: article.data.slug,
+        description: article.data.description,
+    }
+    return {
+        mdxSource,
+        metadata
+    }
 }
 
 export {

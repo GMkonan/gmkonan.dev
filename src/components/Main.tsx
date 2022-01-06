@@ -44,6 +44,7 @@ const Main = () => {
 }
 
 const Container = styled.div`
+background: #fffffe;
 display: flex;
 flex-direction: column;
 justify-content: center;
