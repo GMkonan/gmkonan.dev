@@ -30,8 +30,8 @@ const ArticleContainer = styled.div`
   
   //margin: 56px 0;
   //background: #232946;
-  border: 2px solid #2d3458;
-  border-radius: 32px;
+  //border: 2px solid #2d3458;
+  //border-radius: 32px;
   padding: 32px  64px;
   //font-size: 1.1rem;
   line-height: 26px;

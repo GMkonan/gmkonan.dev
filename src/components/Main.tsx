@@ -59,65 +59,34 @@ display: flex;
 flex-direction: column;
 `
 
-const Intro = styled.p`
-font-size: 1.2rem;
-font-weight: 500;
-color: #fffffe;
-animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
-`
-
 const Title = styled.h1`
 font-size: 5rem;
 font-weight: 600;
-color: #fffffe;
+color: #094067;
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
 `
 
 const SubTitle = styled.h1`
 font-size: 5rem;
 font-weight: 600;
-color: #fffffe;
+color: #094067;
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
 `
 
 const P = styled.h4`
 margin-top: 20px;
 font-size: 2rem;
-color: #b8c1ec;
+color: #5f6c7b;
 animation: ${translateToRight} 0.85s ease 0s 1 normal both running;
-`
-
-const ButtonContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-`
-
-const Button = styled.button`
-font-weight: 600;
-font-size: 1.5rem;
-outline: none;
-border: none;
-width: 300px;
-height: 80px;
-border-radius: 4px;
-cursor: pointer;
-//border: 2px solid white;
-background: #eebbc3;
-color: #232946;
-
-&:hover {
-  opacity: 0.95;
-  transform: scale(0.99);
-}
 `
 
 const ImageContainer = styled(Container)`
 width: 200px;
 height: 200px;
 border-radius: 100%;
-border: 3px #b8c1ec solid;
+border: 3px #3da9fc solid;
 animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
+background: #d8eefe;
 `
 
 const SocialsWrapper = styled.div`
@@ -141,14 +110,14 @@ margin-bottom: 75px;
   content: "";
   height: 2px;
   width: 100%;
-  background: #b8c1ec;
+  background: #094067;
 }
 
 &::after {
   content: "";
   height: 2px;
   width: 100%;
-  background: #b8c1ec;
+  background: #094067;
 }
 
 `
