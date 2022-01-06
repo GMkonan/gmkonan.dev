@@ -14,12 +14,12 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: 120px;
-    background: #2a3050;
+    background: #094067;
 `
 
 const Copyright = styled.p`
     font-size: 0.9rem;
-    color: #d4d8f0;
+    color: #d8eefe;
 `
 
 export default Footer

@@ -13,7 +13,7 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd {
 
   html, body {
   height: 100%;
-  background: #232946;
+  background: #fffffe;
 }
 
 // create root stacking context

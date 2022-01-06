@@ -22,7 +22,8 @@ const NavBar = () => {
 }
 
 const Wrapper = styled.div`
-    //background: #2a3050;
+    background: #d8eefe;
+    height: 100px;
 `
 
 const Container = styled.div`
@@ -32,12 +33,12 @@ display: flex;
 
 const Logo = styled.h1`
 flex: auto;
-color: white;
+color: #094067;
 `
 
 const Links = styled.div`
 display: flex;
-color: white;
+color: #094067;
 gap: 20px;
 `
 
@@ -51,7 +52,7 @@ cursor: pointer;
 
 const UnstyledLink = styled.a`
     text-decoration: none;
-    color: white;
+    color: #094067;
 `
 
 export default NavBar;

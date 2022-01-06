@@ -13,30 +13,32 @@ const components = {
 //elements from mdx
 const H2 = styled.h2`
   margin: 20px 0;
-  color: #d4d8f0;
+  color: #094067;
 `
 
 const H3 = styled.h3`
   margin: 20px 0;
-  color: #d4d8f0;
+  color: #094067;
 `
 
 const H4 = styled.h4`
   margin: 20px 0;
-  color: #d4d8f0;
+  color: #094067;
 `
 
 const P = styled.p`
-  color: white;
+  color: #5f6c7b;
   font-size: 1.2rem;
+  font-weight: 500;
   margin-bottom: 20px;
 `
 
 const LI = styled.li`
   display: flex;
   align-items: flex-start;
+  font-weight: 500;
   //list-style-position: inside; //maintain numbers together, making padding affect list
-  color: white;
+  color: #5f6c7b;
 
   &::before {
     content: '->';
@@ -51,7 +53,7 @@ const UL = styled.ul`
 const A = styled.a`
   text-decoration: none;
   color: inherit;
-
+  font-weight: 500;
   &:hover {
     text-decoration: revert;
   }

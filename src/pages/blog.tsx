@@ -49,16 +49,17 @@ height: 300px;
 background: white;
 border-radius: 3%;
 padding: 16px;
+border: 2px solid #094067;
 `
 
 const Title = styled.h1`
 font-size: 2rem;
 margin-bottom: 12px;
-color: #232946;
+color:#094067;
 `
 
 const Description = styled.p`
-color: #232946;
+color: #5f6c7b;
 font-size: 1.1rem;
 line-height: 28px;
 font-weight: 500;
