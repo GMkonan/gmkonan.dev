@@ -8,6 +8,7 @@ const components = {
     li: (props:any) => <LI variant="li" {...props} />,
     ul: (props:any) => <UL variant="ul" {...props} />,
     a: (props:any) => <A variant="a" {...props} />,
+    strong: (props:any) => <Strong variant="strong" {...props} />,
   }
 
 //elements from mdx
@@ -52,12 +53,15 @@ const UL = styled.ul`
 
 const A = styled.a`
   text-decoration: none;
-  color: inherit;
-  font-weight: 500;
+  color: #ef4565; //#ef4565
+  font-weight: 600;
   &:hover {
     text-decoration: revert;
   }
 `
 
+const Strong = styled.strong`
+  color: #3da9fc; //#3da9fc
+`
 
 export default components

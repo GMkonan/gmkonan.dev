@@ -13,7 +13,7 @@ const NavBar = () => {
                 <Links>
                     <Link onClick={() => Scroll("Hero")}>About</Link> {/* Later change to "My Work" */}
                     {/*<Link>Projects</Link> */}
-                    <Link href="/blog">Articles</Link>
+                    <Link href="/articles">Articles</Link>
                 </Links>
             </Container>
         </MaxWidthWrapper>

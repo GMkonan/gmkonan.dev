@@ -3,15 +3,20 @@ import MaxWidthWrapper from "../../components/MaxWidthWrapper";
 import styled from "styled-components";
 import components from "../../components/BaseMdComponents";
 import { getPostsBySlug, getPostsData } from "../../api";
+import { Breadcrumbs, Crumb } from "../../components/Breadcrumb";
 
 export default function Slug({ source, title }: any) {
   //consider making an "aside" at the left of the article
   return (
     <>
       <TitleWrapper>
-        <MaxWidthWrapper>
+        <ArticleInfoWrapper>
+          <Breadcrumbs>
+            <Crumb href="/">Home</Crumb>
+            <Crumb href="/articles">Articles</Crumb>            
+          </Breadcrumbs>
           <Title>{title}</Title>
-        </MaxWidthWrapper>
+        </ArticleInfoWrapper>
       </TitleWrapper>
       <Container>
         <MaxWidthWrapper>
@@ -26,16 +31,22 @@ export default function Slug({ source, title }: any) {
   );
 }
 
+const ArticleInfoWrapper = styled.div`
+  width: 1100px;
+  margin: 0 auto;
+  padding: 56px 56px;
+`
+
 const TitleWrapper = styled.div`
   display: flex;
   background: #d8eefe;
-  height: 150px;
+  height:170px;
 `;
 
 const Title = styled.h1`
   color: #094067;
-  padding: 64px 64px;
-  
+  //padding: 64px 64px;
+  margin-top: 20px;
 `;
 
 const Container = styled.div`
