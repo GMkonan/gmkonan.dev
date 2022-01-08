@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
-import { getPostsData } from "../api";
+import { getPostsData, getRecentPostsData } from "../api";
+import { format } from "date-fns";
 
 interface Metadata {
     title: string
     type: string
     slug: string
     description: string
+    publishedOn: Date
     content: string
 }
 
@@ -20,6 +22,7 @@ const Blog = (props:any) => {
                             <Title>{metadata.title}</Title>
                             <Description>
                                 {metadata.description}
+                                <h5>{format(new Date(metadata.publishedOn), 'MM/dd/yyyy')}</h5>
                             </Description>
                         </Article>
                     ))}
@@ -77,9 +80,7 @@ const PostType = styled.div`
 `
 
 export async function getStaticProps() {
-    
-    const frontmatter = getPostsData()
-
+    const frontmatter:Metadata[] = getRecentPostsData()
     return { props: { frontmatter } }
 }
 
