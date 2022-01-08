@@ -5,22 +5,41 @@ import prism from "remark-prism";
 
 const getPosts = () => fs.readdirSync('./posts')
 
+interface Article {
+    content?: string,
+    data: {
+    title?: string,
+    type?: string,
+    slug?: string,
+    description?: string,
+    publishedOn?: Date,
+    }
+}
+
 const getPostsData = () => {
     
     const articlesRaw = getPosts()
     
     const frontmatter = articlesRaw.map((articleRaw: any) => {
         const post = fs.readFileSync(`./posts/${articleRaw}`)
-        const article:any = matter(post)  
+        const article = matter(post)  
         return ({
             title: article.data.title,
             type: article.data.type,
             slug: article.data.slug,
             description: article.data.description,
+            publishedOn: article.data.publishedOn,
             content: article.content,
         })
     })
     return frontmatter
+}
+
+const getRecentPostsData = () => {
+    const articles = getPostsData()
+    
+    return articles.sort((article, b) => b.publishedOn - article.publishedOn)
+
 }
 
 const getPostsBySlug = async (params:any) => {
@@ -33,6 +52,7 @@ const getPostsBySlug = async (params:any) => {
         slug: article.data.slug,
         description: article.data.description,
     }
+
     return {
         mdxSource,
         metadata
@@ -42,5 +62,6 @@ const getPostsBySlug = async (params:any) => {
 export {
     getPosts,
     getPostsBySlug,
-    getPostsData
+    getPostsData,
+    getRecentPostsData,
 }
