@@ -44,11 +44,12 @@ const Main = () => {
 }
 
 const Container = styled.div`
-background: #fffffe;
+background: var(--white);
 display: flex;
 flex-direction: column;
 justify-content: center;
 height: 100%;
+
 `
 
 const Wrapper = styled.div`
@@ -63,21 +64,33 @@ flex-direction: column;
 const Title = styled.h1`
 font-size: 5rem;
 font-weight: 600;
-color: #094067;
+color: var(--primary);
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
+
+/* Default: Desktop monitors, 1501px and up */
+@media (max-width: 1500px) {
+  /* Laptop */
+  font-size: 4rem;
+}
+@media (max-width: 1100px) {
+  /* Tablets */
+}
+@media (max-width: 550px) {
+  /* Phones */
+}
 `
 
 const SubTitle = styled.h1`
 font-size: 5rem;
 font-weight: 600;
-color: #094067;
+color: var(--primary);
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
 `
 
 const P = styled.h4`
 margin-top: 20px;
 font-size: 2rem;
-color: #5f6c7b;
+color: var(--gray);
 animation: ${translateToRight} 0.85s ease 0s 1 normal both running;
 `
 
@@ -85,9 +98,9 @@ const ImageContainer = styled(Container)`
 width: 200px;
 height: 200px;
 border-radius: 100%;
-border: 3px #3da9fc solid;
+border: 3px var(--blue400) solid;
 animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
-background: #d8eefe;
+background: var(--blue50);
 `
 
 const SocialsWrapper = styled.div`
@@ -103,7 +116,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 list-style: none;
-color: white;
+color: var(--white);
 gap: 40px;
 width: 100%;
 margin-bottom: 75px;
@@ -111,14 +124,14 @@ margin-bottom: 75px;
   content: "";
   height: 2px;
   width: 100%;
-  background: #094067;
+  background: var(--primary);
 }
 
 &::after {
   content: "";
   height: 2px;
   width: 100%;
-  background: #094067;
+  background: var(--primary);
 }
 
 `
