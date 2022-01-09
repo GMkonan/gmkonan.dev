@@ -39,18 +39,18 @@ const ArticleInfoWrapper = styled.div`
 
 const TitleWrapper = styled.div`
   display: flex;
-  background: #d8eefe;
+  background: var(--blue50);
   height:170px;
 `;
 
 const Title = styled.h1`
-  color: #094067;
+  color: var(--primary);
   //padding: 64px 64px;
   margin-top: 20px;
 `;
 
 const Container = styled.div`
-  background: #fffffe;
+  background: var(--white);
 `;
 
 const Wrapper = styled.div`

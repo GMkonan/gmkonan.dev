@@ -45,24 +45,24 @@ padding: 64px 0;
 `
 
 const Article = styled.a`
-color: #FFFFFF;
+color: var(--white);
 text-decoration: none;
 width: 500px;
 height: 300px;
-background: white;
+background: var(--white);
 border-radius: 3%;
 padding: 16px;
-border: 2px solid #094067;
+border: 2px solid var(--primary);
 `
 
 const Title = styled.h1`
 font-size: 2rem;
 margin-bottom: 12px;
-color:#094067;
+color:var(--primary);
 `
 
 const Description = styled.p`
-color: #5f6c7b;
+color: var(--gray);
 font-size: 1.1rem;
 line-height: 28px;
 font-weight: 500;
@@ -74,7 +74,7 @@ const PostType = styled.div`
     //border-bottom: 2px solid white;
     font-size: 2rem;
     font-weight: 500;
-    color: white;
+    color: var(--white);
     margin-left: 20px;
     padding: 20px 0;
 `
