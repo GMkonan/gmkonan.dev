@@ -9,7 +9,7 @@ const NavBar = () => {
 
         <MaxWidthWrapper>
             <Container>
-                <Logo><UnstyledLink href="/">GMkonan</UnstyledLink></Logo>
+                <Logo href="/">GMkonan</Logo>
                 <Links>
                     <Link onClick={() => Scroll("Hero")}>About</Link> {/* Later change to "My Work" */}
                     {/*<Link>Projects</Link> */}
@@ -31,9 +31,12 @@ padding-top: 32px;
 display: flex;
 `
 
-const Logo = styled.h1`
+const Logo = styled.a`
 flex: auto;
 color: var(--primary);
+text-decoration: none;
+font-size: 2rem;
+font-weight: 700;
 `
 
 const Links = styled.div`
@@ -48,11 +51,6 @@ font-weight: 500;
 color: inherit;
 text-decoration: inherit;
 cursor: pointer;
-`
-
-const UnstyledLink = styled.a`
-    text-decoration: none;
-    color: var(--primary);
 `
 
 export default NavBar;
