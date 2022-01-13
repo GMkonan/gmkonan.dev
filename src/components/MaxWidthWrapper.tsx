@@ -14,7 +14,8 @@ const MaxWidthWrapper = ({ children }: ChildrenType) => {
 }
 
 const Wrapper = styled.div`
-width: 1100px;
+//width: 100%;
+max-width: 1100px;
 margin: 0 auto;
 `
 

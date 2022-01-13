@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import { getPostsData, getRecentPostsData } from "../api";
 import { format } from "date-fns";
+import { QUERIES } from "../constants";
 
 interface Metadata {
     title: string
@@ -42,6 +43,20 @@ grid-template-rows: repeat(2, 1fr);
 justify-items: center;
 gap: 32px;
 padding: 64px 0;
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
 `
 
 const Article = styled.a`
@@ -53,12 +68,33 @@ background: var(--white);
 border-radius: 3%;
 padding: 16px;
 border: 2px solid var(--primary);
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  width: 350px;
+  height: auto;
+}
 `
 
 const Title = styled.h1`
 font-size: 2rem;
 margin-bottom: 12px;
 color:var(--primary);
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  font-size: 1.3rem;
+}
 `
 
 const Description = styled.p`
@@ -66,6 +102,16 @@ color: var(--gray);
 font-size: 1.1rem;
 line-height: 28px;
 font-weight: 500;
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+    font-size: 1rem;
+}
 `
 
 const PostType = styled.div`
