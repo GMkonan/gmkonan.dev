@@ -6,9 +6,11 @@ import Github from '../../public/socials/github.svg'
 import Linkedin from '../../public/socials/linkedin.svg'
 import Twitter from '../../public/socials/twitter.svg'
 import { translateToLeft, translateToRight, scaleInExistence } from '../components/animations'
+import { QUERIES } from '../constants';
+
 
 const Main = () => {
-
+  
   return (
     <Container>
       <MaxWidthWrapper>
@@ -44,12 +46,12 @@ const Main = () => {
 }
 
 const Container = styled.div`
+width: 100%;
 background: var(--white);
 display: flex;
 flex-direction: column;
 justify-content: center;
 height: 100%;
-
 `
 
 const Wrapper = styled.div`
@@ -67,16 +69,14 @@ font-weight: 600;
 color: var(--primary);
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
 
-/* Default: Desktop monitors, 1501px and up */
-@media (max-width: 1500px) {
-  /* Laptop */
+@media ${QUERIES.laptop} {
   font-size: 4rem;
 }
-@media (max-width: 1100px) {
-  /* Tablets */
+@media ${QUERIES.tablet} {
+  font-size: 3rem;
 }
-@media (max-width: 550px) {
-  /* Phones */
+@media ${QUERIES.phone} {
+  font-size: 2.5rem;
 }
 `
 
@@ -85,6 +85,16 @@ font-size: 5rem;
 font-weight: 600;
 color: var(--primary);
 animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
+
+@media ${QUERIES.laptop} {
+  font-size: 4rem;
+}
+@media ${QUERIES.tablet} {
+  font-size: 3rem;
+}
+@media ${QUERIES.phone} {
+  font-size: 2.5rem;
+}
 `
 
 const P = styled.h4`
@@ -92,6 +102,17 @@ margin-top: 20px;
 font-size: 2rem;
 color: var(--gray);
 animation: ${translateToRight} 0.85s ease 0s 1 normal both running;
+
+@media ${QUERIES.laptop} {
+  font-size: 2rem;
+}
+@media ${QUERIES.tablet} {
+  font-size: 1.2rem;
+}
+@media ${QUERIES.phone} {
+  font-size: 1rem;
+}
+
 `
 
 const ImageContainer = styled(Container)`
@@ -101,6 +122,17 @@ border-radius: 100%;
 border: 3px var(--blue400) solid;
 animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
 background: var(--blue50);
+
+@media ${QUERIES.laptop} {
+
+}
+@media ${QUERIES.tablet} {
+
+}
+@media ${QUERIES.phone} {
+  display: none;
+}
+
 `
 
 const SocialsWrapper = styled.div`

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { QUERIES } from "../constants"
 
 const components = { 
     h2: (props:any) => <H2 variant="h2" {...props} />,
@@ -9,6 +10,7 @@ const components = {
     ul: (props:any) => <UL variant="ul" {...props} />,
     a: (props:any) => <A variant="a" {...props} />,
     strong: (props:any) => <Strong variant="strong" {...props} />,
+    pre: (props:any) => <PRE variant="pre" {...props} />
   }
 
 //elements from mdx
@@ -32,6 +34,17 @@ const P = styled.p`
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 20px;
+
+  @media ${QUERIES.laptop} {
+    //font-size: 1.2rem;
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  /* width: 350px;
+  height: auto; */
+}
 `
 
 const LI = styled.li`
@@ -62,6 +75,18 @@ const A = styled.a`
 
 const Strong = styled.strong`
   color: var(--blue400); //#3da9fc
+`
+
+const PRE = styled.pre`
+  @media ${QUERIES.laptop} {
+    //font-size: 1.2rem;
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  width: 350px;
+}
 `
 
 export default components

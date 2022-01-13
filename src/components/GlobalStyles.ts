@@ -23,6 +23,7 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd {
 
   html, body {
   height: 100%;
+  min-width: 100%;
   background: hsl(225deg 25% 95%); //#fffffe
 }
 
@@ -30,6 +31,7 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd {
 #__next {
   isolation: isolate;
   height: 100%;
+  width: 100%;
 }
 `
 
