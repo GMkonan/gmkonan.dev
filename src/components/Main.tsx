@@ -52,6 +52,16 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 height: 100%;
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  padding: 0 16px;
+}
 `
 
 const Wrapper = styled.div`
@@ -76,7 +86,7 @@ animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
   font-size: 3rem;
 }
 @media ${QUERIES.phone} {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 `
 
@@ -93,7 +103,7 @@ animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
   font-size: 3rem;
 }
 @media ${QUERIES.phone} {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 `
 
@@ -141,6 +151,15 @@ justify-content: center;
 align-items: center;
 margin-top: 150px;
 animation: ${scaleInExistence} 0.65s ease 0s 1 normal both running;
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  margin-top: 75px;
+}
 `
 
 const SocialsList = styled.ul`
@@ -164,6 +183,16 @@ margin-bottom: 75px;
   height: 2px;
   width: 100%;
   background: var(--primary);
+}
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  gap: 20px;
 }
 
 `

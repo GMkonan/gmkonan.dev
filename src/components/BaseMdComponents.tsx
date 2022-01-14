@@ -10,7 +10,8 @@ const components = {
     ul: (props:any) => <UL variant="ul" {...props} />,
     a: (props:any) => <A variant="a" {...props} />,
     strong: (props:any) => <Strong variant="strong" {...props} />,
-    pre: (props:any) => <PRE variant="pre" {...props} />
+    pre: (props:any) => <PRE variant="pre" {...props} />,
+    img: (props:any) => <IMG variant="img" {...props} />
   }
 
 //elements from mdx
@@ -44,6 +45,7 @@ const P = styled.p`
 @media ${QUERIES.phone} {
   /* width: 350px;
   height: auto; */
+  font-size: 1rem;
 }
 `
 
@@ -86,6 +88,18 @@ const PRE = styled.pre`
 }
 @media ${QUERIES.phone} {
   width: 350px;
+}
+`
+
+const IMG = styled.img`
+  @media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  max-width: 350px;
 }
 `
 
