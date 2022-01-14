@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { QUERIES } from '../constants';
 import Scroll from '../utils/Scroll';
+import Hamburguer from './Hamburguer';
 import MaxWidthWrapper from './MaxWidthWrapper';
 
 const NavBar = () => {
@@ -15,6 +17,7 @@ const NavBar = () => {
                     {/*<Link>Projects</Link> */}
                     <Link href="/articles">Articles</Link>
                 </Links>
+                <Hamburguer />
             </Container>
         </MaxWidthWrapper>
         </Wrapper>
@@ -43,6 +46,16 @@ const Links = styled.div`
 display: flex;
 color: var(--primary);
 gap: 20px;
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  display: none;
+}
 `
 
 const Link = styled.a`
