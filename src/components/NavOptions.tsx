@@ -8,8 +8,8 @@ const NavOptions = ({open, children}: any) => {
 
     return(
       <MobileList open={open}>
-        {children.map((child:any) => (
-            <li>{child}</li>
+        {children.map((child:any, i:any) => (
+            <li key={i}>{child}</li>
         ))}
       </MobileList>
     )
