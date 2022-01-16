@@ -17,13 +17,14 @@ const NavOptions = ({open, children}: any) => {
 
   const MobileList = styled.ul<BurguerProps>`
   list-style: none;
-  display: flex;
+  display: none;
   flex-flow: row nowrap;
   z-index: 1;
   li {
     padding: 18px 10px;
   }
   @media (max-width: 768px) {
+    display: flex;
     flex-flow: column nowrap;
     background-color: var(--blue50);
     position: fixed;
