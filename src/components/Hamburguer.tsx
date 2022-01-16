@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
-
+import Scroll from "../utils/Scroll";
+import NavOptions from "./NavOptions";
+import router from 'next/router'
 interface BurguerProps {
   open: boolean;
 }
@@ -9,6 +11,17 @@ interface BurguerProps {
 
 const Hamburguer = () => {
   const [open, setOpen] = useState(false);
+
+  const handleOptionClick = () => {
+    if(window.location.pathname == "/") {
+      Scroll("Hero")
+    } else {
+      router.push('/')
+    }
+    //window.location.pathname == "/" ? Scroll("Hero") : router.push('/')
+    setOpen(false)
+  }
+
   return (
     <>
       <Burguer open={open} onClick={() => setOpen(!open)}>
@@ -16,17 +29,23 @@ const Hamburguer = () => {
         <div />
         <div />
       </Burguer>
+      <NavOptions open={open}>
+      <Link onClick={handleOptionClick}>About</Link>
+                    
+      <Link href="/articles">Articles</Link>
+      </NavOptions>
     </>
   );
 };
 
 const Burguer = styled.div<BurguerProps>`
+  //backdrop-filter: blur(6px);
   width: 2rem;
   height: 2rem;
   position: relative;
   top: 0px;
   right: 20px;
-  z-index: 1;
+  z-index: 20;
   display: none;
   
   @media (max-width: 768px) {
@@ -54,5 +73,11 @@ const Burguer = styled.div<BurguerProps>`
     }
   }
 `;
+
+const Link = styled.a`
+color: var(--primary);
+font-size: 1.5rem;
+text-decoration: none;
+`
 
 export default Hamburguer;

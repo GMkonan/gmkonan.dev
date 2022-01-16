@@ -12,12 +12,12 @@ const NavBar = () => {
         <MaxWidthWrapper>
             <Container>
                 <Logo href="/">GMkonan</Logo>
+                <Hamburguer />
                 <Links>
                     <Link onClick={() => Scroll("Hero")}>About</Link> {/* Later change to "My Work" */}
                     {/*<Link>Projects</Link> */}
                     <Link href="/articles">Articles</Link>
                 </Links>
-                <Hamburguer />
             </Container>
         </MaxWidthWrapper>
         </Wrapper>

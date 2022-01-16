@@ -46,6 +46,7 @@ const Main = () => {
 }
 
 const Container = styled.div`
+z-index: 0;
 width: 100%;
 background: var(--white);
 display: flex;
