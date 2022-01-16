@@ -87,7 +87,7 @@ animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
   font-size: 3rem;
 }
 @media ${QUERIES.phone} {
-  font-size: 2.3rem;
+  font-size: 2.4rem;
 }
 `
 
@@ -104,7 +104,7 @@ animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
   font-size: 3rem;
 }
 @media ${QUERIES.phone} {
-  font-size: 2.3rem;
+  font-size: 2.4rem;
 }
 `
 
@@ -121,7 +121,7 @@ animation: ${translateToRight} 0.85s ease 0s 1 normal both running;
   font-size: 1.2rem;
 }
 @media ${QUERIES.phone} {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 `
@@ -193,7 +193,7 @@ margin-bottom: 75px;
   
 }
 @media ${QUERIES.phone} {
-  gap: 20px;
+  gap: 32px; //56px
 }
 
 `

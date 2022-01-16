@@ -40,6 +40,17 @@ color: var(--primary);
 text-decoration: none;
 font-size: 2rem;
 font-weight: 700;
+
+@media ${QUERIES.laptop} {
+  
+}
+@media ${QUERIES.tablet} {
+  
+}
+@media ${QUERIES.phone} {
+  font-size: 1.7rem;
+  padding: 0px 12px;
+}
 `
 
 const Links = styled.div`

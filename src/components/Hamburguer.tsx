@@ -19,7 +19,7 @@ const Hamburguer = () => {
       router.push('/')
     }
     //window.location.pathname == "/" ? Scroll("Hero") : router.push('/')
-    setOpen(false)
+    setOpen(!open)
   }
 
   return (
