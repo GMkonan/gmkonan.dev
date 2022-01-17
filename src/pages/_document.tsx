@@ -1,4 +1,7 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+// Versions 12.0.5 introduced this bug in import, that's why we are importing from dist here,
+// check more info here if needed:
+// https://gitanswer.com/next-js-eslint-config-next-12-0-5-gives-type-any-is-not-a-constructor-function-type-error-in-document-tsx-javascript-1071098025
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/dist/pages/_document'
 import { ServerStyleSheet } from 'styled-components'
 
 //added changes for preventing slow render of css
