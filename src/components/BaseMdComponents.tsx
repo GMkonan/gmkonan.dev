@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { QUERIES } from "../constants"
+import CodeSnippet from "./CodeSnippet"
 
 const components = { 
     h2: (props:any) => <H2 variant="h2" {...props} />,
@@ -11,7 +12,8 @@ const components = {
     a: (props:any) => <A variant="a" {...props} />,
     strong: (props:any) => <Strong variant="strong" {...props} />,
     pre: (props:any) => <PRE variant="pre" {...props} />,
-    img: (props:any) => <IMG variant="img" {...props} />
+    img: (props:any) => <IMG variant="img" {...props} />,
+    CodeSnippet: (props:any) => <CodeSnippet {...props} />
   }
 
 //elements from mdx

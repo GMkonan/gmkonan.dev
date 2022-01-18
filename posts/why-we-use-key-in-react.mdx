@@ -105,6 +105,8 @@ But if we have a similar but different implementation.
 </ul>
 ```
 
+
+
 Here we are inserting something new at the start of the list. React doesn't know how to handle this and will recreate every element, instead of reusing 2 and 3 that remained the same between trees, leading to bad performance.
 
 That's where `keys` are important. Using keys we can have every item in a list have a unique identifier (ID) so React can easily detect who needs to be changed or not, re-rendering only the ones with changes.

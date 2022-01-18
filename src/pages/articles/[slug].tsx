@@ -1,4 +1,4 @@
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import MaxWidthWrapper from "../../components/MaxWidthWrapper";
 import styled from "styled-components";
 import components from "../../components/BaseMdComponents";
@@ -6,7 +6,12 @@ import { getPostsBySlug, getPostsData } from "../../api";
 import { Breadcrumbs, Crumb } from "../../components/Breadcrumb";
 import { QUERIES } from "../../constants";
 
-export default function Slug({ source, title }: any) {
+interface SlugProps {
+  source: MDXRemoteSerializeResult<Record<string, unknown>>
+  title: string
+}
+
+export default function Slug({ source, title }: SlugProps) {
   //consider making an "aside" at the left of the article
   return (
     <>
