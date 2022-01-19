@@ -45,7 +45,7 @@ const getRecentPostsData = () => {
 const getPostsBySlug = async (params:any) => {
     const post = fs.readFileSync(`./posts/${params.slug}.mdx`)
     const article:any = matter(post)
-    const mdxSource = await serialize(article.content, {mdxOptions: {remarkPlugins: [prism]}})
+    const mdxSource = await serialize(article.content) //mdxOptions with prism was substituted by prism-react-renderer
     const metadata = {
         title: article.data.title,
         type: article.data.type,
