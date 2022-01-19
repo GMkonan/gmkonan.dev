@@ -2,6 +2,29 @@ import styled from "styled-components"
 import { QUERIES } from "../constants"
 import CodeSnippet from "./CodeSnippet"
 
+function preToCodeBlock(preProps: any) {
+  if (
+    // children is MDXTag
+    preProps.children &&
+    // MDXTag props
+    preProps.children.props &&
+    // if MDXTag is going to render a <code>
+    preProps.children.props.name === "code"
+  ) {
+    // we have a <pre><code> situation
+    const {
+      children: codeString,
+      props: { className, ...props }
+    } = preProps.children.props;
+
+    return {
+      codeString: codeString.trim(),
+      language: className && className.split("-")[1],
+      ...props
+    };
+  }
+}
+
 const components = { 
     h2: (props:any) => <H2 variant="h2" {...props} />,
     h3: (props:any) => <H3 variant="h3" {...props} />,
@@ -11,9 +34,9 @@ const components = {
     ul: (props:any) => <UL variant="ul" {...props} />,
     a: (props:any) => <A variant="a" {...props} />,
     strong: (props:any) => <Strong variant="strong" {...props} />,
-    pre: (props:any) => <PRE variant="pre" {...props} />,
+    pre: CodeSnippet,
     img: (props:any) => <IMG variant="img" {...props} />,
-    CodeSnippet: (props:any) => <CodeSnippet {...props} />
+    CodeSnippet: (props:any) => <CodeSnippet {...props} />,
   }
 
 //elements from mdx
