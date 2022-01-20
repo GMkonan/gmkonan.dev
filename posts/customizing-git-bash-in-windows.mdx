@@ -27,7 +27,7 @@ The first command is to change your current directory to the `/etc/profile.d/` t
 
 Here is our git-prompt.sh. Now we can open it and see what we have there.
 
-```sh
+```shell
 if test -f /etc/profile.d/git-sdk.sh
 then
 	TITLEPREFIX=SDK-${MSYSTEM#MINGW}
@@ -71,7 +71,7 @@ MSYS2_PS1="$PS1"               # for detection by MSYS2 SDK's bash.basrc
 
 Here we have a lot of different things, but let's focus on the important part, this one:
 
-```sh
+```shell
 	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]' # set window title
 	PS1="$PS1"'\n'                 # new line
 	PS1="$PS1"'\[\033[32m\]'       # change to green
@@ -98,14 +98,14 @@ So for example the line `PS1="$PS1"'\u@\h'` Would be `username@hostname`.
 
 The last thing is the color codes. Those are used before the line we want to color it, so:
 
-```sh
+```shell
 PS1="$PS1"'\[\033[32m\]'       # change to green
 PS1="$PS1"'\u@\h '             # user@host<space>
 ```
 
 Here we are changing the `username@hostname` to green. There are a few color codes we can use in bash such as:
 
-```sh
+```
 Black        30  
 Red          31     
 Green        32     
@@ -128,7 +128,7 @@ Underlined    4
 
 So we can make some pretty cool customization combining those together, here is an example:
 
-```sh
+```shell
 PS1="$PS1"'\[\033[1;36m\]'       # change to bold 1() and cyan (36)
 ```
 
@@ -136,14 +136,14 @@ There are some other lines that you can customize. Basically every line that is 
 
 This one changes the part that indicates in which branch you are
 
-```sh
+```shell
 PS1="$PS1"'\[\033[1;33m\]'  # change color to bold yellow
 PS1="$PS1"'`__git_ps1`'   # bash function
 ```
 
 And this ones defines the second line, where you write the commands (in case is only the "$")
 
-```sh
+```shell
 PS1="$PS1"'\[\033[1;31m\]'     # change color to bold red
 PS1="$PS1"'\n'                 # new line
 PS1="$PS1"'$ '                 # prompt: always $
@@ -151,7 +151,7 @@ PS1="$PS1"'$ '                 # prompt: always $
 
 And that's it, with this knowledge you can make some more customizations in your git bash :). If you liked how mine feel free to get the code for you here:
 
-```sh
+```shell
 if test -f /etc/profile.d/git-sdk.sh
 then
 	TITLEPREFIX=SDK-${MSYSTEM#MINGW}

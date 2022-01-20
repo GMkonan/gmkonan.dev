@@ -2,29 +2,6 @@ import styled from "styled-components"
 import { QUERIES } from "../constants"
 import CodeSnippet from "./CodeSnippet"
 
-function preToCodeBlock(preProps: any) {
-  if (
-    // children is MDXTag
-    preProps.children &&
-    // MDXTag props
-    preProps.children.props &&
-    // if MDXTag is going to render a <code>
-    preProps.children.props.name === "code"
-  ) {
-    // we have a <pre><code> situation
-    const {
-      children: codeString,
-      props: { className, ...props }
-    } = preProps.children.props;
-
-    return {
-      codeString: codeString.trim(),
-      language: className && className.split("-")[1],
-      ...props
-    };
-  }
-}
-
 const components = { 
     h2: (props:any) => <H2 variant="h2" {...props} />,
     h3: (props:any) => <H3 variant="h3" {...props} />,
