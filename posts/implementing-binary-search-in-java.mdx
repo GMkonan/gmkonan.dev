@@ -172,18 +172,18 @@ Our last check in **else** is where we use the same concept of our first **if** 
 And we are done with the **recursive search**, now we only need to add to main to run it.
 
 ```java
-		int first = 0;
-		int last = arr.length - 1;
-		
-		
-		int recursive = binary.recursiveSearch(arr, key, first, last);
-		
-		if(recursive == -1) {
-			System.out.println("Not found");
-		}
-		else {
-			System.out.println("Found at position " + recursive);
-		}
+int first = 0;
+int last = arr.length - 1;
+
+
+int recursive = binary.recursiveSearch(arr, key, first, last);
+
+if(recursive == -1) {
+	System.out.println("Not found");
+}
+else {
+	System.out.println("Found at position " + recursive);
+}
 ```
 
 if it returns -1 as we defined in our base case, we print "Not found". else, we found the position so we just print it!

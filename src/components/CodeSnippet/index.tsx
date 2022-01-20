@@ -1,6 +1,7 @@
 import Highlight, { defaultProps, Language, Prism } from "prism-react-renderer"
 import theme from './theme'
 import styled from "styled-components"
+import { QUERIES } from "../../constants";
 
 //Add support for custom, not out of the box supported, languages
 
@@ -48,11 +49,14 @@ const Pre = styled.pre`
   margin-left: -32px;
   margin-right: -32px;
   padding: 32px;
-  min-height: 50px;
+  //min-height: 50px;
   border: 1px solid rgba(230, 230, 230, 1);
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  max-width: calc(100% + 64px);
+  max-width: (100% + 64px);
+  @media ${QUERIES.phone} {
+  font-size: 14px !important;
+}
 `;
 
 const LanguageHeader = styled.div`
@@ -78,6 +82,10 @@ const Container = styled.div`
   margin-top: 48px;
   margin-bottom: 60px;
   transition: all 200ms ease-in 0s;
+
+@media ${QUERIES.phone} {
+  width: 350px;
+}
 `
 
 export default CodeSnippet
