@@ -4,8 +4,8 @@ const theme: PrismTheme = {
     plain: {
       color: "#000",
       backgroundColor: "var(--off-white)",
-      fontFamily: "Roboto",
-      fontSize: "18px",
+      fontFamily: "Ubuntu Mono",
+      //fontSize: "18px", //this will be controlled inside "pre" for easier query (responsivness) control
     },
     styles: [
       {
@@ -27,7 +27,12 @@ const theme: PrismTheme = {
         types: ["inserted", "attr-name"],
         style: {
           color: "var(--blue400)",
-          fontStyle: "italic",
+        },
+      },
+      {
+        types: ["inserted", "attr-value"],
+        style: {
+          color: "var(--primary-50)",
         },
       },
       {
@@ -40,7 +45,7 @@ const theme: PrismTheme = {
       {
         types: ["string", "url"],
         style: {
-          color: "rgb(173, 219, 103)",
+          color: "var(--gray)",
         },
       },
       {
@@ -66,7 +71,7 @@ const theme: PrismTheme = {
         // so that punctuations are not italicised
         types: ["punctuation"],
         style: {
-          color: "var(--red)",
+          color: "var(--red-500)",
         },
       },
       {
@@ -85,7 +90,7 @@ const theme: PrismTheme = {
       {
         types: ["tag", "operator", "keyword"],
         style: {
-          color: "var(--red)",
+          color: "var(--primary)",
         },
       },
       {

@@ -12,7 +12,7 @@ const components = {
     a: (props:any) => <A variant="a" {...props} />,
     strong: (props:any) => <Strong variant="strong" {...props} />,
     pre: CodeSnippet,
-    img: (props:any) => <IMG variant="img" {...props} />,
+    img: (props:any) => <PICTURE><IMG variant="img" {...props} /></PICTURE>,
     CodeSnippet: (props:any) => <CodeSnippet {...props} />,
   }
 
@@ -103,6 +103,12 @@ const IMG = styled.img`
 @media ${QUERIES.phone} {
   max-width: 350px;
 }
+`
+
+const PICTURE = styled.picture`
+  display: block;
+  min-width: 100%;
+  text-align: center;
 `
 
 export default components
