@@ -1,0 +1,83 @@
+import Highlight, { defaultProps, Language, Prism } from "prism-react-renderer"
+import theme from './theme'
+import styled from "styled-components"
+
+//Add support for custom, not out of the box supported, languages
+
+//@ts-ignore
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+
+require("prismjs/components/prism-java");
+
+const CodeSnippet: React.FC<any> = (props) => {
+  const language = props.children.props.className?.replace("language-", "").trim()
+  return (
+  <Highlight
+    {...defaultProps}
+    //Prism={Prism}
+    code={props.children.props.children.trim() || ''}
+    language={language}
+    theme={theme}
+  >
+    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <Container>
+        {language && (
+          <LanguageHeader>{language.toUpperCase()}</LanguageHeader>
+        )}
+      <Pre className={className} style={{ ...style }}>
+        {tokens.map((line, i) => (
+          <div key={i} {...getLineProps({ line, key: i })}>
+            {line.map((token, key) => (
+              <span key={key} {...getTokenProps({ token, key })} />
+            ))}
+          </div>
+        ))}
+      </Pre>
+      </Container>
+    )}
+  </Highlight>
+);
+            }
+// ways to style:
+// https://www.peterlunch.com/blog/prism-react-render-nextjs
+
+const Pre = styled.pre`
+  font-size: 18px;
+  outline-offset: 2px;
+  overflow-x: auto;
+  margin-left: -32px;
+  margin-right: -32px;
+  padding: 32px;
+  min-height: 50px;
+  border: 1px solid rgba(230, 230, 230, 1);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  max-width: calc(100% + 64px);
+`;
+
+const LanguageHeader = styled.div`
+  background: var(--off-white);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-width: 1px 1px 0px;
+  border-style: solid;
+  border-color: rgba(230, 230, 230, 1);
+  padding: 0.75rem 1.25rem;
+  margin-left: -32px;
+  margin-right: -32px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: hsl(220deg, 23%, 5%);
+  text-align: right;
+`
+
+const Container = styled.div`
+  background: var(--off-white);
+  position: relative;
+  margin-top: 48px;
+  margin-bottom: 60px;
+  transition: all 200ms ease-in 0s;
+`
+
+export default CodeSnippet
