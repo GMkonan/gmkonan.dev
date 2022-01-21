@@ -16,3 +16,16 @@ Some Useful links for ideas, interesting library's to use etc
 - https://www.npmjs.com/package/windups
 - https://www.joshwcomeau.com/
 - https://www.joshwcomeau.com/react/dark-mode/
+
+### Dependencies
+For now we are using a workaround to have it fix while waiting for mdx 2
+workaround is putting this in package.json:
+
+```
+"resolutions": {
+  "**/trim": "^1.0.0"
+}
+```
+
+check more info here if needed
+- https://github.com/storybookjs/storybook/issues/14603
