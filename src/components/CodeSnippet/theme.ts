@@ -4,7 +4,7 @@ const theme: PrismTheme = {
     plain: {
       color: "#000",
       backgroundColor: "var(--off-white)",
-      fontFamily: "Ubuntu Mono",
+      fontFamily: "Ubuntu Mono, sans-serif",
       //fontSize: "18px", //this will be controlled inside "pre" for easier query (responsivness) control
     },
     styles: [
