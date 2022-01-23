@@ -9,18 +9,17 @@ const NavOptions = ({open, children}: any) => {
     return(
       <MobileList open={open}>
         {children.map((child:any, i:any) => (
-            <li key={i}>{child}</li>
+            <div key={i}>{child}</div>
         ))}
       </MobileList>
     )
   }
 
-  const MobileList = styled.ul<BurguerProps>`
-  list-style: none;
+  const MobileList = styled.div<BurguerProps>`
   display: none;
   flex-flow: row nowrap;
   z-index: 1;
-  li {
+  div {
     padding: 18px 10px;
   }
   @media (max-width: 768px) {
@@ -35,11 +34,6 @@ const NavOptions = ({open, children}: any) => {
     width: 100%;
     padding-top: 3.5rem;
     transition: transform 0.3s linear;
-    li {
-      color: #fff;
-    }
-
-    
   }
 `
 
