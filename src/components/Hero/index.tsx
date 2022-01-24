@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import styled from 'styled-components';
-import { QUERIES } from '../constants';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import { QUERIES } from '@constants';
+import MaxWidthWrapper from '@components/MaxWidthWrapper';
 
 const Hero = () => {
     return(

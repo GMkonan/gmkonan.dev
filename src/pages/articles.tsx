@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import MaxWidthWrapper from "../components/MaxWidthWrapper";
-import { getPostsData, getRecentPostsData } from "../api";
+import MaxWidthWrapper from "@components/MaxWidthWrapper";
+import { getRecentPostsData } from "@api";
 import { format } from "date-fns";
-import { QUERIES } from "../constants";
+import { QUERIES } from "@constants";
 
 interface Metadata {
     title: string

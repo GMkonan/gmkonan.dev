@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { QUERIES } from '../constants';
-import Scroll from '../utils/Scroll';
-import Hamburguer from './Hamburguer';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import { QUERIES } from '@constants';
+import Scroll from '@utils/Scroll';
+import Hamburguer from '@components/Hamburguer';
+import MaxWidthWrapper from '@components/MaxWidthWrapper';
 
 const NavBar = () => {
     

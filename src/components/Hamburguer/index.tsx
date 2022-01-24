@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Scroll from "../utils/Scroll";
+import Scroll from "@utils/Scroll";
 import NavOptions from "./NavOptions";
 import router from 'next/router'
 interface BurguerProps {

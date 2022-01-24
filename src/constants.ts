@@ -1,4 +1,4 @@
-import screenSizeCompare from "./utils/screenSizeCompare"
+import screenSizeCompare from "@utils/screenSizeCompare"
 
 const BREAKPOINTS = {
     tablet: 550,
