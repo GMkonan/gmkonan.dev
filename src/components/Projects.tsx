@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "@components/MaxWidthWrapper";
 
 const Projects = () => {
   return (

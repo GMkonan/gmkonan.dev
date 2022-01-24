@@ -1,10 +1,10 @@
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import MaxWidthWrapper from "../../components/MaxWidthWrapper";
+import MaxWidthWrapper from "@components/MaxWidthWrapper";
 import styled from "styled-components";
-import components from "../../components/BaseMdComponents";
-import { getPostsBySlug, getPostsData } from "../../api";
-import { Breadcrumbs, Crumb } from "../../components/Breadcrumb";
-import { QUERIES } from "../../constants";
+import components from "@components/BaseMdComponents";
+import { getPostsBySlug, getPostsData } from "@api";
+import { Breadcrumbs, Crumb } from "@components/BreadCrumb";
+import { QUERIES } from "@constants";
 
 interface SlugProps {
   source: MDXRemoteSerializeResult<Record<string, unknown>>

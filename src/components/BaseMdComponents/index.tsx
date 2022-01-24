@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { QUERIES } from "../constants"
-import CodeSnippet from "./CodeSnippet"
+import { QUERIES } from "@constants"
+import CodeSnippet from "@components/CodeSnippet"
 
 const components = { 
     h2: (props:any) => <H2 variant="h2" {...props} />,

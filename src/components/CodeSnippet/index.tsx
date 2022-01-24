@@ -1,7 +1,7 @@
 import Highlight, { defaultProps, Language, Prism } from "prism-react-renderer"
 import theme from './theme'
 import styled from "styled-components"
-import { QUERIES } from "../../constants";
+import { QUERIES } from "@constants";
 
 //Add support for custom, not out of the box supported, languages
 

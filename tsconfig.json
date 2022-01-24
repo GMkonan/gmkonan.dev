@@ -2,28 +2,61 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@images/*": ["public/images/*"],
-      "@pages/*": ["src/pages/*"],
-      "@utils": ["src/common/utils"],
-      "@utils/*": ["src/common/utils/*"],
-      "@components": ["src/common/components"],
-      "@components/*": ["src/common/components/*"],
+      "@images/*": [
+        "public/images/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@constants": [
+        "src/constants.ts"
+      ],
+      "@api": [
+        "src/api"
+      ],
     },
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "noImplicitAny": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

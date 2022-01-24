@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
-import Me from '../../public/icon.svg';
-import MaxWidthWrapper from './MaxWidthWrapper';
-import Github from '../../public/socials/github.svg'
-import Linkedin from '../../public/socials/linkedin.svg'
-import Twitter from '../../public/socials/twitter.svg'
-import { translateToLeft, translateToRight, scaleInExistence } from '../components/animations'
-import { QUERIES } from '../constants';
+import Me from '@public/icon.svg';
+import MaxWidthWrapper from '@components/MaxWidthWrapper';
+import Github from '@public/socials/github.svg'
+import Linkedin from '@public/socials/linkedin.svg'
+import Twitter from '@public/socials/twitter.svg'
+import { translateToLeft, translateToRight, scaleInExistence } from '@components/animations'
+import { QUERIES } from '@constants';
 
 
 const Main = () => {

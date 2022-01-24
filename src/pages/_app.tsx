@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import Footer from '../components/Footer';
-import GlobalStyles from '../components/GlobalStyles';
-import NavBar from '../components/NavBar';
+import Footer from '@components/Footer';
+import GlobalStyles from '@components/GlobalStyles';
+import NavBar from '@components/NavBar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
