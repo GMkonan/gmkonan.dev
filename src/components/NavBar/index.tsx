@@ -3,9 +3,12 @@ import { QUERIES } from '@constants';
 import Scroll from '@utils/Scroll';
 import Hamburguer from '@components/Hamburguer';
 import MaxWidthWrapper from '@components/MaxWidthWrapper';
+import router from 'next/router'
 
 const NavBar = () => {
     
+    const handleOptionClick = () => window.location.pathname == "/" ? Scroll("Hero") : router.push('/')   
+
     return(
         <Wrapper>
 
@@ -14,7 +17,7 @@ const NavBar = () => {
                 <Logo href="/">GMkonan</Logo>
                 <Hamburguer />
                 <Links>
-                    <Link onClick={() => Scroll("Hero")}>About</Link> {/* Later change to "My Work" */}
+                    <Link onClick={handleOptionClick}>About</Link> {/* Later change to "My Work" */}
                     {/*<Link>Projects</Link> */}
                     <Link href="/articles">Articles</Link>
                 </Links>
