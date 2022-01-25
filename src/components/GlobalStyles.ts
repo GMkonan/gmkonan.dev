@@ -5,6 +5,21 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  ::-webkit-scrollbar {
+    width: 9px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    //you can manipulate border here if you want as well.
+    background-color: #5f6c7b;
+  }
+
+  //doesnt work on firefox
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gray);
+  }
+
   :root {
     --primary: #094067;
     --white: #fffffe;
