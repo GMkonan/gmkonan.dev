@@ -21,17 +21,17 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --primary: #094067;
-    --white: #fffffe;
-    --off-white: hsl(225deg 25% 95%);
-    --gray: #5f6c7b;
-    --blue400: #3da9fc;
-    --blue50: #d8eefe;
-    --red: #ef4565;
+    --primary: ${props => props.theme.primary}; //#094067
+    --white: ${props => props.theme.white}; //#fffffe
+    --off-white: ${props => props.theme.offWhite}; //hsl(225deg 25% 95%)
+    --gray: ${props => props.theme.gray}; //#5f6c7b
+    --blue400: ${props => props.theme.blue400}; //#3da9fc
+    --blue50: ${props => props.theme.blue50}; //#d8eefe
+    --red: ${props => props.theme.red}; //#ef4565
 
     //syntax colors to be used in code blocks
-    --red-500: hsl(353deg 100% 55%);
-    --primary-50: hsl(205, 84%, 30%);
+    --red-500: ${props => props.theme.red500} //hsl(353deg 100% 55%)
+    --primary-50: ${props => props.theme.primary50} //hsl(205, 84%, 30%)
   }
 
 body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd, pre {
@@ -43,7 +43,8 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd, pre {
   html, body {
   height: 100%;
   min-width: 100%;
-  background: hsl(225deg 25% 95%); //#fffffe
+  background: var(--off-white); //#fffffe
+  transition: color 350ms ease 0s, background 350ms ease 0s
 }
 
 // create root stacking context
