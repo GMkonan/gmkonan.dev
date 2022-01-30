@@ -2,7 +2,8 @@ import styled from "styled-components"
 import { QUERIES } from "@constants"
 import CodeSnippet from "@components/CodeSnippet"
 
-const components = { 
+const components = {
+    h1: (props:any) => <H1 variant="h1" {...props} />,
     h2: (props:any) => <H2 variant="h2" {...props} />,
     h3: (props:any) => <H3 variant="h3" {...props} />,
     h4: (props:any) => <H4 variant="h4" {...props} />,
@@ -17,6 +18,12 @@ const components = {
   }
 
 //elements from mdx
+
+const H1 = styled.h1`
+  margin: 20px 0;
+  color: var(--primary);
+`
+
 const H2 = styled.h2`
   margin: 20px 0;
   color: var(--primary);

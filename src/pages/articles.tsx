@@ -97,7 +97,7 @@ color:var(--primary);
 }
 `
 
-const Description = styled.p`
+const Description = styled.div`
 color: var(--gray);
 font-size: 1.1rem;
 line-height: 28px;

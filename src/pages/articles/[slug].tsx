@@ -57,6 +57,7 @@ const ArticleInfoWrapper = styled.div`
 const TitleWrapper = styled.div`
   display: flex;
   background: var(--blue50);
+  transition: color 350ms ease 0s, background-color 350ms ease 0s;
   height: 170px;
 `;
 
@@ -68,6 +69,7 @@ const Title = styled.h1`
 
 const Container = styled.div`
   background: var(--white);
+  transition: color 350ms ease 0s, background-color 350ms ease 0s;
   width: 100%;
 `;
 
