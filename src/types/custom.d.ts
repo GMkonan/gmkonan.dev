@@ -11,5 +11,8 @@ declare module 'styled-components' {
     red: string
     red500: string
     primary50: string
+    green: string
+    black: string
+    blue50Blurred: string
   }
 }

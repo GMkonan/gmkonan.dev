@@ -60,7 +60,7 @@ const CrumbWrapper = styled.li`
 `;
 
 const CrumbLink = styled.a`
-  color: #094067;
+  color: var(--primary);
   text-decoration: none;
   &:hover {
     text-decoration: revert;

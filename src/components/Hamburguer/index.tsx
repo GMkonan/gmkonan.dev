@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Scroll from "@utils/Scroll";
 import NavOptions from "./NavOptions";
 import router from 'next/router'
+import { QUERIES } from "@constants";
 interface BurguerProps {
   open: boolean;
 }
@@ -47,8 +48,8 @@ const Burguer = styled.div<BurguerProps>`
   right: 20px;
   z-index: 20;
   display: none;
-  
-  @media (max-width: 768px) {
+
+  @media ${QUERIES.phone} {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -76,7 +77,7 @@ const Burguer = styled.div<BurguerProps>`
 
 const Link = styled.a`
 color: var(--primary);
-font-size: 1.5rem;
+font-size: 1.9rem;
 text-decoration: none;
 `
 

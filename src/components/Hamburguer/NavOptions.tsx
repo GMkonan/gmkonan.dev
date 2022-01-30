@@ -1,4 +1,6 @@
 import ThemeToggle from "@components/ThemeToggle";
+import { QUERIES } from "@constants";
+import { useEffect } from "react";
 import styled from "styled-components"
 
 interface BurguerProps {
@@ -6,6 +8,15 @@ interface BurguerProps {
   }
 
 const NavOptions = ({open, children}: any) => {
+
+    useEffect(() => {
+      if(open == true) {
+        document.body.style.position = "fixed";
+      }else {
+        document.body.style.position = ''
+      }
+      console.log("dasd")
+    }, [open])
 
     return(
       
@@ -38,10 +49,12 @@ const NavOptions = ({open, children}: any) => {
   div {
     padding: 18px 10px;
   }
-  @media (max-width: 768px) {
+
+  
+  @media ${QUERIES.phone} {
     display: flex;
     flex-flow: column nowrap;
-    background-color: var(--blue50);
+    background-color: var(--blue50-blurred);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
@@ -50,11 +63,14 @@ const NavOptions = ({open, children}: any) => {
     width: 100%;
     padding-top: 3.5rem;
     transition: transform 0.3s linear;
+    backdrop-filter: blur(8px);
   }
 `
 
 const BottomOptions = styled.div`
-  
+  position: absolute;
+  bottom: 0;
+  margin: 48px 12px;
 `
 
 export default NavOptions;

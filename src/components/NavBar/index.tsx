@@ -51,7 +51,7 @@ font-weight: 700;
   
 }
 @media ${QUERIES.tablet} {
-  
+    padding: 0px 12px;
 }
 @media ${QUERIES.phone} {
   font-size: 1.7rem;
@@ -68,7 +68,7 @@ gap: 20px;
   
 }
 @media ${QUERIES.tablet} {
-  
+    padding: 0px 12px;
 }
 @media ${QUERIES.phone} {
   display: none;
