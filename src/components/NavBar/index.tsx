@@ -31,6 +31,7 @@ const NavBar = () => {
 
 const Wrapper = styled.div`
     background: var(--blue50);
+    transition: color 350ms ease 0s, background-color 350ms ease 0s;
     height: 100px;
 `
 

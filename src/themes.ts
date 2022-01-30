@@ -2,7 +2,7 @@ export const darkTheme = {
     primary: 'hsl(205, 95%, 40%)',
     white: 'hsl(210deg, 30%, 8%)',
     offWhite: 'hsl(210deg, 30%, 2%)',
-    gray: 'hsl(212, 13%, 53%)',
+    gray: '#fff',
     blue400: '#3da9fc',
     blue50: 'hsl(205, 5%, 15%)',
     red: '#ef4565',

@@ -24,7 +24,7 @@ display: flex;
 flex-direction: column;
 height: 100%;
 background: var(--blue50); //#1a1e33
-
+transition: color 350ms ease 0s, background-color 350ms ease 0s;
 @media ${QUERIES.laptop} {
   
 }

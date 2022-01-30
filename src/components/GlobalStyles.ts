@@ -44,7 +44,7 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd, pre {
   height: 100%;
   min-width: 100%;
   background: var(--off-white); //#fffffe
-  transition: color 350ms ease 0s, background 350ms ease 0s
+  transition: color 350ms ease 0s, background-color 350ms ease 0s;
 }
 
 // create root stacking context
