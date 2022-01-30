@@ -32,7 +32,7 @@ const Main = () => {
                 <svg
                   stroke=""
                   fill="var(--primary)"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="img"
                   viewBox="0 0 24 24"
                   height="32px"
@@ -49,7 +49,7 @@ const Main = () => {
                 <svg
                   stroke="currentColor"
                   fill="var(--primary)"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="img"
                   viewBox="0 0 24 24"
                   height="32px"
@@ -66,7 +66,7 @@ const Main = () => {
                 <svg
                   stroke="currentColor"
                   fill="var(--primary)"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="img"
                   viewBox="0 0 24 24"
                   height="32px"
