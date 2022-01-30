@@ -48,9 +48,6 @@ padding: 64px 0;
   
 }
 @media ${QUERIES.tablet} {
-  
-}
-@media ${QUERIES.phone} {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -73,10 +70,7 @@ border: 2px solid var(--primary);
   
 }
 @media ${QUERIES.tablet} {
-  
-}
-@media ${QUERIES.phone} {
-  width: 350px;
+  width: 90%;
   height: auto;
 }
 `

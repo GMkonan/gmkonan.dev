@@ -2,7 +2,7 @@ import { PrismTheme } from "prism-react-renderer";
 
 const theme: PrismTheme = {
     plain: {
-      color: "#000",
+      color: "var(--green)",
       backgroundColor: "var(--off-white)",
       fontFamily: "Ubuntu Mono, sans-serif",
       //fontSize: "18px", //this will be controlled inside "pre" for easier query (responsivness) control

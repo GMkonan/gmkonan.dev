@@ -29,10 +29,7 @@ transition: color 350ms ease 0s, background-color 350ms ease 0s;
   
 }
 @media ${QUERIES.tablet} {
-  
-}
-@media ${QUERIES.phone} {
-  padding: 0 16px;
+  padding: 0px 16px;
 }
 `
 
@@ -46,9 +43,11 @@ color: var(--primary);
 }
 @media ${QUERIES.tablet} {
   font-size: 3rem;
+  
 }
 @media ${QUERIES.phone} {
   font-size: 2.3rem;
+  margin-top: 155px;
 }
 `
 

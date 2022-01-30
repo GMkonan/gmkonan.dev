@@ -61,6 +61,7 @@ const Pre = styled.pre`
 
 const LanguageHeader = styled.div`
   background: var(--off-white);
+  color: var(--gray);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   border-width: 1px 1px 0px;
@@ -72,7 +73,6 @@ const LanguageHeader = styled.div`
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
-  color: hsl(220deg, 23%, 5%);
   text-align: right;
 `
 
