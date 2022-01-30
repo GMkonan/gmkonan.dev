@@ -92,6 +92,7 @@ const Container = styled.div`
   z-index: 0;
   width: 100%;
   background: var(--white);
+  transition: color 350ms ease 0s, background-color 350ms ease 0s;
   display: flex;
   flex-direction: column;
   justify-content: center;
