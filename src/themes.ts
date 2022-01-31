@@ -10,7 +10,7 @@ export const darkTheme = {
     primary50: 'hsl(205, 84%, 30%)',
     green: '#84cc16',
     black: "#ffffff",
-    blue50Blurred: 'hsl(205, 25%, 55%, 0.65)',
+    blue50Blurred: 'hsl(205, 25%, 25%, 0.65)',
 }
 
 export const lightTheme = {
