@@ -43,6 +43,11 @@ body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd, pre {
   font-family: Raleway, 'sans-serif';
 }
 
+// prevent svg from getting in front of button, making it not trigger
+svg {
+  pointer-events: none;
+}
+
   html, body {
   height: 100%;
   min-width: 100%;
