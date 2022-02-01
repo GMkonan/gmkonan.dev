@@ -15,11 +15,11 @@ const ThemeToggle = () => {
             <Button 
             onClick={(e) => changeTheme()}
             >
-            {theme == 'light' ? (
+            {hasMounted ? theme == 'light' ? (
                 <Moon stroke="var(--primary)" width="22px" height="22px" />
             ) : (
                 <Sun stroke="var(--primary)" width="22px" height="22px" />
-            )}
+            ) : null}
             </Button>
         </Label>
     )
