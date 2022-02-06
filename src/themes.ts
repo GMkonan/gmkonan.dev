@@ -4,7 +4,7 @@ export const darkTheme = {
     offWhite: 'hsl(210deg, 30%, 2%)',
     gray: '#fff',
     blue400: '#3da9fc',
-    blue50: 'hsl(205, 5%, 15%)',
+    blue50: 'hsl(205, 15%, 25%)',
     red: '#ef4565',
     red500: 'hsl(353deg 100% 55%)',
     primary50: 'hsl(205, 84%, 30%)',
