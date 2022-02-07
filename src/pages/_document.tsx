@@ -3,7 +3,6 @@
 // https://gitanswer.com/next-js-eslint-config-next-12-0-5-gives-type-any-is-not-a-constructor-function-type-error-in-document-tsx-javascript-1071098025
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/dist/pages/_document'
 import { ServerStyleSheet } from 'styled-components'
-
 //added changes for preventing slow render of css
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -36,6 +35,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
         {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+            <link rel="icon" href="mev2.png" />
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />   
             <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap" rel="stylesheet" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />

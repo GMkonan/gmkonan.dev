@@ -15,20 +15,44 @@ const Hero = () => {
                 <SubTitle>Who Am I?</SubTitle>
                 <AboutMe>
                   {/* Write this section better */}
-                    My name is Guilherme Monteiro Pereira AKA Konan and I&apos;m a Self-Learning Software Developer.
+                    My name is <Strong>Guilherme Monteiro Pereira</Strong> AKA Konan and I&apos;m a <Strong>Self-Learning Software Developer</Strong>.
                     I have always had been really curious guy, researching ideas that interest me and that got me into programming.
                     I like making ideas come to reality with code :).
                     <br />
                     <br />
-                    After nights and nights of study, today I work as a fullstack developer. 
+                    After nights and nights of study, today I work as a <Strong> fullstack developer </Strong>. 
                     <br />
                     You can check a few of the technologies I work with below:
-                    <ul>
-                      <li>Typescript</li>
-                      <li>React</li>
-                      <li>NextJS</li>
-                      <li>GraphQL</li>
-                    </ul>
+                      <TitleSkills>Skills</TitleSkills>
+                    <Skills>
+                    <Card>
+                      Javascript ES6
+                    </Card>
+                    <Card>
+                      Typescript
+                    </Card>
+                    <Card>
+                      React
+                    </Card>
+                    <Card>
+                      NextJS
+                    </Card>
+                    <Card>
+                      TailwindCSS
+                    </Card>
+                    <Card>
+                      GraphQL
+                    </Card>
+                    <Card>
+                      Hasura
+                    </Card>
+                    <Card>
+                      PostgresSQL
+                    </Card>
+                    <Card>
+                      NodeJS
+                    </Card>
+                    </Skills>
                 </AboutMe>
                 </Presentation>
 
@@ -63,6 +87,11 @@ const Wrapper = styled.div`
   grid-template-rows: 1fr;
   gap: 32px;
   //flex-direction: column;
+  @media ${QUERIES.phone} {
+    grid-template-columns:1fr;
+  grid-template-rows: 1fr;
+  margin-top: 25px;
+}
 `
 
 const Presentation = styled.div`
@@ -82,8 +111,7 @@ color: var(--primary);
   
 }
 @media ${QUERIES.phone} {
-  font-size: 2.3rem;
-  margin-top: 155px;
+  font-size: 2.6rem;
 }
 `
 
@@ -103,7 +131,7 @@ color: var(--primary);
 }
 `
 
-const AboutMe = styled.h2`
+const AboutMe = styled.div`
 padding: 0 0px;
 margin-top: 75px;
 font-size: 1.3rem;
@@ -114,17 +142,20 @@ color: var(--gray);
 @media ${QUERIES.tablet} {
 }
 @media ${QUERIES.phone} {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  line-height: 20px;
 }
 `
 
+const Strong = styled.strong`
+  color: var(--blue400);
+`
+
 const ImageContainer = styled(Container)`
+  margin-top: 52px;
   width: 350px;
   height: 350px;
   margin-left: 56px;
-  //border-radius: 100%;
-  //border: 3px var(--blue400) solid;
-  //animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
   background: var(--blue50);
 
   @media ${QUERIES.laptop} {
@@ -135,5 +166,56 @@ const ImageContainer = styled(Container)`
     display: none;
   }
 `;
+
+const Skills = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 16px;
+
+  @media ${QUERIES.phone} {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+`
+
+const TitleSkills = styled.h1`
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  color: var(--blue400);
+  font-size: 2rem;
+  gap: 32px;
+  //border-bottom: 2px solid var(--blue400);
+  &:after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--blue400);
+  }
+  &:before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--blue400);
+  }
+`
+
+const Card = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  color: var(--blue400);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  font-weight: 500;
+  @media ${QUERIES.phone} {
+    width: 170px;
+}
+`
 
 export default Hero;
