@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Scroll from "@utils/Scroll";
 import NavOptions from "./NavOptions";
@@ -13,8 +13,19 @@ interface BurguerProps {
 const Hamburguer = () => {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if(open == true) {
+      document.body.style.position = "fixed";
+    }else {
+      document.body.style.position = ''
+    }
+    console.log("dasd")
+  }, [open])
+
   const handleOptionClick = () => {
     if(window.location.pathname == "/") {
+      //prevent "not scrolling bug" removing "fixed position property" before scrolling
+      document.body.style.position = ''
       Scroll("Hero")
     } else {
       router.push('/')

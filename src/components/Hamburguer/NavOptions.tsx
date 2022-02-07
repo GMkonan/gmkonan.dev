@@ -9,15 +9,6 @@ interface BurguerProps {
 
 const NavOptions = ({open, children}: any) => {
 
-    useEffect(() => {
-      if(open == true) {
-        document.body.style.position = "fixed";
-      }else {
-        document.body.style.position = ''
-      }
-      console.log("dasd")
-    }, [open])
-
     return(
       
       <MobileList open={open}>

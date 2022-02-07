@@ -15,7 +15,7 @@ const NavBar = () => {
 
         <MaxWidthWrapper>
             <Container>
-                <Logo href="/">GMkonan</Logo>
+                <Logo><Title href="/">GMkonan</Title></Logo>
                 <Hamburguer />
                 <Links>
                 <ThemeToggle />
@@ -40,10 +40,8 @@ padding-top: 32px;
 display: flex;
 `
 
-const Logo = styled.a`
+const Logo = styled.div`
 flex: auto;
-color: var(--primary);
-text-decoration: none;
 font-size: 2rem;
 font-weight: 700;
 
@@ -57,6 +55,11 @@ font-weight: 700;
   font-size: 1.7rem;
   padding: 0px 12px;
 }
+`
+
+const Title = styled.a`
+    color: var(--primary);
+text-decoration: none;
 `
 
 const Links = styled.div`
