@@ -33,7 +33,8 @@ const Blog = (props:any) => {
     );
 }
 const Container = styled.div`
-margin-top: 32px;
+background: var(--off-white);
+
 `
 
 const Wrapper = styled.div`

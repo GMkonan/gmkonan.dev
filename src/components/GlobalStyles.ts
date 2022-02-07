@@ -51,7 +51,7 @@ svg {
   html, body {
   height: 100%;
   min-width: 100%;
-  background: var(--off-white); //#fffffe
+  background: var(--white); //#fffffe
   transition: color 350ms ease 0s, background-color 350ms ease 0s;
 }
 
