@@ -32,24 +32,26 @@ const Hero = () => {
                             <br />
                             You can check a few of the technologies I work with
                             below:
-                            <TitleSkills>Skills</TitleSkills>
-                            <Skills>
-                                <Card>Javascript ES6</Card>
-                                <Card>Typescript</Card>
-                                <Card>React</Card>
-                                <Card>NextJS</Card>
-                                <Card>TailwindCSS</Card>
-                                <Card>GraphQL</Card>
-                                <Card>Hasura</Card>
-                                <Card>PostgresSQL</Card>
-                                <Card>NodeJS</Card>
-                            </Skills>
                         </AboutMe>
                     </Presentation>
 
                     <ImageContainer>
                         <Image src={Me} />
                     </ImageContainer>
+                    <SkillsContainer>
+                        <TitleSkills>Skills</TitleSkills>
+                        <Skills>
+                            <Card>Javascript ES6</Card>
+                            <Card>Typescript</Card>
+                            <Card>React</Card>
+                            <Card>NextJS</Card>
+                            <Card>TailwindCSS</Card>
+                            <Card>GraphQL</Card>
+                            <Card>Hasura</Card>
+                            <Card>PostgresSQL</Card>
+                            <Card>NodeJS</Card>
+                        </Skills>
+                    </SkillsContainer>
                 </Wrapper>
             </MaxWidthWrapper>
         </Container>
@@ -75,7 +77,7 @@ const Wrapper = styled.div`
     margin-top: 100px;
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 1fr;
+    grid-template-rows: 60% 40%;
     gap: 32px;
     //flex-direction: column;
     @media ${QUERIES.tablet} {
@@ -138,7 +140,8 @@ const AboutMe = styled.div`
     }
 `
 
-const Description = styled.div``
+const SkillsContainer = styled.div`
+`
 
 const Strong = styled.strong`
     color: var(--blue400);
@@ -154,7 +157,16 @@ const ImageContainer = styled(Container)`
     @media ${QUERIES.laptop} {
     }
     @media ${QUERIES.tablet} {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        margin: 0;
+    }
+    @media ${QUERIES.phone} {
+        width: 200px;
+        height: 200px;
     }
 `
 
