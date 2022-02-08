@@ -210,6 +210,7 @@ const TitleSkills = styled.h1`
 
 const Card = styled.div`
     display: flex;
+    background: var(--off-white);
     align-items: center;
     justify-content: center;
     width: 200px;
@@ -217,10 +218,16 @@ const Card = styled.div`
     border-radius: 10px;
     color: var(--blue400);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    font-weight: 500;
+    font-weight: 600;
     @media ${QUERIES.phone} {
         width: 170px;
     }
+
+    /* &:hover {
+        cursor: pointer;
+        width:  105%;
+        height: 105%;
+    } */
 `
 
 export default Hero

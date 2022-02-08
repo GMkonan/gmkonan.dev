@@ -19,7 +19,6 @@ const Hamburguer = () => {
     }else {
       document.body.style.position = ''
     }
-    console.log("dasd")
   }, [open])
 
   const handleOptionClick = () => {
