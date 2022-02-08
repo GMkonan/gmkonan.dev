@@ -76,8 +76,7 @@ const Burguer = styled.div<BurguerProps>`
     &:nth-child(1) {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
-    &:nth-child(2) {
-      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
+    &:nth-child(2) {  
       opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {
