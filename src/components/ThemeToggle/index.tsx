@@ -1,19 +1,18 @@
 import { Moon, Sun } from "@components/svgs"
 import useHasMounted from "src/hooks/useHasMounted"
-import { useTheme } from "src/store/Theme"
+import { useTheme } from 'next-themes'
 import styled from "styled-components"
 
 
 const ThemeToggle = () => {
 
     const hasMounted = useHasMounted()
-    const theme = useTheme(state => state.theme)
-    const changeTheme = useTheme(state => state.ChangeTheme)
+    const { theme, setTheme } = useTheme()
 
     return (
         <Label>
             <Button 
-            onClick={(e) => changeTheme()}
+            onClick={(e) => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
             {hasMounted ? theme == 'light' ? (
                 <Moon stroke="var(--primary)" width="22px" height="22px" />

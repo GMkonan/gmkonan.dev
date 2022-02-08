@@ -21,21 +21,38 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --primary: ${props => props.theme.primary}; //#094067
-    --white: ${props => props.theme.white}; //#fffffe
-    --off-white: ${props => props.theme.offWhite}; //hsl(225deg 25% 95%)
-    --gray: ${props => props.theme.gray}; //#5f6c7b
-    --blue400: ${props => props.theme.blue400}; //#3da9fc
-    --blue50: ${props => props.theme.blue50}; //#d8eefe
-    --red: ${props => props.theme.red}; //#ef4565
+    --primary: #094067; //#094067
+    --white: #fffffe; //#fffffe
+    --off-white: hsl(225deg 25% 95%); //hsl(225deg 25% 95%)
+    --gray: hsl(212, 13%, 43%); //#5f6c7b
+    --blue400: #3da9fc; //#3da9fc
+    --blue50: hsl(205, 95%, 92%); //#d8eefe
+    --red: #ef4565; //#ef4565
 
     //syntax colors to be used in code blocks
-    --red-500: ${props => props.theme.red500}; //hsl(353deg 100% 55%)
-    --primary-50: ${props => props.theme.primary50}; //hsl(205, 84%, 30%)
-    --green: ${props => props.theme.green};
-    --black: ${props => props.theme.black};
-    --blue50-blurred: ${props => props.theme.blue50Blurred};
+    --red-500: hsl(353deg 100% 55%); //hsl(353deg 100% 55%)
+    --primary-50: hsl(205, 84%, 30%); //hsl(205, 84%, 30%)
+    --green: #84cc16;
+    --black: #00000;
+    --blue50-blurred: hsl(205, 25%, 55%, 0.65);
   }
+
+  [data-theme='dark'] {
+    --primary: hsl(205, 95%, 40%); //#094067
+    --white: hsl(210deg, 30%, 8%); //#fffffe
+    --off-white: hsl(210deg, 30%, 2%); //hsl(225deg 25% 95%)
+    --gray: #fff; //#5f6c7b
+    --blue400: #3da9fc; //#3da9fc
+    --blue50: hsl(205, 15%, 25%); //#d8eefe
+    --red: #ef4565; //#ef4565
+
+    //syntax colors to be used in code blocks
+    --red-500: hsl(353deg 100% 55%); //hsl(353deg 100% 55%)
+    --primary-50: hsl(205, 84%, 30%); //hsl(205, 84%, 30%)
+    --green: #84cc16;
+    --black: #ffffff;
+    --blue50-blurred: hsl(205, 25%, 25%, 0.65);
+}
 
 body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol, dl, dt, dd, pre {
   margin: 0;

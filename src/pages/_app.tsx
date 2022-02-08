@@ -4,24 +4,26 @@ import Footer from '@components/Footer';
 import GlobalStyles from '@components/GlobalStyles';
 import NavBar from '@components/NavBar';
 import { useTheme } from 'src/store/Theme';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'next-themes'
 import { darkTheme, lightTheme } from 'src/themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-   const theme = useTheme(state => state.theme)
-   const colorTheme = theme == 'light' ? lightTheme : darkTheme
+   //const theme = useTheme(state => state.theme)
+   //const colorTheme = theme == 'light' ? lightTheme : darkTheme
 
   return (
-    <ThemeProvider theme={colorTheme}>
+    <>
+    <GlobalStyles />
+    <ThemeProvider>
       <Head>
         <title>GMkonan</title>
       </Head>
-      <GlobalStyles />
       <NavBar />
       <Component {...pageProps} />
       <Footer />
     </ThemeProvider>
+    </>
   );
 }
 
