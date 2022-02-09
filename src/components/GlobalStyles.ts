@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
     --off-white: hsl(210deg, 30%, 2%); //hsl(225deg 25% 95%)
     --gray: #fff; //#5f6c7b
     --blue400: #3da9fc; //#3da9fc
-    --blue50: hsl(205, 15%, 25%); //#d8eefe
+    --blue50: hsl(205, 85%, 15%); //#d8eefe
     --red: #ef4565; //#ef4565
 
     //syntax colors to be used in code blocks
