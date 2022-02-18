@@ -63,6 +63,7 @@ const LanguageHeader = styled.div`
   border-top-right-radius: 0.25rem;
   border-width: 1px 1px 0px;
   border-style: solid;
+  padding: 0.4rem;
   border-color: rgba(230, 230, 230, 1);
   font-size: 0.875rem;
   line-height: 1.25rem;
