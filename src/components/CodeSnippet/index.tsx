@@ -46,9 +46,6 @@ const Pre = styled.pre`
   font-size: 18px;
   outline-offset: 2px;
   overflow-x: auto;
-  margin-left: -32px;
-  margin-right: -32px;
-  padding: 32px;
   //min-height: 50px;
   border: 1px solid rgba(230, 230, 230, 1);
   border-bottom-left-radius: 6px;
@@ -67,9 +64,6 @@ const LanguageHeader = styled.div`
   border-width: 1px 1px 0px;
   border-style: solid;
   border-color: rgba(230, 230, 230, 1);
-  padding: 0.75rem 1.25rem;
-  margin-left: -32px;
-  margin-right: -32px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
