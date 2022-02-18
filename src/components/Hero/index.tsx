@@ -80,6 +80,12 @@ const Wrapper = styled.div`
     grid-template-rows: 60% 40%;
     gap: 32px;
     //flex-direction: column;
+
+    @media ${QUERIES.laptop} {
+        
+        margin-top: 25px;
+    }
+
     @media ${QUERIES.tablet} {
         display: flex;
         flex-direction: column;
@@ -131,6 +137,7 @@ const AboutMe = styled.div`
     line-height: 28px;
     color: var(--gray);
     @media ${QUERIES.laptop} {
+        line-height: 22px;
     }
     @media ${QUERIES.tablet} {
     }
