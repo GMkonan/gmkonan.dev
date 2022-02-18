@@ -82,7 +82,9 @@ const Wrapper = styled.div`
     //flex-direction: column;
 
     @media ${QUERIES.laptop} {
-        
+        //grid-template-columns: 60% 40%;
+        //grid-template-rows: 60% 40%;
+        gap: 4px;
         margin-top: 25px;
     }
 
@@ -121,6 +123,7 @@ const SubTitle = styled.h1`
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
+        margin-top: 30px;
     }
     @media ${QUERIES.tablet} {
         font-size: 2.3rem;
@@ -137,6 +140,8 @@ const AboutMe = styled.div`
     line-height: 28px;
     color: var(--gray);
     @media ${QUERIES.laptop} {
+        font-size: 1.2rem;
+        margin-top: 30px;
         line-height: 22px;
     }
     @media ${QUERIES.tablet} {
@@ -185,6 +190,10 @@ const Skills = styled.div`
     align-items: center;
     justify-items: center;
 
+    @media ${QUERIES.laptop} {
+        margin-top: 16px;
+    }
+
     @media ${QUERIES.phone} {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -212,6 +221,10 @@ const TitleSkills = styled.h1`
         height: 2px;
         width: 100%;
         background: var(--blue400);
+    }
+
+    @media ${QUERIES.laptop} {
+        margin: 0;
     }
 `
 
