@@ -38,6 +38,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
 padding-top: 32px;
 display: flex;
+align-items: baseline;
 `
 
 const Logo = styled.div`
