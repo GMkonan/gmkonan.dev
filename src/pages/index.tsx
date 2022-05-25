@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     return (
         <>
             <Head>
-                <title>GMKonan DEV</title>
+                <title>GMkonan DEV</title>
                 <meta name="title" content="GMKonan DEV" />
                 <meta
                     name="description"

@@ -4,6 +4,7 @@ import { QUERIES } from '@constants'
 import MaxWidthWrapper from '@components/MaxWidthWrapper'
 import Image from 'next/image'
 import Me from '@public/mev2.png'
+import { translateToLeft, translateToRight } from '@components/animations'
 
 /* Change HTML structure */
 const Hero = () => {
@@ -104,6 +105,7 @@ const Presentation = styled.div`
 
 const Title = styled.h1`
     font-size: 5rem;
+    animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -120,6 +122,7 @@ const Title = styled.h1`
 const SubTitle = styled.h1`
     margin-top: 50px;
     font-size: 2.78rem;
+    animation: ${translateToRight} 1.2s ease 0.4s 1 normal both running;
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -152,8 +155,7 @@ const AboutMe = styled.div`
     }
 `
 
-const SkillsContainer = styled.div`
-`
+const SkillsContainer = styled.div``
 
 const Strong = styled.strong`
     color: var(--blue400);
