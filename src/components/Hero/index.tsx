@@ -4,7 +4,12 @@ import { QUERIES } from '@constants'
 import MaxWidthWrapper from '@components/MaxWidthWrapper'
 import Image from 'next/image'
 import Me from '@public/mev2.png'
-import { translateToLeft, translateToRight } from '@components/animations'
+import {
+    scaleInExistence,
+    scaleInOpacity,
+    translateToLeft,
+    translateToRight,
+} from '@components/animations'
 
 /* Change HTML structure */
 const Hero = () => {
@@ -167,6 +172,7 @@ const ImageContainer = styled(Container)`
     height: 350px;
     margin-left: 56px;
     background: var(--blue50);
+    animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
 
     @media ${QUERIES.laptop} {
     }
@@ -211,6 +217,7 @@ const TitleSkills = styled.h1`
     color: var(--blue400);
     font-size: 2rem;
     gap: 32px;
+    animation: ${scaleInOpacity} 0.85s ease 1s 1 normal both running;
     //border-bottom: 2px solid var(--blue400);
     &:after {
         content: '';
@@ -241,6 +248,7 @@ const Card = styled.div`
     color: var(--blue400);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     font-weight: 600;
+    animation: ${scaleInExistence} 1.1s ease 1.2s 1 normal both running;
     @media ${QUERIES.phone} {
         width: 170px;
     }
@@ -250,6 +258,15 @@ const Card = styled.div`
         width:  105%;
         height: 105%;
     } */
+`
+
+const UnstyledButton = styled.button`
+    outline: none;
+    background: transparent;
+    border: none;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
 `
 
 export default Hero
