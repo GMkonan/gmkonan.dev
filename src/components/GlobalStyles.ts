@@ -65,6 +65,17 @@ svg {
   pointer-events: none;
 }
 
+//change mouse selection background
+::-moz-selection { /* Code for Firefox */
+  //color: red;
+  background: var(--blue50);
+}
+
+::selection {
+  //color: red;
+  background: var(--blue50);
+}
+
   html, body {
   height: 100%;
   min-width: 100%;

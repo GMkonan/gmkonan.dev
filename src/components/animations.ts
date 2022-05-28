@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+import { keyframes } from 'styled-components'
 
 const translateToRight = keyframes`
   from {
@@ -9,7 +9,7 @@ const translateToRight = keyframes`
     transform:  translateX(0);
     opacity: 1;
   }
-`;
+`
 
 const translateToLeft = keyframes`
   from {
@@ -20,7 +20,7 @@ const translateToLeft = keyframes`
     transform:  translateX(0);
     opacity: 1;
   }
-`;
+`
 
 const scaleInExistence = keyframes`
   from {
@@ -31,10 +31,17 @@ const scaleInExistence = keyframes`
     transform:  scale(1);
     //opacity: 1;
   }
-`;
+`
 
-export {
-  translateToLeft,
-  translateToRight,
-  scaleInExistence,
-};
+const scaleInOpacity = keyframes`
+  from {
+    
+    opacity: 0;
+  }
+  to {
+
+    opacity: 1;
+  }
+`
+
+export { translateToLeft, translateToRight, scaleInExistence, scaleInOpacity }
