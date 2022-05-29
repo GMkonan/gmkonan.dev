@@ -44,4 +44,21 @@ const scaleInOpacity = keyframes`
   }
 `
 
-export { translateToLeft, translateToRight, scaleInExistence, scaleInOpacity }
+const translateToTop = keyframes`
+  from {
+    transform:  translateY(-300);
+    opacity: 0;
+  }
+  to {
+    transform:  translateY(0);
+    opacity: 1;
+  }
+`
+
+export {
+    translateToLeft,
+    translateToRight,
+    scaleInExistence,
+    scaleInOpacity,
+    translateToTop,
+}
