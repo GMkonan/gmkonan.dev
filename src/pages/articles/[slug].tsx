@@ -10,24 +10,22 @@ import Head from 'next/head'
 interface SlugProps {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     title: string
+    description: string
 }
 
-export default function Slug({ source, title }: SlugProps) {
+export default function Slug({ source, title, description }: SlugProps) {
     //consider making an "aside" at the left of the article
     return (
         <>
             <Head>
                 <title>GMkonan DEV</title>
-                <meta name="title" content="GMKonan DEV" />
+                <meta name="title" content={title} />
                 <meta name="description" content={`Read about ${title}`} />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://gmkonan.dev" />
-                <meta property="og:title" content="GMKonan DEV" />
-                <meta
-                    property="og:description"
-                    content={`Read about ${title}`}
-                />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
                 <meta
                     property="og:image"
                     content="https://gmkonan.dev/website-image.png"
@@ -35,11 +33,8 @@ export default function Slug({ source, title }: SlugProps) {
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:url" content="https://gmkonan.dev" />
-                <meta name="twitter:title" content="GMKonan DEV" />
-                <meta
-                    name="twitter:description"
-                    content={`Read about ${title}`}
-                />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
                 <meta
                     name="twitter:image"
                     content="https://gmkonan.dev/website-image.png"
@@ -129,7 +124,13 @@ const ArticleContainer = styled.div`
 export async function getStaticProps({ params }: any) {
     const { mdxSource, metadata } = await getPostsBySlug(params)
 
-    return { props: { source: mdxSource, title: metadata.title } }
+    return {
+        props: {
+            source: mdxSource,
+            title: metadata.title,
+            description: metadata.description,
+        },
+    }
 }
 
 export async function getStaticPaths() {
