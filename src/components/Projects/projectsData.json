@@ -1,0 +1,37 @@
+{
+    "projects": [
+        {
+            "title": "Random anime recommendation",
+            "description": "Get a random anime recommendation based on your filters",
+            "techs": ["Typescript", "Svelte"],
+            "links": {
+                "github": "https://github.com/GMkonan/random-anime-recommendation",
+                "preview": "https://random-anime-recommendation.vercel.app/"
+            },
+            "image": "https://random-anime-recommendation.vercel.app/meta-image.png",
+            "video": "awesome_video_link"
+        },
+        {
+            "title": "Random anime recommendation",
+            "description": "Get a random anime recommendation based on your filters",
+            "techs": ["Typescript", "Svelte"],
+            "links": {
+                "github": "https://github.com/GMkonan/random-anime-recommendation",
+                "preview": "https://random-anime-recommendation.vercel.app/"
+            },
+            "image": "https://random-anime-recommendation.vercel.app/meta-image.png",
+            "video": "awesome_video_link"
+        },
+        {
+            "title": "Random anime recommendation",
+            "description": "Get a random anime recommendation based on your filters",
+            "techs": ["Typescript", "Svelte"],
+            "links": {
+                "github": "https://github.com/GMkonan/random-anime-recommendation",
+                "preview": "https://random-anime-recommendation.vercel.app/"
+            },
+            "image": "https://random-anime-recommendation.vercel.app/meta-image.png",
+            "video": "awesome_video_link"
+        }
+    ]
+}
