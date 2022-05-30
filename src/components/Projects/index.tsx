@@ -1,52 +1,63 @@
-import styled from "styled-components";
-import MaxWidthWrapper from "@components/MaxWidthWrapper";
+import styled from 'styled-components'
+import MaxWidthWrapper from '@components/MaxWidthWrapper'
+import { QUERIES } from '@constants'
+import projectsData from './projectsData.json'
+import ProjectCard from './ProjectCard'
+
+/* 
+the idea is passing the projects to here from elsewhere,
+(I still don't know where, maybe from github API)
+but since this is the idea I will be passing the projects details
+in a json file to be consumed by this page, that way it will be
+easier to change to any sort of API,db or something
+*/
 
 const Projects = () => {
-  return (
-    <Container>
-      <MaxWidthWrapper>
-        <Title>Projects</Title>
-        <Wrapper>
-          <Project>
-
-          </Project>
-          <Project>
-
-          </Project>
-          <Project>
-
-          </Project>
-        </Wrapper>
-      </MaxWidthWrapper>
-    </Container>
-  );
-};
+    return (
+        <Container id="projects">
+            <MaxWidthWrapper>
+                <Wrapper>
+                    <Title>Projects</Title>
+                    {projectsData.projects.map((project) => (
+                        <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            techs={project.techs}
+                            links={project.links}
+                            image={project.image}
+                        />
+                    ))}
+                </Wrapper>
+            </MaxWidthWrapper>
+        </Container>
+    )
+}
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: #232946;
-`;
-
-const Title = styled.h1`
-  margin-top: 125px;
-  font-size: 5rem;
-  color: #d4d8f0;
-`;
-
+    z-index: 0;
+    background: var(--white);
+    transition: color 350ms ease 0s, background-color 350ms ease 0s;
+`
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 56px;
-`;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 100px 0;
+`
+const Title = styled.h1`
+    font-size: 5rem;
+    margin-bottom: 100px;
+    color: var(--primary);
 
-const Project = styled.div`
-border: 2px solid white;
-width: 300px;
-height: 250px;
-border-radius: 5%;
+    @media ${QUERIES.laptop} {
+        font-size: 4rem;
+    }
+    @media ${QUERIES.tablet} {
+        font-size: 3rem;
+    }
+    @media ${QUERIES.phone} {
+        font-size: 2.6rem;
+    }
 `
 
-export default Projects;
-
+export default Projects

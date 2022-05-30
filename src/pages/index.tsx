@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Hero from '@components/Hero'
 import Main from '@components/Main'
+import Projects from '@components/Projects'
 import Head from 'next/head'
 
 const Home: NextPage = () => {
@@ -40,7 +41,7 @@ const Home: NextPage = () => {
             </Head>
             <Main />
             <Hero />
-            {/*<Projects />*/}
+            {/* <Projects /> */}
         </>
     )
 }

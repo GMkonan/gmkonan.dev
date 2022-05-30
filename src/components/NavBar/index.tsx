@@ -7,12 +7,12 @@ import router from 'next/router'
 import ThemeToggle from '@components/ThemeToggle'
 
 const NavBar = () => {
-    const handleOptionClick = async () => {
+    const handleOptionClick = async (section: string) => {
         if (window.location.pathname == '/') {
-            Scroll('Hero')
+            Scroll(section)
         } else {
             await router.push('/')
-            Scroll('Hero')
+            Scroll(section)
         }
     }
     return (
@@ -25,9 +25,13 @@ const NavBar = () => {
                     <Hamburguer />
                     <Links>
                         <ThemeToggle />
-                        <Link onClick={handleOptionClick}>About</Link>{' '}
+                        <Link onClick={() => handleOptionClick('Hero')}>
+                            About
+                        </Link>{' '}
                         {/* Later change to "My Work" */}
-                        {/*<Link>Projects</Link> */}
+                        <Link onClick={() => handleOptionClick('projects')}>
+                            Projects
+                        </Link>
                         <Link href="/articles">Articles</Link>
                     </Links>
                 </Container>
