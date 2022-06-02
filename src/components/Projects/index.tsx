@@ -20,6 +20,7 @@ const Projects = () => {
                     <Title>Projects</Title>
                     {projectsData.projects.map((project) => (
                         <ProjectCard
+							key={project.title}
                             title={project.title}
                             description={project.description}
                             techs={project.techs}
