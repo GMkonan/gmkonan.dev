@@ -25,7 +25,7 @@ const ProjectCard = ({
                 <Description>{description}</Description>
                 <TechWrapper>
                     {techs.map((tech) => (
-                        <Tech>{tech}</Tech>
+                        <Tech key={tech}>{tech}</Tech>
                     ))}
                 </TechWrapper>
             </Card>
