@@ -20,7 +20,7 @@ const Projects = () => {
                     <Title>Projects</Title>
                     {projectsData.projects.map((project) => (
                         <ProjectCard
-							key={project.title}
+                            key={project.title}
                             title={project.title}
                             description={project.description}
                             techs={project.techs}
@@ -42,12 +42,11 @@ const Container = styled.div`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 32px;
     margin: 100px 0;
 `
 const Title = styled.h1`
     font-size: 5rem;
-    margin-bottom: 100px;
+    margin-bottom: 16px;
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
