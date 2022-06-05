@@ -72,9 +72,7 @@ const Card = styled.div`
 `
 
 const Image = styled.img`
-    border: 2px solid var(--blue400);
     border-radius: 8px;
-    position: static;
     /* mix-blend-mode: multiply;
     filter: grayscale(100%) contrast(1) brightness(90%);
     z-index: 2;
@@ -87,17 +85,6 @@ const Image = styled.img`
 
 const ImageLink = styled.a`
     cursor: pointer;
-    background-color: #00907685;
-    &::before {
-        content: '';
-        mix-blend-mode: screen;
-        background-color: var(--blue400);
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        inset: 0px;
-        position: absolute;
-    }
     /* background-color: var(--blue50-blurred);
     &:hover {
         background-color: none;
@@ -107,8 +94,8 @@ const ImageLink = styled.a`
 
 const ImageWrapper = styled.div`
     //border-radius: var(--border-radius);
-    mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1) brightness(90%);
+    //mix-blend-mode: multiply;
+    filter: contrast(1) brightness(90%);
 `
 
 const Title = styled.div`
