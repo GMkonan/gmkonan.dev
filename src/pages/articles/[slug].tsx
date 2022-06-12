@@ -6,11 +6,17 @@ import { getPostsBySlug, getPostsData } from '@api'
 import { Breadcrumbs, Crumb } from '@components/BreadCrumb'
 import { QUERIES } from '@constants'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
 interface SlugProps {
     source: MDXRemoteSerializeResult<Record<string, unknown>>
     title: string
     description: string
+}
+
+interface IParams extends ParsedUrlQuery {
+    slug: string
 }
 
 export default function Slug({ source, title, description }: SlugProps) {
@@ -121,8 +127,9 @@ const ArticleContainer = styled.div`
     }
 `
 
-export async function getStaticProps({ params }: any) {
-    const { mdxSource, metadata } = await getPostsBySlug(params)
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { slug } = context.params as IParams
+    const { mdxSource, metadata } = await getPostsBySlug(slug)
 
     return {
         props: {
@@ -134,7 +141,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-    const frontmatter = getPostsData()
+    const frontmatter = await getPostsData()
 
     return {
         paths: frontmatter.map((post: any) => ({
