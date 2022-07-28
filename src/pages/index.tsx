@@ -3,6 +3,9 @@ import Hero from '@components/Hero'
 import Main from '@components/Main'
 import Projects from '@components/Projects'
 import Head from 'next/head'
+import handleViewport from 'react-in-viewport'
+
+const ViewPortHero = handleViewport(Hero /** options: {}, config: {} **/)
 
 const Home: NextPage = () => {
     return (
@@ -40,7 +43,7 @@ const Home: NextPage = () => {
                 />
             </Head>
             <Main />
-            <Hero />
+            <ViewPortHero />
             {/* <Projects /> */}
         </>
     )

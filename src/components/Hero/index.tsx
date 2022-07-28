@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { QUERIES } from '@constants'
 import MaxWidthWrapper from '@components/MaxWidthWrapper'
 import Image from 'next/image'
@@ -12,17 +12,23 @@ import {
     translateToTop,
 } from '@components/animations'
 
+interface AnimationProps {
+    inViewPort: boolean
+}
+
 /* Change HTML structure */
-const Hero = () => {
+const Hero = (props) => {
+    const { inViewport, forwardedRef } = props
+
     return (
-        <Container id="Hero">
+        <Container id="Hero" ref={forwardedRef}>
             <MaxWidthWrapper>
                 <Wrapper>
                     <Presentation>
-                        <Title>About Me</Title>{' '}
+                        <Title inViewPort={inViewport}>About Me</Title>{' '}
                         {/* Later change to "My Work" */}
-                        <SubTitle>Who Am I?</SubTitle>
-                        <AboutMe>
+                        <SubTitle inViewPort={inViewport}>Who Am I?</SubTitle>
+                        <AboutMe inViewPort={inViewport}>
                             {/* Write this section better */}
                             My name is{' '}
                             <Strong>Guilherme Monteiro Pereira</Strong> AKA
@@ -42,21 +48,23 @@ const Hero = () => {
                         </AboutMe>
                     </Presentation>
 
-                    <ImageContainer>
+                    <ImageContainer inViewPort={inViewport}>
                         <Image src={Me} />
                     </ImageContainer>
                     <SkillsContainer>
-                        <TitleSkills>Skills</TitleSkills>
+                        <TitleSkills inViewPort={inViewport}>
+                            Skills
+                        </TitleSkills>
                         <Skills>
-                            <Card>Javascript ES6</Card>
-                            <Card>Typescript</Card>
-                            <Card>React</Card>
-                            <Card>NextJS</Card>
-                            <Card>TailwindCSS</Card>
-                            <Card>GraphQL</Card>
-                            <Card>Hasura</Card>
-                            <Card>PostgresSQL</Card>
-                            <Card>NodeJS</Card>
+                            <Card inViewPort={inViewport}>Javascript ES6</Card>
+                            <Card inViewPort={inViewport}>Typescript</Card>
+                            <Card inViewPort={inViewport}>React</Card>
+                            <Card inViewPort={inViewport}>NextJS</Card>
+                            <Card inViewPort={inViewport}>TailwindCSS</Card>
+                            <Card inViewPort={inViewport}>GraphQL</Card>
+                            <Card inViewPort={inViewport}>Hasura</Card>
+                            <Card inViewPort={inViewport}>PostgresSQL</Card>
+                            <Card inViewPort={inViewport}>NodeJS</Card>
                         </Skills>
                     </SkillsContainer>
                 </Wrapper>
@@ -109,9 +117,13 @@ const Presentation = styled.div`
     flex-direction: column;
 `
 
-const Title = styled.h1`
+const Title = styled.h1<AnimationProps>`
     font-size: 5rem;
-    animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${translateToRight} 0.75s ease 0s 1 normal both running
+        `};
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -125,10 +137,14 @@ const Title = styled.h1`
     }
 `
 
-const SubTitle = styled.h1`
+const SubTitle = styled.h1<AnimationProps>`
     margin-top: 50px;
     font-size: 2.78rem;
-    animation: ${translateToRight} 1.2s ease 0.4s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${translateToRight} 1.2s ease 0.4s 1 normal both running
+        `};
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -142,13 +158,17 @@ const SubTitle = styled.h1`
     }
 `
 
-const AboutMe = styled.div`
+const AboutMe = styled.div<AnimationProps>`
     padding: 0 0px;
     margin-top: 75px;
     font-size: 1.3rem;
     line-height: 28px;
     color: var(--gray);
-    animation: ${translateToTop} 0.5s ease 1.2s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${translateToTop} 0.5s ease 1.2s 1 normal both running
+        `};
     @media ${QUERIES.laptop} {
         font-size: 1.2rem;
         margin-top: 30px;
@@ -168,13 +188,17 @@ const Strong = styled.strong`
     color: var(--blue400);
 `
 
-const ImageContainer = styled(Container)`
+const ImageContainer = styled(Container)<AnimationProps>`
     margin-top: 52px;
     width: 350px;
     height: 350px;
     margin-left: 56px;
     background: var(--blue50);
-    animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${translateToLeft} 0.75s ease 0s 1 normal both running
+        `};
 
     @media ${QUERIES.laptop} {
     }
@@ -211,7 +235,7 @@ const Skills = styled.div`
     }
 `
 
-const TitleSkills = styled.h1`
+const TitleSkills = styled.h1<AnimationProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,7 +243,11 @@ const TitleSkills = styled.h1`
     color: var(--blue400);
     font-size: 2rem;
     gap: 32px;
-    animation: ${scaleInOpacity} 0.85s ease 1.8s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${scaleInOpacity} 0.85s ease 1.8s 1 normal both running
+        `};
     //border-bottom: 2px solid var(--blue400);
     &:after {
         content: '';
@@ -239,7 +267,7 @@ const TitleSkills = styled.h1`
     }
 `
 
-const Card = styled.div`
+const Card = styled.div<AnimationProps>`
     display: flex;
     background: var(--off-white);
     align-items: center;
@@ -250,7 +278,11 @@ const Card = styled.div`
     color: var(--blue400);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     font-weight: 600;
-    animation: ${scaleInExistence} 1.1s ease 2.15s 1 normal both running;
+    animation: ${({ inViewPort }) =>
+        inViewPort &&
+        css`
+            ${scaleInExistence} 1.1s ease 2.15s 1 normal both running
+        `};
     @media ${QUERIES.phone} {
         width: 170px;
     }
