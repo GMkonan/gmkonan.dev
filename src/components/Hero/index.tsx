@@ -104,7 +104,6 @@ const Presentation = styled.div`
 
 const Title = styled.h1`
     font-size: 5rem;
-    // animation: ${translateToRight} 0.75s ease 0s 1 normal both running;
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -121,7 +120,6 @@ const Title = styled.h1`
 const SubTitle = styled.h1`
     margin-top: 50px;
     font-size: 2.78rem;
-    // animation: ${translateToRight} 1.2s ease 0.4s 1 normal both running;
     color: var(--primary);
 
     @media ${QUERIES.laptop} {
@@ -141,8 +139,8 @@ const AboutMe = styled.div`
     font-size: 1.3rem;
     line-height: 28px;
     color: var(--gray);
-    // animation: ${translateToTop} 0.5s ease 1.2s 1 normal both running;
-    @media ${QUERIES.laptop} {
+
+    media ${QUERIES.laptop} {
         font-size: 1.2rem;
         margin-top: 30px;
         line-height: 22px;
@@ -167,10 +165,10 @@ const ImageContainer = styled(Container)`
     height: 350px;
     margin-left: 56px;
     background: var(--blue50);
-    // animation: ${translateToLeft} 0.75s ease 0s 1 normal both running;
 
     @media ${QUERIES.laptop} {
     }
+
     @media ${QUERIES.tablet} {
         display: flex;
         align-items: center;
@@ -212,8 +210,7 @@ const TitleSkills = styled.h1`
     color: var(--blue400);
     font-size: 2rem;
     gap: 32px;
-    // animation: ${scaleInOpacity} 0.85s ease 1.8s 1 normal both running;
-    //border-bottom: 2px solid var(--blue400);
+
     &:after {
         content: '';
         height: 2px;
@@ -243,7 +240,7 @@ const Card = styled.div`
     color: var(--blue400);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     font-weight: 600;
-    // animation: ${scaleInExistence} 1.1s ease 2.15s 1 normal both running;
+
     @media ${QUERIES.phone} {
         width: 170px;
     }
