@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import MaxWidthWrapper from "@components/MaxWidthWrapper";
-import { getRecentPostsData } from "@api";
-import { format } from "date-fns";
-import { QUERIES } from "@constants";
+import styled from 'styled-components'
+import MaxWidthWrapper from '@components/MaxWidthWrapper'
+import { getRecentPostsData } from '@api'
+import { format } from 'date-fns'
+import { QUERIES } from '@constants'
 
 interface Metadata {
     title: string
@@ -13,100 +13,100 @@ interface Metadata {
     content: string
 }
 
-const Blog = (props:any) => {
-    return(
+const Blog = (props: any) => {
+    return (
         <Container>
             <MaxWidthWrapper>
                 <Wrapper>
                     {props.frontmatter.map((metadata: Metadata) => (
-                        <Article key={metadata.slug} href={`/articles/${metadata.slug}`}>
+                        <Article
+                            key={metadata.slug}
+                            href={`/articles/${metadata.slug}`}
+                        >
                             <Title>{metadata.title}</Title>
                             <Description>
                                 {metadata.description}
-                                <h5>{format(new Date(metadata.publishedOn), 'MM/dd/yyyy')}</h5>
+                                <h5>
+                                    {format(
+                                        new Date(metadata.publishedOn),
+                                        'MM/dd/yyyy'
+                                    )}
+                                </h5>
                             </Description>
                         </Article>
                     ))}
                 </Wrapper>
             </MaxWidthWrapper>
         </Container>
-    );
+    )
 }
 const Container = styled.div`
-background: var(--off-white);
-
+    background: var(--white);
 `
 
 const Wrapper = styled.div`
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(2, 1fr);
-justify-items: center;
-gap: 32px;
-padding: 64px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    gap: 32px;
+    padding: 64px 0;
 
-@media ${QUERIES.laptop} {
-  
-}
-@media ${QUERIES.tablet} {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-}
-
+    @media ${QUERIES.laptop} {
+    }
+    @media ${QUERIES.tablet} {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
 `
 
 const Article = styled.a`
-color: var(--white);
-text-decoration: none;
-width: 500px;
-height: 300px;
-background: var(--white);
-border-radius: 3%;
-padding: 16px;
-border: 2px solid var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    width: 500px;
+    height: 300px;
+    background: var(--off-white);
+    border-radius: 16px;
+    padding: 16px;
+    //border: 2px solid var(--primary);
 
-@media ${QUERIES.laptop} {
-  
-}
-@media ${QUERIES.tablet} {
-  width: 90%;
-  height: auto;
-}
+    @media ${QUERIES.laptop} {
+    }
+    @media ${QUERIES.tablet} {
+        width: 90%;
+        height: auto;
+    }
 `
 
 const Title = styled.h1`
-font-size: 2rem;
-margin-bottom: 12px;
-color:var(--primary);
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--primary);
 
-@media ${QUERIES.laptop} {
-  
-}
-@media ${QUERIES.tablet} {
-  
-}
-@media ${QUERIES.phone} {
-  font-size: 1.3rem;
-}
+    @media ${QUERIES.laptop} {
+    }
+    @media ${QUERIES.tablet} {
+    }
+    @media ${QUERIES.phone} {
+        font-size: 1.3rem;
+    }
 `
 
 const Description = styled.div`
-color: var(--gray);
-font-size: 1.1rem;
-line-height: 28px;
-font-weight: 500;
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 28px;
+    font-weight: 500;
 
-@media ${QUERIES.laptop} {
-  
-}
-@media ${QUERIES.tablet} {
-  
-}
-@media ${QUERIES.phone} {
-    font-size: 1rem;
-}
+    @media ${QUERIES.laptop} {
+    }
+    @media ${QUERIES.tablet} {
+    }
+    @media ${QUERIES.phone} {
+        font-size: 1rem;
+    }
 `
 
 const PostType = styled.div`
@@ -121,8 +121,8 @@ const PostType = styled.div`
 `
 
 export async function getStaticProps() {
-    const frontmatter:Metadata[] = getRecentPostsData()
+    const frontmatter: Metadata[] = getRecentPostsData()
     return { props: { frontmatter } }
 }
 
-export default Blog;
+export default Blog

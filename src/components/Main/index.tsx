@@ -183,6 +183,7 @@ const SocialsWrapper = styled.div`
     margin-top: 150px;
     animation: ${scaleInExistence} 0.65s ease 0s 1 normal both running;
     @media ${QUERIES.laptop} {
+        margin-top: 75px;
     }
     @media ${QUERIES.tablet} {
     }
@@ -246,6 +247,9 @@ const Button = styled.a`
     text-decoration: none;
     &:hover {
         transform: scale(1.03);
+    }
+
+    @media ${QUERIES.laptop} {
     }
 `
 

@@ -192,7 +192,7 @@ const Skills = styled.div`
     justify-items: center;
 
     @media ${QUERIES.laptop} {
-        margin-top: 16px;
+        margin-top: 32px;
     }
 
     @media ${QUERIES.phone} {
@@ -225,7 +225,7 @@ const TitleSkills = styled.h1`
     }
 
     @media ${QUERIES.laptop} {
-        margin: 0;
+        margin: 16px;
     }
 `
 
