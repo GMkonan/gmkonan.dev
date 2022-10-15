@@ -28,7 +28,7 @@ const ProjectCard = ({
                     <TechsTitle>Technologies</TechsTitle>
                     <Techs>
                         {techs.map((tech) => (
-                            <Tech>{tech}</Tech>
+                            <Tech key={tech}>{tech}</Tech>
                         ))}
                     </Techs>
                 </TechsWrapper>
