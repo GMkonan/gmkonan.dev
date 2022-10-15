@@ -25,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #fffffe; //#fffffe
     --off-white: hsl(225deg 25% 95%); //hsl(225deg 25% 95%)
     --gray: hsl(212, 13%, 43%); //#5f6c7b
+    --gray400: hsl(212, 13%, 85%);
     --blue400: #3da9fc; //#3da9fc
     --blue50: hsl(205, 95%, 92%); //#d8eefe
     --red: #ef4565; //#ef4565

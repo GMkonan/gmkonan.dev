@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "Random anime recommendation",
-            "description": "Get a random anime recommendation based on your filters",
+            "description": "Get a random anime recommendation based on your filters.",
             "techs": ["Typescript", "Svelte"],
             "links": {
                 "github": "https://github.com/GMkonan/random-anime-recommendation",
@@ -12,25 +12,25 @@
             "video": "awesome_video_link"
         },
         {
-            "title": "Random anime recommendation",
-            "description": "Get a random anime recommendation based on your filters",
-            "techs": ["Typescript", "Svelte"],
+            "title": "Terminal Website",
+            "description": "A terminal website based on my own terminal using the catppuccin theme.",
+            "techs": ["HTML", "CSS", "Javascript"],
             "links": {
-                "github": "https://github.com/GMkonan/random-anime-recommendation",
-                "preview": "https://random-anime-recommendation.vercel.app/"
+                "github": "https://github.com/GMkonan/terminal-website",
+                "preview": "https://gmkonan.github.io/terminal-website/"
             },
-            "image": "https://random-anime-recommendation.vercel.app/meta-image.png",
+            "image": "/terminal-website-image.png",
             "video": "awesome_video_link"
         },
         {
-            "title": "Random anime recommendation",
-            "description": "Get a random anime recommendation based on your filters",
-            "techs": ["Typescript", "Svelte"],
+            "title": "MoveIt",
+            "description": "Website started in an brazilian event course called NLW. This project was lated extended by me.",
+            "techs": ["React", "NextJS", "Typescript"],
             "links": {
-                "github": "https://github.com/GMkonan/random-anime-recommendation",
-                "preview": "https://random-anime-recommendation.vercel.app/"
+                "github": "https://github.com/GMkonan/MoveIt",
+                "preview": "https://moveit-alpha-lovat.vercel.app/"
             },
-            "image": "https://random-anime-recommendation.vercel.app/meta-image.png",
+            "image": "/moveit-image.png",
             "video": "awesome_video_link"
         }
     ]

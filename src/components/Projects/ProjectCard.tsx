@@ -21,38 +21,37 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
     return (
         <Project>
-            <Card>
+            <Info>
                 <Title>{title}</Title>
                 <Description>{description}</Description>
-                <TechWrapper>
-                    {techs.map((tech) => (
-                        <Tech key={tech}>{tech}</Tech>
-                    ))}
-                </TechWrapper>
-                <LinkWrapper>
-                    <Link href={links.github}>
+                <TechsWrapper>
+                    <TechsTitle>Technologies</TechsTitle>
+                    <Techs>
+                        {techs.map((tech) => (
+                            <Tech>{tech}</Tech>
+                        ))}
+                    </Techs>
+                </TechsWrapper>
+                <Links>
+                    <a target="blank" href={links.github}>
                         <Github
-                            fill="var(--blue400)"
-                            width="24px"
-                            height="24px"
+                            fill="var(--white)"
+                            width="28px"
+                            height="28px"
                         />
-                    </Link>
-                    {links.preview !== '' ? (
-                        <Link href={links.preview}>
-                            <ExternalLink
-                                fill="var(--blue400)"
-                                width="24px"
-                                height="24px"
-                            />
-                        </Link>
-                    ) : null}
-                </LinkWrapper>
-            </Card>
-            <ImageLink href={links.preview}>
-                <ImageWrapper>
-                    <Image src={image} width={650} height={400} />
-                </ImageWrapper>
-            </ImageLink>
+                    </a>
+                    <a target="blank" href={links.preview}>
+                        <ExternalLink
+                            fill="var(--white)"
+                            width="28px"
+                            height="28px"
+                        />
+                    </a>
+                </Links>
+            </Info>
+            <ImageWrapper>
+                <Image src={image} />
+            </ImageWrapper>
         </Project>
     )
 }
@@ -61,87 +60,65 @@ const Project = styled.div`
     display: flex;
     width: 100%;
     height: 400px;
-    margin-bottom: 82px;
+    background: var(--primary);
+    margin: 32px 0;
+    border-radius: 16px;
+    overflow: hidden;
 `
 
-const Card = styled.div`
-    /* display: flex;
-    flex-direction: column; */
-    margin-top: 32px;
-    width: 400px;
+const Info = styled.div`
+    padding: 16px;
+    width: 40%;
 `
 
-const Image = styled.img`
-    border-radius: 8px;
-    /* mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1) brightness(90%);
-    z-index: 2;
-
-    &:hover {
-        filter: none;
-        //mix-blend-mode: none;
-    } */
+const Title = styled.h1`
+    font-size: 1.2rem;
+    color: var(--white);
 `
 
-const ImageLink = styled.a`
-    cursor: pointer;
-    /* background-color: var(--blue50-blurred);
-    &:hover {
-        background-color: none;
-        //mix-blend-mode: none;
-    } */
+const Description = styled.p`
+    margin-top: 24px;
+    color: var(--gray400);
 `
 
 const ImageWrapper = styled.div`
-    //border-radius: var(--border-radius);
-    //mix-blend-mode: multiply;
-    filter: contrast(1) brightness(90%);
+    width: 60%;
+    height: 100%;
 `
 
-const Title = styled.div`
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 56px;
+const Image = styled.img`
+    height: 100%;
+    width: 100%;
 `
 
-const Description = styled.div`
-    position: absolute;
-    margin-top: 8px;
-    font-size: 1rem;
-    color: var(--blue400);
-    background-color: var(--off-white);
-    width: 450px;
-    height: 100px;
-    padding: 16px;
-    border-radius: 8px;
+const TechsWrapper = styled.div`
+    margin-top: 108px;
 `
 
-const TechWrapper = styled.div`
-    position: relative;
-    top: 124px;
+const Techs = styled.div`
     display: flex;
-    gap: 16px;
+    gap: 12px;
 `
 
 const Tech = styled.div`
-    background: var(--blue400);
-    color: var(--off-white);
-    font-size: 16px;
-    font-weight: 600;
-    padding: 3px;
+    color: var(--white);
+    padding: 8px;
     border-radius: 4px;
+    font-weight: bold;
+    background: var(--blue400);
+    font-size: 0.8rem;
 `
 
-const LinkWrapper = styled.div`
-    position: relative;
-    bottom: -224px;
+const TechsTitle = styled.h2`
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--white);
+`
+
+const Links = styled.div`
     display: flex;
-    align-items: flex-end;
-`
-
-const Link = styled.a`
-    margin-right: 8px;
+    gap: 16px;
+    margin-top: 32px;
 `
 
 export default ProjectCard
